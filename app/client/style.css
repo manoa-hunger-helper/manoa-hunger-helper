@@ -1,0 +1,15 @@
+.footer-background{
+  background-color: #FBBD08;
+  color:white;
+}
+.landing-middle{
+  background:url(https://foodrevolution.org/wp-content/uploads/blog-featured_healthy_foods-20180306.jpg)no-repeat center fixed;
+  background-size: cover;
+  height: 500px;
+  color: white;
+  padding-top: 150px;
+;
+}
+.landing-bottom{
+  background-color: #FBBD08;
+}
