@@ -62,6 +62,25 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
 );
 
 /**
+ * VendorProtectedRoute (see React Router v4 sample)
+ * Checks for Meteor login and admin role before routing to the requested page, otherwise goes to signin page.
+ * @param {any} { component: Component, ...rest }
+ */
+const VendorProtectedRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={(props) => {
+      const isLogged = Meteor.userId() !== null;
+      const isVendor = Roles.userIsInRole(Meteor.userId(), 'vendor');
+      return (isLogged && isVendor) ?
+        (<Component {...props} />) :
+        (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+        );
+    }}
+  />
+);
+
+/**
  * AdminProtectedRoute (see React Router v4 sample)
  * Checks for Meteor login and admin role before routing to the requested page, otherwise goes to signin page.
  * @param {any} { component: Component, ...rest }
@@ -82,6 +101,12 @@ const AdminProtectedRoute = ({ component: Component, ...rest }) => (
 
 // Require a component and location to be passed to each ProtectedRoute.
 ProtectedRoute.propTypes = {
+  component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+  location: PropTypes.object,
+};
+
+// Require a component and location to be passed to each AdminProtectedRoute.
+VendorProtectedRoute.propTypes = {
   component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   location: PropTypes.object,
 };
