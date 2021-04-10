@@ -10,9 +10,17 @@ import { Roles } from 'meteor/alanning:roles';
 class NavBar extends React.Component {
   render() {
     const menuStyle = { marginBottom: '10px' };
+    const landing = () => {
+      if (Roles.userIsInRole(Meteor.userId(), 'vendor')) {
+        return '/vendor-home';
+      } if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+        return '/';
+      }
+      return '/';
+    };
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
-        <Menu.Item as={NavLink} activeClassName="" exact to="/">
+        <Menu.Item as={NavLink} activeClassName="" exact to={landing}>
           <Header inverted as='h1'>meteor-application-template</Header>
         </Menu.Item>
         {this.props.currentUser ? (
