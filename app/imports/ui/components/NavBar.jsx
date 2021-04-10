@@ -10,9 +10,15 @@ import { Roles } from 'meteor/alanning:roles';
 class NavBar extends React.Component {
   render() {
     const menuStyle = { marginBottom: '0px' };
+    const landing = () => {
+      if (Roles.userIsInRole(Meteor.userId(), 'vendor')) {
+        return '/vendor-home';
+      }
+      return '/';
+    };
     return (
       <Menu style={menuStyle} attached="top" borderless inverted color="yellow">
-        <Menu.Item as={NavLink} activeClassName="" exact to="/">
+        <Menu.Item as={NavLink} activeClassName="" exact to={landing()}>
           <Header inverted as='h1'>manoa-hunger-helper</Header>
         </Menu.Item>
         {this.props.currentUser ? (
