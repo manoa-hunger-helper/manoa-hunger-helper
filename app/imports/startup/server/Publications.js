@@ -15,9 +15,10 @@ Meteor.publish(Stuffs.userPublicationName, function () {
 
 // Vendor-level publication.
 // If logged in, then publish documents owned by this vendor. Otherwise publish nothing.
-Meteor.publish(Stuffs.adminPublicationName, function () {
+Meteor.publish(Vendors.userPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
-    return Vendors.collection.find();
+    const username = Meteor.users.findOne(this.userId).username;
+    return Vendors.collection.find({ owner: username });
   }
   return this.ready();
 });
