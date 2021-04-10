@@ -2,7 +2,8 @@
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme" },
-    { "email": "vendor@foo.com", "password": "changeme", "role": "vendor" }
+    { "email": "vendor@foo.com", "password": "changeme", "role": "vendor" },
+    { "email": "vendor2@foo.com", "password": "changeme", "role": "vendor" }
   ],
 
   "defaultData": [
@@ -10,5 +11,18 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+
+  "defaultVendor": [
+    { "name": "Panda Express", "image": "./images/panda_logo.png", "price": "$", "location":  "Paradise Palms Café",
+      "state": "close", "businessdate": "Monday to Friday", "starttime": "10", "endtime":  "14",
+      "website": "https://manoa.hawaii.edu/food/panda-express/", "phone": "(808) 956-4798", "email": "food@hawaii.edu",
+      "type": "Chinese", "owner": "vendor@foo.com"
+    },
+    { "name": "DA Spot", "image": "./images/daspot_logo.png", "price": "$", "location":  "Krauss Circle",
+      "state": "close", "businessdate": "Monday to Friday", "starttime": "0", "endtime":  "0",
+      "website": "https://manoa.hawaii.edu/food/da-spot/", "phone": "(808) 956-4798", "email": "food@hawaii.edu",
+      "type": "Mediterranean, North African", "owner": "vendor2@foo.com"
+    }
   ]
 }
