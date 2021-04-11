@@ -3,32 +3,25 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /**
- * The VendorsCollection. It encapsulates state and variable values for menu.
+ * The FoodMenusCollection. It encapsulates state and variable values for food menu.
  */
-class VendorCollection {
+class FoodMenuCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'VendorsCollection';
+    this.name = 'FoodMenusCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       name: String,
+      vendor: String,
+      price: Number,
       image: String,
-      price: String,
-      location: String,
-      state: {
+      vegan: {
         type: String,
-        allowedValues: ['Open', 'Close'],
-        defaultValue: 'Close',
+        allowedValues: ['Yes', 'No'],
+        defaultValue: 'No',
       },
-      businessdate: String,
-      starttime: Number,
-      endtime: Number,
-      website: String,
-      phone: String,
-      email: String,
-      type: String,
       owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
@@ -40,7 +33,7 @@ class VendorCollection {
 }
 
 /**
- * The singleton instance of the VendorsCollection.
- * @type {VendorsCollection}
+ * The singleton instance of the FoodMenusCollection.
+ * @type {FoodMenusCollection}
  */
-export const Vendors = new VendorCollection();
+export const FoodMenus = new FoodMenuCollection();

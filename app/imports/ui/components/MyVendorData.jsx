@@ -6,6 +6,12 @@ import { withRouter } from 'react-router-dom';
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class MyVendorData extends React.Component {
   render() {
+    const currtime = new Date().getHours();
+    if (currtime >= this.props.vendor.starttime && currtime <= this.props.vendor.endtime) {
+      this.props.vendor.state = 'Open';
+    } else {
+      this.props.vendor.state = 'Close';
+    }
     return (
       <Table.Row>
         <Table.Cell>{this.props.vendor.name}</Table.Cell>
