@@ -14,6 +14,9 @@ class NavBar extends React.Component {
       if (Roles.userIsInRole(Meteor.userId(), 'vendor')) {
         return '/vendor-home';
       }
+      if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+        return '/admin-home';
+      }
       return '/';
     };
     return (

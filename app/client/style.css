@@ -8,7 +8,6 @@
   height: 500px;
   color: white;
   padding-top: 150px;
-;
 }
 .landing-bottom{
   background-color: #FBBD08;
@@ -18,4 +17,14 @@
   background: url("images/uhm-food-vendors-background.jpg") no-repeat center center fixed;
   background-size: cover;
   height: 600px;
+}
+.admin-middle{
+  background:url(https://oneclassblog.com/wp-content/uploads/2017/09/JABSOM_Pano_Brizzi-2014.jpg)no-repeat center fixed;
+  background-size: cover;
+  height: 500px;
+  color: white;
+  padding-top: 150px;
+}
+.admin-tex{
+  font-size:5em ;
 }
