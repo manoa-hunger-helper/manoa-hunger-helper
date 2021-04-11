@@ -15,14 +15,24 @@
 
   "defaultVendor": [
     { "name": "Panda Express", "image": "./images/panda_logo.png", "price": "$", "location":  "Paradise Palms Café",
-      "state": "close", "businessdate": "Monday to Friday", "starttime": "10", "endtime":  "14",
+      "state": "Close", "businessdate": "Monday to Friday", "starttime": 10, "endtime":  14,
       "website": "https://manoa.hawaii.edu/food/panda-express/", "phone": "(808) 956-4798", "email": "food@hawaii.edu",
       "type": "Chinese", "owner": "vendor@foo.com"
     },
     { "name": "DA Spot", "image": "./images/daspot_logo.png", "price": "$", "location":  "Krauss Circle",
-      "state": "close", "businessdate": "Monday to Friday", "starttime": "0", "endtime":  "0",
+      "state": "Close", "businessdate": "Monday to Friday", "starttime": 0, "endtime":  0,
       "website": "https://manoa.hawaii.edu/food/da-spot/", "phone": "(808) 956-4798", "email": "food@hawaii.edu",
       "type": "Mediterranean, North African", "owner": "vendor2@foo.com"
+    }
+  ],
+  "defaultFoodMenu": [
+    { "name": "Orange Chicken", "vendor": "Panda Express", "price": 10.20,
+      "image": "https://s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/pdp_OrangeChicken.jpg",
+      "vegan": "No", "owner": "vendor@foo.com"
+    },
+    { "name": "Honey Walnut Shrimp", "vendor": "Panda Express", "price": 13.95,
+      "image": "https://s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/pdp_HoneyWalnutShrimp.jpg",
+      "vegan": "No", "owner": "vendor@foo.com"
     }
   ]
 }
