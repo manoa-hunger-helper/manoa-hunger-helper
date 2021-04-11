@@ -42,6 +42,9 @@ export default class Signin extends React.Component {
       if (Roles.userIsInRole(Meteor.userId(), 'vendor')) {
         return <Redirect to="/vendor-home"/>;
       }
+      if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+        return <Redirect to="/admin-home"/>;
+      }
       return <Redirect to={from}/>;
     }
     // Otherwise return the Login form.
