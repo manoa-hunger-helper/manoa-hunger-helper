@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
+import { Meteor } from 'meteor/meteor';
 
 /**
  * Signup component is similar to signin component, but we create a new user instead.
@@ -17,19 +18,19 @@ class Signup extends React.Component {
   /* Update the form controls each time the user interacts with them. */
   handleChange = (e, { name, value, role }) => {
     this.setState({ [name]: value, role });
-    console.log(name, value, role, 1);
   }
 
   /* Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
     const { email, password, role } = this.state;
-    console.log(email, password, role, 2);
     Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
+        if (role === 'vendor') {
+          Meteor.call('addvendortonewuser');
+        }
         this.setState({ error: '', redirectToReferer: true });
-        console.log(email, password, role, 3);
       }
     });
   }
@@ -39,6 +40,9 @@ class Signup extends React.Component {
     const { from } = this.props.location.state || { from: { pathname: '/add' } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
+      if (this.state.role === 'vendor') {
+        return <Redirect to='/vendor-home'/>;
+      }
       return <Redirect to={from}/>;
     }
     const { role } = this.state;
