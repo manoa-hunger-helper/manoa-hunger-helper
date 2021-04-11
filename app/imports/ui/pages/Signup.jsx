@@ -11,22 +11,25 @@ class Signup extends React.Component {
   /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+    this.state = { email: '', password: '', roles: '', error: '', redirectToReferer: false };
   }
 
   /* Update the form controls each time the user interacts with them. */
-  handleChange = (e, { name, value }) => {
-    this.setState({ [name]: value });
+  handleChange = (e, { name, value, role }) => {
+    this.setState({ [name]: value, role });
+    console.log(name, value, role, 1);
   }
 
   /* Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, password } = this.state;
+    const { email, password, role } = this.state;
+    console.log(email, password, role, 2);
     Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
         this.setState({ error: '', redirectToReferer: true });
+        console.log(email, password, role, 3);
       }
     });
   }
@@ -38,6 +41,7 @@ class Signup extends React.Component {
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
     }
+    const { role } = this.state;
     return (
       <Container id="signup-page">
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
@@ -67,6 +71,25 @@ class Signup extends React.Component {
                   type="password"
                   onChange={this.handleChange}
                 />
+                <Form.Group inline>
+                  <label>Account Type:</label>
+                  <Form.Radio
+                    label='Personal'
+                    name='user'
+                    value=''
+                    role='user'
+                    checked={role === 'user'}
+                    onChange={this.handleChange}
+                  />
+                  <Form.Radio
+                    label='Vendor'
+                    name='vendor'
+                    value='vendor'
+                    role='vendor'
+                    checked={role === 'vendor'}
+                    onChange={this.handleChange}
+                  />
+                </Form.Group>
                 <Form.Button id="signup-form-submit" content="Submit"/>
               </Segment>
             </Form>
