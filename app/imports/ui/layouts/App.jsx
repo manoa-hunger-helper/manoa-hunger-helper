@@ -16,6 +16,10 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import UserHome from '../pages/UserHome';
+import AllVendors from '../pages/AllVendors';
+import TodayTopPicks from '../pages/TodayTopPicks';
+import AvailableNow from '../pages/AvailableNow';
+import Recommendation from '../pages/Recommendation';
 import VendorHome from '../pages/VendorHome';
 import MyVendor from '../pages/MyVendor';
 
@@ -36,6 +40,10 @@ class App extends React.Component {
             <VendorProtectedRoute path="/my-vendor" component={MyVendor}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
+            <ProtectedRoute path="/all-vendors" component={AllVendors}/>
+            <ProtectedRoute path="/available-vendors" component={AvailableNow}/>
+            <ProtectedRoute path="/todays-top-picks" component={TodayTopPicks}/>
+            <ProtectedRoute path="/recommendation" component={Recommendation}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <Route component={NotFound}/>

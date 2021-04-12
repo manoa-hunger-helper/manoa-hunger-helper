@@ -20,9 +20,20 @@
   height: 600px;
 }
 .user-home-background {
-  background:url("images/user-homepage-background.jpg")no-repeat center fixed;
+  background:
+      url("images/user-homepage-background.jpg")no-repeat center fixed;
   background-size: cover;
   height: 500px;
   color: white;
   padding-top: 150px;
+}
+.transbox {
+  margin: 30px;
+  background-color: #ffffff;
+  opacity: 0.6;
+}
+.transbox-text {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
 }

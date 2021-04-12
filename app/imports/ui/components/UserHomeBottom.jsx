@@ -5,7 +5,7 @@ import { Grid, Image } from 'semantic-ui-react';
 class UserHomeBottom extends React.Component {
   render() {
     return (
-      <div className ="Landing-bottom">
+      <div className ="landing-bottom">
         <Grid>
           <Grid.Row columns="four">
             <Grid.Column>
