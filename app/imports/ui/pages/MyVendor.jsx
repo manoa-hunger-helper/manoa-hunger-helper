@@ -5,6 +5,8 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Vendors } from '../../api/vendor/Vendor';
 import MyVendorData from '../components/MyVendorData';
+import { FoodMenus } from '../../api/menu/FoodMenu';
+import FoodMenuItem from '../components/FoodMenuItem';
 
 /** Renders a table containing all of the vendor documents. Use <MyVendorData> to render each row. */
 class MyVendor extends React.Component {
@@ -37,6 +39,22 @@ class MyVendor extends React.Component {
             {this.props.vendors.map((vendor) => <MyVendorData key={vendor._id} vendor={vendor} />)}
           </Table.Body>
         </Table>
+
+        <Table celled>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Name</Table.HeaderCell>
+              <Table.HeaderCell>Vendor</Table.HeaderCell>
+              <Table.HeaderCell>Image</Table.HeaderCell>
+              <Table.HeaderCell>Price</Table.HeaderCell>
+              <Table.HeaderCell>Vegan</Table.HeaderCell>
+              <Table.HeaderCell>Edit</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            {this.props.foodmenus.map((foodmenu) => <FoodMenuItem key={foodmenu._id} foodmenu={foodmenu} />)}
+          </Table.Body>
+        </Table>
       </Container>
     );
   }
@@ -45,6 +63,7 @@ class MyVendor extends React.Component {
 // Require an array of Vendor documents in the props.
 MyVendor.propTypes = {
   vendors: PropTypes.array.isRequired,
+  foodmenus: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -52,12 +71,17 @@ MyVendor.propTypes = {
 export default withTracker(() => {
   // Get access to Vendor documents.
   const subscription = Meteor.subscribe(Vendors.userPublicationName);
+  // Get access to FoodMenus documents.
+  const subscription2 = Meteor.subscribe(FoodMenus.userPublicationName);
   // Determine if the subscription is ready
-  const ready = subscription.ready();
+  const ready = subscription.ready() && subscription2.ready();
   // Get the Vendor documents
   const vendors = Vendors.collection.find({}).fetch();
+  // Get the FoodMenus documents
+  const foodmenus = FoodMenus.collection.find({}).fetch();
   return {
     vendors,
+    foodmenus,
     ready,
   };
 })(MyVendor);
