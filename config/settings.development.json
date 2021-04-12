@@ -60,11 +60,11 @@
     },
     { "name": "Strawberry Wild", "vendor": "Ono seafood", "price": 5.89,
       "image": "https://jambajuice.ph/wp-content/uploads/SWild.jpg",
-      "vegan": "No", "owner": "vendor4@foo.com"
+      "vegan": "Yes", "owner": "vendor4@foo.com"
     },
     { "name": "Peach Perfection", "vendor": "Ono seafood", "price": 5.89,
       "image": "https://jambajuice.ph/wp-content/uploads/Peach-Pleasure.jpg",
-      "vegan": "No", "owner": "vendor4@foo.com"
+      "vegan": "Yes", "owner": "vendor4@foo.com"
     }
   ]
 }
