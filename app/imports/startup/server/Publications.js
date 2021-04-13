@@ -3,7 +3,6 @@ import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Vendors } from '../../api/vendor/Vendor';
 import { FoodMenus } from '../../api/menu/FoodMenu';
-import { Preferences } from '../../api/preferences/Preferences';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -11,14 +10,6 @@ Meteor.publish(Stuffs.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Stuffs.collection.find({ owner: username });
-  }
-  return this.ready();
-});
-
-Meteor.publish(Preferences.userPublicationName, function () {
-  if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Preferences.collection.find({ owner: username });
   }
   return this.ready();
 });
@@ -42,7 +33,7 @@ Meteor.publish(Vendors.userPublicationName, function () {
 });
 
 Meteor.publish(FoodMenus.vendorPublicationName, function () {
-  if (this.userId) {
+  if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
     const username = Meteor.users.findOne(this.userId).username;
     return FoodMenus.collection.find({ owner: username });
   }

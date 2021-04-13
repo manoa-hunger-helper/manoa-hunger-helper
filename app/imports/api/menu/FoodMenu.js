@@ -18,6 +18,7 @@ class FoodMenuCollection {
       price: Number,
       image: String,
       bio: String,
+      owner: String,
       vegan: Boolean,
       drink: Boolean,
       dessert: Boolean,
@@ -26,7 +27,7 @@ class FoodMenuCollection {
     this.collection.attachSchema(this.schema);
     // Define names for publications and subscriptions
     this.userPublicationName = `${this.name}.publication.user`;
-    this.vendorPublicationName = `${this.name}.publication.user`;
+    this.vendorPublicationName = `${this.name}.publication.vendor`;
     this.adminPublicationName = `${this.name}.publication.admin`;
   }
 }
