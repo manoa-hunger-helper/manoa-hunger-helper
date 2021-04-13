@@ -49,6 +49,8 @@ class MyVendor extends React.Component {
                 <Table.HeaderCell>Image</Table.HeaderCell>
                 <Table.HeaderCell>Price</Table.HeaderCell>
                 <Table.HeaderCell>Vegan</Table.HeaderCell>
+                <Table.HeaderCell>Drink</Table.HeaderCell>
+                <Table.HeaderCell>Dessert</Table.HeaderCell>
                 <Table.HeaderCell>Edit</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
