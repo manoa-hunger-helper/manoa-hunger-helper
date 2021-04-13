@@ -24,7 +24,7 @@ function addProfile({ name, preferences, price, picture, bio, vendor }) {
   // Create the profile.
   Profiles.collection.insert({ name, preferences, price, picture, bio, vendor });
   // Add interests and projects.
-  preferences.map(pref => ProfilesPreferences.collection.insert({ profile: price, pref }));
+  preferences.map(pref => ProfilesPreferences.collection.insert({ profile: name, pref }));
   // Make sure interests are defined in the Interests collection if they weren't already.
   preferences.map(pref => addPreference(pref));
 }

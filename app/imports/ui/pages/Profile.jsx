@@ -46,14 +46,14 @@ class Profile extends React.Component {
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
-    const email = Meteor.user().username;
+    const name = Meteor.user().username;
     // Create the form schema for uniforms. Need to determine all interests and projects for muliselect list.
-    const allPreferences = _.pluck(Preferences.collection.find().fetch(), 'name');
+    const allPreferences = _.pluck(Preferences.collection.find().fetch(), 'preferences');
     const formSchema = makeSchema(allPreferences);
     const bridge = new SimpleSchema2Bridge(formSchema);
     // Now create the model with all the user information.
-    const preferences = _.pluck(ProfilesPreferences.collection.find({ profile: email }).fetch(), 'preference');
-    const profile = Profiles.collection.findOne({ email });
+    const preferences = _.pluck(ProfilesPreferences.collection.find({ profile: name }).fetch(), 'preference');
+    const profile = Profiles.collection.findOne({ name });
     const model = _.extend({}, profile, { preferences });
     return (
       <Grid id="home-page" container centered>
@@ -64,7 +64,7 @@ class Profile extends React.Component {
               <Form.Group widths={'equal'}>
                 <TextField id='name' name='name' showInlineError={true} placeholder={'Food Name'}/>
                 <NumField id='price' name='price' showInlineError={true} />
-                <TextField name='vendor' showInlineError={true} placeholder={'vendor'} disabled/>
+                <TextField name='vendor' showInlineError={true} placeholder={'name'} disabled/>
               </Form.Group>
               <LongTextField id='bio' name='bio' placeholder='Describe the food...'/>
               <Form.Group widths={'equal'}>

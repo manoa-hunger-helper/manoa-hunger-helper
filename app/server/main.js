@@ -3,6 +3,7 @@ import '/imports/startup/server/Publications';
 import '/imports/startup/server/Mongo';
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
+import '/imports/startup/both/Methods';
 
 Meteor.methods({
 

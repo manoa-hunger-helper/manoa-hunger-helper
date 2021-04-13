@@ -27,12 +27,12 @@ class NavBar extends React.Component {
             <Menu.Item as={NavLink} activeClassName="active" exact to="/available-vendors" key='now'>Available Now</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/todays-top-picks" key='picks'>Today Top Picks</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/view" key='all-menus'>All Menus</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/profile" key='add-food'>Add Menu Item</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/recommendation" key='recommend'>Recommendation</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>List Stuff</Menu.Item>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'vendor') ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/my-vendor" key='my-vendor'>My Vendor</Menu.Item>
+          <Menu.Item as={NavLink} activeClassName="active" exact to="/my-vendor" key='my-vendor'>My Vendor</Menu.Item>,
+          <Menu.Item as={NavLink} activeClassName="active" exact to="/profile" key='add-food'>Add Menu Item</Menu.Item>
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
           <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>

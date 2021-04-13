@@ -10,7 +10,7 @@ import { ProfilesPreferences } from '../../api/profiles/ProfilesPreferences';
 /** Returns the Profile and associated Projects and preferences associated with the passed user email. */
 function getProfileData(name) {
   const data = Profiles.collection.findOne({ name });
-  const preferences = _.pluck(ProfilesPreferences.collection.find({ profile: name }).fetch(), 'preference');
+  const preferences = _.pluck(ProfilesPreferences.collection.find({ profile: name }).fetch(), 'preferences');
   // console.log(_.extend({ }, data, { preferences, projects: projectPictures }));
   return _.extend({ }, data, { preferences });
 }
@@ -49,8 +49,8 @@ class ViewMenuItem extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    const vendors = _.pluck(Profiles.collection.find().fetch(), 'vendor');
-    const profileData = vendors.map(vendor => getProfileData(vendor));
+    const names = _.pluck(Profiles.collection.find().fetch(), 'name');
+    const profileData = names.map(name => getProfileData(name));
     return (
       <Container id="profiles-page">
         <Card.Group>
