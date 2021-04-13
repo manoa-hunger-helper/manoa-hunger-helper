@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class MyVendorData extends React.Component {
@@ -24,7 +24,7 @@ class MyVendorData extends React.Component {
         </Table.Cell>
         <Table.Cell>{this.props.vendor.type}</Table.Cell>
         <Table.Cell>
-          <p>Edit</p>
+          <Link to={`/editVedorInfor/${this.props.vendor._id}`}>Edit</Link>
         </Table.Cell>
       </Table.Row>
     );
