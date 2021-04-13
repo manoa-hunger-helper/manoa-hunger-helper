@@ -8,7 +8,7 @@ class LandingTop extends React.Component {
     return (
       <div className ="landing-middle">
         <Grid container centered>
-          <Header as="h1" inverted>Very Welcome!</Header>
+          <Header as="h1" inverted>Welcome!</Header>
         </Grid>
       </div>
     );

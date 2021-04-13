@@ -36,27 +36,25 @@ class MyVendor extends React.Component {
             </Table.Row>
           </Table.Header>
           <Table.Body>
-            {this.props.vendors.map((vendor) => <MyVendorData key={vendor._id} vendor={vendor}/>)}
+            {this.props.vendors.map((vendor) => <MyVendorData key={vendor._id} vendor={vendor} />)}
           </Table.Body>
         </Table>
 
-        {(this.props.foodmenus.length) ? (
-          <Table celled>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Vendor</Table.HeaderCell>
-                <Table.HeaderCell>Image</Table.HeaderCell>
-                <Table.HeaderCell>Price</Table.HeaderCell>
-                <Table.HeaderCell>Vegan</Table.HeaderCell>
-                <Table.HeaderCell>Edit</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {this.props.foodmenus.map((foodmenu) => <FoodMenuItem key={foodmenu._id} foodmenu={foodmenu}/>)}
-            </Table.Body>
-          </Table>
-        ) : ''}
+        <Table celled>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Name</Table.HeaderCell>
+              <Table.HeaderCell>Vendor</Table.HeaderCell>
+              <Table.HeaderCell>Image</Table.HeaderCell>
+              <Table.HeaderCell>Price</Table.HeaderCell>
+              <Table.HeaderCell>Vegan</Table.HeaderCell>
+              <Table.HeaderCell>Edit</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            {this.props.foodmenus.map((foodmenu) => <FoodMenuItem key={foodmenu._id} foodmenu={foodmenu} />)}
+          </Table.Body>
+        </Table>
       </Container>
     );
   }
