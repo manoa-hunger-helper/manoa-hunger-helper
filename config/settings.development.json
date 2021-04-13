@@ -88,6 +88,10 @@
       "website": "https://uhm.sodexomyway.com/dining-near-me/jamba-juice", "phone": "(808) 956-7327", "email": "food@hawaii.edu",
       "type": "Hawaiian", "owner": "vendor4@foo.com"
     }
+  ],
 
-  ]
+  "monti": {
+    "appId": "changeme",
+    "appSecret": "changeme"
+  }
 }
