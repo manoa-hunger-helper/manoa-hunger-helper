@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class FoodMenuItem extends React.Component {
@@ -14,7 +14,7 @@ class FoodMenuItem extends React.Component {
         <Table.Cell>{this.props.foodmenu.price}</Table.Cell>
         <Table.Cell>{this.props.foodmenu.vegan}</Table.Cell>
         <Table.Cell>
-          <p>Edit</p>
+          <Link to={`/editMyMenu/${this.props.foodmenu._id}`}>Edit</Link>
         </Table.Cell>
       </Table.Row>
     );
