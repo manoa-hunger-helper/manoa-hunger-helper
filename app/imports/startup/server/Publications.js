@@ -1,8 +1,20 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
+import { Preferences } from '../../api/preferences/Preferences';
+import { Profiles } from '../../api/profiles/Profiles';
+import { ProfilesPreferences } from '../../api/profiles/ProfilesPreferences';
 import { Vendors } from '../../api/vendor/Vendor';
 import { FoodMenus } from '../../api/menu/FoodMenu';
+
+/** Define a publication to publish all Preferences. */
+Meteor.publish(Preferences.userPublicationName, () => Preferences.collection.find());
+
+/** Define a publication to publish all profiles. */
+Meteor.publish(Profiles.userPublicationName, () => Profiles.collection.find());
+
+/** Define a publication to publish this collection. */
+Meteor.publish(ProfilesPreferences.userPublicationName, () => ProfilesPreferences.collection.find());
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.

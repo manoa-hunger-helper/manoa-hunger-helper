@@ -1,4 +1,63 @@
 {
+  "defaultProfiles": [
+    { "name": "Orange Chicken", "vendor": "Panda Express", "price": 10.20,
+      "picture": "https://s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/pdp_OrangeChicken.jpg",
+      "bio": "somethingsomethingsomethingsomething",
+      "preferences": [
+        "Software Engineering",
+        "Climate Change"
+      ]
+    },
+    { "name": "Mixed Veggie", "vendor": "Panda Express", "price": 8.00,
+      "picture": "https://image.zmenu.com/large/3300/20140409152448457945.jpg",
+      "bio": "Yes",
+      "preferences": [
+        "Vegan",
+        "Drink"
+      ]
+    },
+    { "name": "Honey Walnut Shrimp", "vendor": "Panda Express", "price": 13.95,
+      "picture": "https://s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/pdp_HoneyWalnutShrimp.jpg",
+      "bio": "No",
+      "preferences": [
+        "Vegan",
+        "Drink"
+      ]
+    },
+    { "name": "Grilled Chicken Fillet", "vendor": "Da spot", "price": 6.00,
+      "picture": "https://www.cfacdn.com/img/order/COM/Menu_Refresh/Entree/Entree%20PDP/_0000s_0009_Final__0026_CFA_PDP_Grilled-Deluxe-Sandwich_1085.png",
+      "bio": "No",
+      "preferences": [
+        "Vegan",
+        "Drink"
+      ]
+    },
+    { "name": "Shoyu Ahi", "vendor": "Ono seafood", "price": 11.75,
+      "picture": "https://farm2.staticflickr.com/1729/28526594158_caa528b371_z.jpg",
+      "bio": "No",
+      "preferences": [
+        "Vegan",
+        "Drink"
+      ]
+    },
+    { "name": "Strawberry Wild", "vendor": "Ono seafood", "price": 5.89,
+      "picture": "https://jambajuice.ph/wp-content/uploads/SWild.jpg",
+      "bio": "Yes",
+      "preferences": [
+        "Vegan",
+        "Drink"
+      ]
+    },
+    { "name": "Peach Perfection", "vendor": "Ono seafood", "price": 5.89,
+      "picture": "https://jambajuice.ph/wp-content/uploads/Peach-Pleasure.jpg",
+      "bio": "Yes",
+      "preferences": [
+        "Vegan",
+        "Drink"
+      ]
+    }
+    ],
+
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme" },
