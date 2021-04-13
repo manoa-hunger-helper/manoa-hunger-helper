@@ -17,9 +17,9 @@ class UserHomeTop extends React.Component {
             <Header as='h3' inverted>Views all vendors at Uh Manoa </Header>
           </Grid.Column>
           <Grid.Column>
-            <Header as='h2' inverted>Today's Top picks</Header>
+            <Header as='h2' inverted>Today&apos;s Top picks</Header>
             <Icon name='food' inverted size='huge'/>
-            <Header as='h3' inverted>See today's featured dishes</Header>
+            <Header as='h3' inverted>See today&apos;s featured dishes</Header>
           </Grid.Column>
         </Grid>
       </div>
