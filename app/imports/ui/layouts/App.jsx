@@ -15,6 +15,12 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
+import UserHome from '../pages/UserHome';
+import Menu from '../pages/Menu';
+import AllVendors from '../pages/AllVendors';
+import TodayTopPicks from '../pages/TodayTopPicks';
+import AvailableNow from '../pages/AvailableNow';
+import Recommendation from '../pages/Recommendation';
 import VendorHome from '../pages/VendorHome';
 import MyVendor from '../pages/MyVendor';
 import AdimHome from '../pages/AdimHome';
@@ -32,6 +38,8 @@ class App extends React.Component {
             <Route path="/signin" component={Signin}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
+            <ProtectedRoute path="/user-home" component={UserHome}/>
+            <ProtectedRoute path="/view" component={Menu}/>
             <VendorProtectedRoute path="/vendor-home" component={VendorHome}/>
             <VendorProtectedRoute path="/my-vendor" component={MyVendor}/>
             <VendorProtectedRoute path="/editVedorInfor/:_id" component={EditVendorInformation}/>

@@ -14,6 +14,14 @@ Meteor.publish(Stuffs.userPublicationName, function () {
   return this.ready();
 });
 
+// If logged in, then publish documents owned by this vendor. Otherwise publish nothing.
+Meteor.publish(FoodMenus.userPublicationName, function () {
+  if (this.userId) {
+    return FoodMenus.collection.find();
+  }
+  return this.ready();
+});
+
 // Vendor-level publication.
 // If logged in, then publish documents owned by this vendor. Otherwise publish nothing.
 Meteor.publish(Vendors.userPublicationName, function () {
@@ -24,8 +32,8 @@ Meteor.publish(Vendors.userPublicationName, function () {
   return this.ready();
 });
 
-Meteor.publish(FoodMenus.userPublicationName, function () {
-  if (this.userId) {
+Meteor.publish(FoodMenus.vendorPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
     const username = Meteor.users.findOne(this.userId).username;
     return FoodMenus.collection.find({ owner: username });
   }

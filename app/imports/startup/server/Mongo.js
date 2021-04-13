@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Vendors } from '../../api/vendor/Vendor.js';
 import { FoodMenus } from '../../api/menu/FoodMenu.js';
+
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
