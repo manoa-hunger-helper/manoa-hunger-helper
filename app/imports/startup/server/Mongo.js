@@ -2,9 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Vendors } from '../../api/vendor/Vendor.js';
 import { FoodMenus } from '../../api/menu/FoodMenu.js';
-import { Profiles } from '../../ui/pages/Profile';
-import { ProfilesPreferences } from '../../api/profiles/ProfilesPreferences';
-import { Preferences } from '../../api/preferences/Preferences';
+import { Profiles } from '../../api/profiles/Profiles';
 
 /* eslint-disable no-console */
 
@@ -13,20 +11,12 @@ function addData(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
   Stuffs.collection.insert(data);
 }
-/** Define an interest.  Has no effect if interest already exists. */
-function addPreference(pref) {
-  Preferences.collection.update({ name: pref }, { $set: { name: pref } }, { upsert: true });
-}
 
 /** Defines a new user and associated profile. Error if user already exists. */
-function addProfile({ name, preferences, price, picture, bio, vendor }) {
-  console.log(`Defining profile ${name}`);
+function addProfile(data) {
+  console.log(`Defining profile ${data.name}`);
   // Create the profile.
-  Profiles.collection.insert({ name, preferences, price, picture, bio, vendor });
-  // Add interests and projects.
-  preferences.map(pref => ProfilesPreferences.collection.insert({ profile: name, pref }));
-  // Make sure interests are defined in the Interests collection if they weren't already.
-  preferences.map(pref => addPreference(pref));
+  Profiles.collection.insert(data);
 }
 
 // Initialize the database with a default vendor document.
@@ -42,12 +32,10 @@ function addFood(data) {
 }
 
 /** Initialize DB if it appears to be empty (i.e. no users defined.) */
-if (Meteor.users.find().count() === 0) {
+if (Profiles.collection.find().count() === 0) {
   if (Meteor.settings.defaultProfiles) {
     console.log('Creating the default profiles');
-    Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
-  } else {
-    console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
+    Meteor.settings.defaultProfiles.map(data => addProfile(data));
   }
 }
 // Initialize the StuffsCollection if empty.
