@@ -17,6 +17,7 @@ class FoodMenuItem extends React.Component {
         <Table.Cell>{this.props.foodmenu.name}</Table.Cell>
         <Table.Cell>{this.props.foodmenu.vendor}</Table.Cell>
         <Table.Cell><Image src={this.props.foodmenu.image} size='small'/></Table.Cell>
+        <Table.Cell>{this.props.foodmenu.bio}</Table.Cell>
         <Table.Cell>{this.props.foodmenu.price}</Table.Cell>
         <Table.Cell>{strvegan}</Table.Cell>
         <Table.Cell>{strdrink}</Table.Cell>

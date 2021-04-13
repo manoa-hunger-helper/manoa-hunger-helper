@@ -89,15 +89,5 @@
       "type": "Hawaiian", "owner": "vendor4@foo.com"
     }
 
-  ],
-  "notuserdefaultFoodMenu": [
-    { "name": "Orange Chicken", "vendor": "Panda Express", "price": 10.20,
-      "image": "https://s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/pdp_OrangeChicken.jpg",
-      "vegan": "No", "owner": "vendor@foo.com"
-    },
-    { "name": "Honey Walnut Shrimp", "vendor": "Panda Express", "price": 13.95,
-      "image": "https://s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/pdp_HoneyWalnutShrimp.jpg",
-      "vegan": "No", "owner": "vendor@foo.com"
-    }
   ]
 }

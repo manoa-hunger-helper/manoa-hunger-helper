@@ -47,6 +47,7 @@ class MyVendor extends React.Component {
                 <Table.HeaderCell>Name</Table.HeaderCell>
                 <Table.HeaderCell>Vendor</Table.HeaderCell>
                 <Table.HeaderCell>Image</Table.HeaderCell>
+                <Table.HeaderCell>Bio</Table.HeaderCell>
                 <Table.HeaderCell>Price</Table.HeaderCell>
                 <Table.HeaderCell>Vegan</Table.HeaderCell>
                 <Table.HeaderCell>Drink</Table.HeaderCell>
