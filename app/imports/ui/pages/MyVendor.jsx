@@ -72,7 +72,7 @@ export default withTracker(() => {
   // Get access to Vendor documents.
   const subscription = Meteor.subscribe(Vendors.userPublicationName);
   // Get access to FoodMenus documents.
-  const subscription2 = Meteor.subscribe(FoodMenus.userPublicationName);
+  const subscription2 = Meteor.subscribe(FoodMenus.vendorPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready() && subscription2.ready();
   // Get the Vendor documents

@@ -16,7 +16,8 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import UserHome from '../pages/UserHome';
-import ViewMenuItem from '../pages/ViewMenuItem';
+import Menu from '../pages/Menu';
+import Profile from '../pages/Profile';
 import AllVendors from '../pages/AllVendors';
 import TodayTopPicks from '../pages/TodayTopPicks';
 import AvailableNow from '../pages/AvailableNow';
@@ -37,7 +38,8 @@ class App extends React.Component {
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/user-home" component={UserHome}/>
-            <ProtectedRoute path="/view" component={ViewMenuItem}/>
+            <ProtectedRoute path="/view" component={Menu}/>
+            <ProtectedRoute path="/profile" component={Profile}/>
             <VendorProtectedRoute path="/vendor-home" component={VendorHome}/>
             <VendorProtectedRoute path="/my-vendor" component={MyVendor}/>
             <ProtectedRoute path="/list" component={ListStuff}/>

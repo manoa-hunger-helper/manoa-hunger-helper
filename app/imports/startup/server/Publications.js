@@ -1,9 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
-import { Profiles } from '../../api/profiles/Profiles';
 import { Vendors } from '../../api/vendor/Vendor';
 import { FoodMenus } from '../../api/menu/FoodMenu';
+import { Preferences } from '../../api/preferences/Preferences';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -15,10 +15,18 @@ Meteor.publish(Stuffs.userPublicationName, function () {
   return this.ready();
 });
 
+Meteor.publish(Preferences.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Preferences.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
 // If logged in, then publish documents owned by this vendor. Otherwise publish nothing.
 Meteor.publish(FoodMenus.userPublicationName, function () {
   if (this.userId) {
-    return Profiles.collection.find();
+    return FoodMenus.collection.find();
   }
   return this.ready();
 });
@@ -33,7 +41,7 @@ Meteor.publish(Vendors.userPublicationName, function () {
   return this.ready();
 });
 
-Meteor.publish(FoodMenus.userPublicationName, function () {
+Meteor.publish(FoodMenus.vendorPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return FoodMenus.collection.find({ owner: username });

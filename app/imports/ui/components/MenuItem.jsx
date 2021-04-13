@@ -4,24 +4,24 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-class Profile extends React.Component {
+class MenuItem extends React.Component {
   render() {
     return (
       <Card centered>
-        <Image size='huge' src={this.props.profile.picture} wrapped ui={false} />
+        <Image size='huge' src={this.props.menu.image} wrapped ui={false} />
         <Card.Content>
-          <Card.Header>{this.props.profile.name}</Card.Header>
+          <Card.Header>{this.props.menu.name}</Card.Header>
           <Card.Meta>
             <Icon name="dollar sign" floated="right" />
-            {this.props.profile.price}
+            {this.props.menu.price}
           </Card.Meta>
           <Card.Description>
-            {this.props.profile.bio}
+            {this.props.menu.bio}
           </Card.Description>
           <Card.Content extra>
             <Divider/>
             <Icon name='user' />
-            {this.props.profile.vendor}
+            {this.props.menu.vendor}
           </Card.Content>
         </Card.Content>
       </Card>
@@ -30,9 +30,9 @@ class Profile extends React.Component {
 }
 
 // Require a document to be passed to this component.
-Profile.propTypes = {
-  profile: PropTypes.object.isRequired,
+MenuItem.propTypes = {
+  menu: PropTypes.object.isRequired,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.
-export default withRouter(Profile);
+export default withRouter(MenuItem);

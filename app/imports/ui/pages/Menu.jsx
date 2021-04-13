@@ -3,11 +3,11 @@ import { Meteor } from 'meteor/meteor';
 import { Container, Loader, Card, Header } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import Profile from '../components/Profile';
-import { Profiles } from '../../api/profiles/Profiles';
+import MenuItem from '../components/MenuItem';
+import { FoodMenus } from '../../api/menu/FoodMenu';
 
 /** Renders the Profile Collection as a set of Cards. */
-class ViewMenuItem extends React.Component {
+class Menus extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -20,26 +20,26 @@ class ViewMenuItem extends React.Component {
       <Container>
         <Header as="h2" inverted textAlign="center">View All Menu Items </Header>
         <Card.Group>
-          {this.props.profiles.map((profile, index) => <Profile key={index} profile={profile}/>)}
+          {this.props.foodMenus.map((menu, index) => <MenuItem key={index} menu={menu}/>)}
         </Card.Group>
       </Container>
     );
   }
 }
 
-ViewMenuItem.propTypes = {
+Menus.propTypes = {
   ready: PropTypes.bool.isRequired,
-  profiles: PropTypes.array.isRequired,
+  foodMenus: PropTypes.array.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Ensure that minimongo is populated with all collections prior to running render().
-  const sub1 = Meteor.subscribe(Profiles.userPublicationName);
+  const sub1 = Meteor.subscribe(FoodMenus.userPublicationName);
   const ready = sub1.ready();
-  const profiles = Profiles.collection.find({}).fetch();
+  const foodMenus = FoodMenus.collection.find({}).fetch();
   return {
-    profiles,
+    foodMenus,
     ready,
   };
-})(ViewMenuItem);
+})(Menus);
