@@ -28,3 +28,10 @@
 .admin-tex{
   font-size:5em ;
 }
+.user-home-background {
+  background:url("images/user-homepage-background.jpg")no-repeat center fixed;
+  background-size: cover;
+  height: 500px;
+  color: white;
+  padding-top: 150px;
+}

@@ -55,7 +55,9 @@
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme" },
     { "email": "vendor@foo.com", "password": "changeme", "role": "vendor" },
-    { "email": "vendor2@foo.com", "password": "changeme", "role": "vendor" }
+    { "email": "vendor2@foo.com", "password": "changeme", "role": "vendor" },
+    { "email": "vendor3@foo.com", "password": "changeme", "role": "vendor" },
+    { "email": "vendor4@foo.com", "password": "changeme", "role": "vendor" }
   ],
 
   "defaultData": [
@@ -75,7 +77,18 @@
       "state": "Close", "businessdate": "Monday to Friday", "starttime": 0, "endtime":  0,
       "website": "https://manoa.hawaii.edu/food/da-spot/", "phone": "(808) 956-4798", "email": "food@hawaii.edu",
       "type": "Mediterranean, North African", "owner": "vendor2@foo.com"
+    },
+    { "name": "Ono Seafood", "image": "./images/onoseafood_logo.png", "price": "$", "location":  "Krauss Circle",
+      "state": "Close", "businessdate": "Monday, Tuesday, Thursday and Friday", "starttime": 0, "endtime":  0,
+      "website": "https://manoa.hawaii.edu/food/ono-seafood/", "phone": "(808) 956-4798", "email": "food@hawaii.edu",
+      "type": "Japanese", "owner": "vendor3@foo.com"
+    },
+    { "name": "Jamba Juice ", "image": "./images/jamba-juice-logo.png", "price": "$", "location":  "Campus Center",
+      "state": "Close", "businessdate": "Monday to Friday", "starttime": 0, "endtime":  0,
+      "website": "https://uhm.sodexomyway.com/dining-near-me/jamba-juice", "phone": "(808) 956-7327", "email": "food@hawaii.edu",
+      "type": "Hawaiian", "owner": "vendor4@foo.com"
     }
+
   ],
   "notuserdefaultFoodMenu": [
     { "name": "Orange Chicken", "vendor": "Panda Express", "price": 10.20,
