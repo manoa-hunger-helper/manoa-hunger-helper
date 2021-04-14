@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
 import swal from 'sweetalert';
-import { AutoForm, ErrorsField, HiddenField, NumField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
+import { AutoForm, LongTextField, BoolField, ErrorsField, HiddenField, NumField, SubmitField, TextField } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -15,8 +15,8 @@ class EditMyMenu extends React.Component {
 
   // On successful submit, insert the data.
   submit(data) {
-    const { name, vendor, price, image, vegan, _id } = data;
-    FoodMenus.collection.update(_id, { $set: { name, vendor, price, image, vegan } }, (error) => (error ?
+    const { name, vendor, price, image, bio, vegan, drink, dessert, _id } = data;
+    FoodMenus.collection.update(_id, { $set: { name, vendor, price, image, bio, vegan, drink, dessert } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   }
@@ -38,7 +38,10 @@ class EditMyMenu extends React.Component {
               <TextField name='vendor'/>
               <NumField name='price' decimal={true}/>
               <TextField name='image'/>
-              <SelectField name='vegan'/>
+              <LongTextField name='bio'/>
+              <BoolField name='vegan'/>
+              <BoolField name='drink'/>
+              <BoolField name='dessert'/>
               <SubmitField value='Submit'/>
               <ErrorsField/>
               <HiddenField name='owner' />
