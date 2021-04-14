@@ -53,10 +53,11 @@ class MyVendor extends React.Component {
                 <Table.HeaderCell>Drink</Table.HeaderCell>
                 <Table.HeaderCell>Dessert</Table.HeaderCell>
                 <Table.HeaderCell>Edit</Table.HeaderCell>
+                <Table.HeaderCell>Remove</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>
-              {this.props.foodmenus.map((foodmenu) => <FoodMenuItem key={foodmenu._id} foodmenu={foodmenu}/>)}
+              {this.props.foodmenus.map((foodmenu) => <FoodMenuItem key={foodmenu._id} foodmenu={foodmenu} FoodMenus={FoodMenus}/>)}
             </Table.Body>
           </Table>
         ) : ''}

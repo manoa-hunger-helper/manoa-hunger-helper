@@ -1,10 +1,14 @@
 import React from 'react';
-import { Table, Image } from 'semantic-ui-react';
+import { Table, Image, Button, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class FoodMenuItem extends React.Component {
+  removeItem(foodID) {
+    this.props.FoodMenus.collection.remove(foodID);
+  }
+
   render() {
     let strvegan = 'true';
     let strdrink = 'true';
@@ -25,6 +29,11 @@ class FoodMenuItem extends React.Component {
         <Table.Cell>
           <Link to={`/editMyMenu/${this.props.foodmenu._id}`}>Edit</Link>
         </Table.Cell>
+        <Table.Cell>
+          <Button icon onClick={() => this.removeItem(this.props.foodmenu._id)}>
+            <Icon name='trash' />
+          </Button>
+        </Table.Cell>
       </Table.Row>
     );
   }
@@ -35,6 +44,7 @@ class FoodMenuItem extends React.Component {
 // Require a document to be passed to this component.
 FoodMenuItem.propTypes = {
   foodmenu: PropTypes.object.isRequired,
+  FoodMenus: PropTypes.object.isRequired,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.

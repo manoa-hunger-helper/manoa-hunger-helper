@@ -19,9 +19,21 @@ class FoodMenuCollection {
       image: String,
       bio: String,
       owner: String,
-      vegan: Boolean,
-      drink: Boolean,
-      dessert: Boolean,
+      vegan: {
+        type: Boolean,
+        allowedValues: [true, false],
+        defaultValue: false,
+      },
+      drink: {
+        type: Boolean,
+        allowedValues: [true, false],
+        defaultValue: false,
+      },
+      dessert: {
+        type: Boolean,
+        allowedValues: [true, false],
+        defaultValue: false,
+      },
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);

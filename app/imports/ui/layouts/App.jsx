@@ -27,6 +27,7 @@ import AdimHome from '../pages/AdimHome';
 import EditVendorInformation from '../pages/EditVendorInformation';
 import EditMyMenu from '../pages/EditMyMenu';
 import AddVendor from '../pages/AddVendor';
+import AddFood from '../pages/AddFood';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -49,6 +50,7 @@ class App extends React.Component {
             <VendorProtectedRoute path="/vendor-home" component={VendorHome}/>
             <VendorProtectedRoute path="/my-vendor" component={MyVendor}/>
             <VendorProtectedRoute path="/add-vendor-info" component={AddVendor}/>
+            <VendorProtectedRoute path="/add-menu-food" component={AddFood}/>
             <VendorProtectedRoute path="/editVedorInfor/:_id" component={EditVendorInformation}/>
             <VendorProtectedRoute path="/editMyMenu/:_id" component={EditMyMenu}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
