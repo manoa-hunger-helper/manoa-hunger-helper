@@ -7,8 +7,8 @@ import { Link, withRouter } from 'react-router-dom';
 class FoodMenuItem extends React.Component {
   render() {
     let strvegan = 'true';
-    let strdrink = true;
-    let strdessert = true;
+    let strdrink = 'true';
+    let strdessert = 'true';
     if (!this.props.foodmenu.vegan) strvegan = 'false';
     if (!this.props.foodmenu.drink) strdrink = 'false';
     if (!this.props.foodmenu.dessert) strdessert = 'false';
