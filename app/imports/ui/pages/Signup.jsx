@@ -4,6 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor';
+import swal from 'sweetalert';
 
 /**
  * Signup component is similar to signin component, but we create a new user instead.
@@ -41,7 +42,9 @@ class Signup extends React.Component {
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
       if (this.state.role === 'vendor') {
-        return <Redirect to='/vendor-home'/>;
+        swal('Success', 'Please, log in to your new account ');
+        Meteor.logout();
+        return <Redirect to="/signin"/>;
       }
       return <Redirect to={from}/>;
     }
