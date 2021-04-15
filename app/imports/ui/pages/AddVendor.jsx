@@ -42,8 +42,8 @@ class AddVendor extends React.Component {
               <TextField name='location'/>
               <SelectField name='state'/>
               <TextField name='businessdate' label='Business Date'/>
-              <NumField name='starttime' label='Open Time' decimal={false} min={0} max={23} />
-              <NumField name='endtime' label='Close Time' decimal={false} min={0} max={23} />
+              <NumField name='starttime' label='Open Time (24-hour notation)' decimal={false} min={0} max={23} />
+              <NumField name='endtime' label='Close Time (24-hour notation)' decimal={false} min={0} max={23} />
               <TextField name='website'/>
               <TextField name='phone'/>
               <TextField name='email'/>
