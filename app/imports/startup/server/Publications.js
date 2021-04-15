@@ -13,11 +13,16 @@ Meteor.publish(Stuffs.userPublicationName, function () {
   }
   return this.ready();
 });
-
 // If logged in, then publish documents owned by this vendor. Otherwise publish nothing.
 Meteor.publish(FoodMenus.userPublicationName, function () {
   if (this.userId) {
     return FoodMenus.collection.find();
+  }
+  return this.ready();
+});
+Meteor.publish(Vendors.userPublicationName, function () {
+  if (this.userId) {
+    return Vendors.collection.find();
   }
   return this.ready();
 });

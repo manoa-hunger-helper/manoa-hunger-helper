@@ -1,63 +1,45 @@
 import React from 'react';
-import { Grid, Segment, Header } from 'semantic-ui-react';
-import { AutoForm, ErrorsField, NumField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
-import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
-import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import SimpleSchema from 'simpl-schema';
-import { Stuffs } from '../../api/stuff/Stuff';
+import { Container, Loader, Card, Header } from 'semantic-ui-react';
+import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
+import VendorItem from '../components/VendorItem';
+import { Vendors } from '../../api/vendor/Vendor';
 
-// Create a schema to specify the structure of the data to appear in the form.
-const formSchema = new SimpleSchema({
-  name: String,
-  quantity: Number,
-  condition: {
-    type: String,
-    allowedValues: ['excellent', 'good', 'fair', 'poor'],
-    defaultValue: 'good',
-  },
-});
+/** Renders the Profile Collection as a set of Cards. */
+class AllVendors extends React.Component {
 
-const bridge = new SimpleSchema2Bridge(formSchema);
-
-/** Renders the Page for adding a document. */
-class AddStuff extends React.Component {
-
-  // On submit, insert the data.
-  submit(data, formRef) {
-    const { name, quantity, condition } = data;
-    const owner = Meteor.user().username;
-    Stuffs.collection.insert({ name, quantity, condition, owner },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Item added successfully', 'success');
-          formRef.reset();
-        }
-      });
+  /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
+  render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
-  // Render the form. Use Uniforms: https://github.com/vazco/uniforms
-  render() {
-    let fRef = null;
+  /** Render the page once subscriptions have been received. */
+  renderPage() {
     return (
-      <Grid container centered>
-        <Grid.Column>
-          <Header as="h2" textAlign="center">Add Stuff</Header>
-          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
-            <Segment>
-              <TextField name='name'/>
-              <NumField name='quantity' decimal={false}/>
-              <SelectField name='condition'/>
-              <SubmitField value='Submit'/>
-              <ErrorsField/>
-            </Segment>
-          </AutoForm>
-        </Grid.Column>
-      </Grid>
+      <Container>
+        <Header as="h2" textAlign="center">Vendors </Header>
+        <Card.Group>
+          {this.props.vendors.map((vendor, index) => <VendorItem key={index} vendor={vendor}/>)}
+        </Card.Group>
+      </Container>
     );
   }
 }
 
-export default AddStuff;
+AllVendors.propTypes = {
+  ready: PropTypes.bool.isRequired,
+  vendors: PropTypes.array.isRequired,
+};
+
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+export default withTracker(() => {
+  // Ensure that minimongo is populated with all collections prior to running render().
+  const sub2 = Meteor.subscribe(Vendors.userPublicationName);
+  const ready = sub2.ready();
+  const vendors = Vendors.collection.find({}).fetch();
+  return {
+    vendors,
+    ready,
+  };
+})(AllVendors);
