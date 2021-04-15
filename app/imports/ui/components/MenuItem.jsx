@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Card, Icon, Divider } from 'semantic-ui-react';
+import { Image, Card, Icon, Divider, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ class MenuItem extends React.Component {
   render() {
     return (
       <Card centered>
-        <Image size='huge' src={this.props.menu.image} wrapped ui={false} />
+        <Image size='huge' src={this.props.menu.image} style={{ height: '290px' }}/>
         <Card.Content>
           <Card.Header>{this.props.menu.name}</Card.Header>
           <Card.Meta>
@@ -22,6 +22,8 @@ class MenuItem extends React.Component {
             <Divider/>
             <Icon name='user' />
             {this.props.menu.vendor}
+            <Button toggle icon={'heart'}
+              floated={'right'}/>
           </Card.Content>
         </Card.Content>
       </Card>

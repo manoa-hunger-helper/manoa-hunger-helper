@@ -1,14 +1,14 @@
 {
   "defaultFoodMenu": [
     { "name": "Orange Chicken", "vendor": "Panda Express", "price": 10.20, "owner": "vendor@foo.com",
-      "image": "https://s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/pdp_OrangeChicken.jpg",
+      "image": "https://tse3.mm.bing.net/th?id=OIP.57l6PdkDJQjl-zgif9CsNwHaFf&pid=Api&P=0&w=246&h=184",
       "bio": "Our signature dish. Crispy chicken wok-tossed in a sweet and spicy orange sauce.",
       "vegan": true,
       "drink": false,
       "dessert": false
     },
     { "name": "Shoyu Ahi", "vendor": "Ono seafood", "price": 11.75, "owner": "vendor3@foo.com",
-      "image": "https://farm2.staticflickr.com/1729/28526594158_caa528b371_z.jpg",
+      "image": "https://tse4.mm.bing.net/th?id=OIP.9dXaW8PVD5zbLmxwVsKZ0QHaLG&pid=Api&P=0&w=300&h=300",
       "bio" : "Fresh ahi mixed with Japanese shoyu sauce, served with white rice or brown rice",
       "vegan": false,
       "drink": false,
@@ -22,7 +22,7 @@
       "dessert": false
     },
     { "name": "Honey Walnut Shrimp", "vendor": "Panda Express", "price": 13.95, "owner": "vendor@foo.com",
-      "image": "https://s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/pdp_HoneyWalnutShrimp.jpg",
+      "image": "https://tse2.mm.bing.net/th?id=OIP.JHRJbT_8OAVsMqFMzUD6kQHaFj&pid=Api&P=0&w=227&h=171",
       "bio": "Large tempura-battered shrimp, wok-tossed in a honey sauce and topped with glazed walnuts.",
       "vegan": false,
       "drink": false,
