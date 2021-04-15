@@ -14,6 +14,17 @@ class VendorItem extends React.Component {
           <Card.Meta>
             {this.props.vendor.address}
           </Card.Meta>
+          <Card.Meta>
+            {this.props.vendor.businessdate}
+            <p>{this.props.vendor.starttime}:00 --- {this.props.vendor.endtime}:00</p>
+          </Card.Meta>
+          <Card.Meta>
+            {this.props.vendor.address}
+          </Card.Meta>
+          <Card.Meta>
+            {this.props.vendor.phone}
+          </Card.Meta>
+
           <Card.Description>
             {this.props.vendor.location}
           </Card.Description>
