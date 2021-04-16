@@ -69,7 +69,6 @@ Meteor.publish(FoodMenus.adminPublicationName, function () {
   return this.ready();
 });
 
-
 // alanning:roles publication
 // Recommended code to publish roles for each user.
 Meteor.publish(null, function () {

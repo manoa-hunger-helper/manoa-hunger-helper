@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Vendors } from '../../api/vendor/Vendor';
 import AdminVendorData from '../components/AdminVendorData';
 import { FoodMenus } from '../../api/menu/FoodMenu';
-import FoodMenuItem from '../components/FoodMenuItem';
+import AdminFoodMenuItem from '../components/AdminFoodMenuItem';
 
 /** Renders a table containing all of the vendor documents. Use <MyVendorData> to render each row. */
 class ManageVendors extends React.Component {
@@ -33,7 +33,6 @@ class ManageVendors extends React.Component {
                 <Table.HeaderCell>Time</Table.HeaderCell>
                 <Table.HeaderCell>Contact</Table.HeaderCell>
                 <Table.HeaderCell>Type</Table.HeaderCell>
-                <Table.HeaderCell>Edit</Table.HeaderCell>
                 <Table.HeaderCell>Remove</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
@@ -55,12 +54,11 @@ class ManageVendors extends React.Component {
                 <Table.HeaderCell>Vegan</Table.HeaderCell>
                 <Table.HeaderCell>Drink</Table.HeaderCell>
                 <Table.HeaderCell>Dessert</Table.HeaderCell>
-                <Table.HeaderCell>Edit</Table.HeaderCell>
                 <Table.HeaderCell>Remove</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>
-              {this.props.foodmenus.map((foodmenu) => <FoodMenuItem key={foodmenu._id} foodmenu={foodmenu} FoodMenus={FoodMenus}/>)}
+              {this.props.foodmenus.map((foodmenu) => <AdminFoodMenuItem key={foodmenu._id} foodmenu={foodmenu} FoodMenus={FoodMenus}/>)}
             </Table.Body>
           </Table>
         ) : 'No menu data'}
