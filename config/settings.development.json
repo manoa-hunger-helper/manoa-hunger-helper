@@ -69,22 +69,22 @@
 
   "defaultVendor": [
     { "name": "Panda Express", "image": "./images/panda_logo.png", "price": "$", "location":  "Paradise Palms Café",
-      "state": "Close", "businessdate": "Monday to Friday", "starttime": 10, "endtime":  14,
+      "state": "Close", "businessdate": "Monday, Tuesday, Wednesday, Thursday and Friday", "starttime": 10, "endtime":  14,
       "website": "https://manoa.hawaii.edu/food/panda-express/", "phone": "(808) 956-4798", "email": "food@hawaii.edu",
       "type": "Chinese", "owner": "vendor@foo.com"
     },
     { "name": "DA Spot", "image": "./images/daspot_logo.png", "price": "$", "location":  "Krauss Circle",
-      "state": "Close", "businessdate": "Monday to Friday", "starttime": 0, "endtime":  0,
+      "state": "Close", "businessdate": "Monday, Tuesday, Wednesday, Thursday and Friday", "starttime": 10, "endtime":  23,
       "website": "https://manoa.hawaii.edu/food/da-spot/", "phone": "(808) 956-4798", "email": "food@hawaii.edu",
       "type": "Mediterranean, North African", "owner": "vendor2@foo.com"
     },
     { "name": "Ono Seafood", "image": "./images/onoseafood_logo.png", "price": "$", "location":  "Krauss Circle",
-      "state": "Close", "businessdate": "Monday, Tuesday, Thursday and Friday", "starttime": 0, "endtime":  0,
+      "state": "Close", "businessdate": "Monday, Tuesday, Thursday and Friday", "starttime": 10, "endtime":  14,
       "website": "https://manoa.hawaii.edu/food/ono-seafood/", "phone": "(808) 956-4798", "email": "food@hawaii.edu",
       "type": "Japanese", "owner": "vendor3@foo.com"
     },
     { "name": "Jamba Juice ", "image": "./images/jamba-juice-logo.png", "price": "$", "location":  "Campus Center",
-      "state": "Close", "businessdate": "Monday to Friday", "starttime": 0, "endtime":  0,
+      "state": "Close", "businessdate": "Monday, Tuesday, Wednesday, Thursday and Friday", "starttime": 10, "endtime":  23,
       "website": "https://uhm.sodexomyway.com/dining-near-me/jamba-juice", "phone": "(808) 956-7327", "email": "food@hawaii.edu",
       "type": "Hawaiian", "owner": "vendor4@foo.com"
     }
