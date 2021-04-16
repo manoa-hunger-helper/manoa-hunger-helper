@@ -78,7 +78,7 @@ MyVendor.propTypes = {
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 export default withTracker(() => {
   // Get access to Vendor documents.
-  const subscription = Meteor.subscribe(Vendors.userPublicationName);
+  const subscription = Meteor.subscribe(Vendors.vendorPublicationName);
   // Get access to FoodMenus documents.
   const subscription2 = Meteor.subscribe(FoodMenus.vendorPublicationName);
   // Determine if the subscription is ready

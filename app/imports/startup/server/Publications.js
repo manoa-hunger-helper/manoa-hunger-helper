@@ -20,6 +20,7 @@ Meteor.publish(FoodMenus.userPublicationName, function () {
   }
   return this.ready();
 });
+
 Meteor.publish(Vendors.userPublicationName, function () {
   if (this.userId) {
     return Vendors.collection.find();
@@ -29,7 +30,7 @@ Meteor.publish(Vendors.userPublicationName, function () {
 
 // Vendor-level publication.
 // If logged in, then publish documents owned by this vendor. Otherwise publish nothing.
-Meteor.publish(Vendors.userPublicationName, function () {
+Meteor.publish(Vendors.vendorPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
     const username = Meteor.users.findOne(this.userId).username;
     return Vendors.collection.find({ owner: username });
