@@ -17,10 +17,10 @@ class AllVendors extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-      <Container>
-        <Header as="h2" textAlign="center">Vendors </Header>
-        <Card.Group>
-          {this.props.vendors.map((vendor, index) => <VendorItem key={index} vendor={vendor}/>)}
+      <Container id="AllVendors-page">
+        <Header as="h2" textAlign="center">Vendors</Header>
+        <Card.Group centered>
+          {this.props.vendors.map((vendors, index) => <VendorItem key={index} vendor={vendors}/>)}
         </Card.Group>
       </Container>
     );
@@ -36,10 +36,9 @@ AllVendors.propTypes = {
 export default withTracker(() => {
   // Ensure that minimongo is populated with all collections prior to running render().
   const sub2 = Meteor.subscribe(Vendors.userPublicationName);
-  const ready = sub2.ready();
-  const vendors = Vendors.collection.find({}).fetch();
+
   return {
-    vendors,
-    ready,
+    vendors: Vendors.collection.find({}).fetch(),
+    ready: sub2.ready(),
   };
 })(AllVendors);
