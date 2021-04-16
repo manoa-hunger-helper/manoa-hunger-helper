@@ -23,7 +23,6 @@ class Menus extends React.Component {
   constructor(props) {
     super(props);
     this.state = { types: [] };
-    // console.log(typeof this.state);
   }
 
   submit(data) {
@@ -38,17 +37,9 @@ class Menus extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     const allTypes = _.pluck(Vendors.collection.find().fetch(), 'type');
-    //console.log(allTypes);
     const formSchema = makeSchema(allTypes);
     const bridge = new SimpleSchema2Bridge(formSchema);
     const names = _.pluck(Vendors.collection.find({ type: { $in: this.state.types } }).fetch(), 'name');
-    //const restaurantList = Vendors.collection.find({ type: { $in: this.state.types } });
-    //console.log(restaurantList);
-    //const right = _.pluck(restaurantList, 'name');
-    //const restaurantList = Vendors.collection.find({ type: { $in: this.state.types } });
-    //console.log(typeof restaurantList);
-    //const right = _.pluck(restaurantList, 'name');
-    //const food = this.props.foodMenus.map(enter => enter.vendor === right);
     const food = FoodMenus.collection.find({ vendor: { $in: names } });
 
     return (

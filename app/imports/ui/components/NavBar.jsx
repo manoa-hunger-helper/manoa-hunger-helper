@@ -32,7 +32,15 @@ class NavBar extends React.Component {
             <Menu.Item as={NavLink} activeClassName="active" exact to="/todays-top-picks" key='picks'>Today Top
               Picks</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/view" key='all-menus'>Menus</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/recommendation" key='recommend'>Recommendation</Menu.Item>,
+            <Menu.Item key='recomm'>
+              <Dropdown text="Recommendation">
+                <Dropdown.Menu>
+                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/vegan-menu" key='vegan'>Vegetarian</Dropdown.Item>
+                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/drink-menu" key='drink'>Drink</Dropdown.Item>
+                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/dessert-menu" key='dessert'>Dessert</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Menu.Item>,
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'vendor') ? (
@@ -56,7 +64,6 @@ class NavBar extends React.Component {
           ) : (
             <Dropdown id="navbar-current-user" text={this.props.currentUser} pointing="top right" icon={'user'}>
               <Dropdown.Menu>
-                <Dropdown.Item id="navbar-profile" icon="user" text="My Profile" as={NavLink} exact to="/profile"/>
                 <Dropdown.Item id="navbar-sign-out" icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
               </Dropdown.Menu>
             </Dropdown>
