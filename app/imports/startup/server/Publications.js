@@ -55,6 +55,21 @@ Meteor.publish(Stuffs.adminPublicationName, function () {
   return this.ready();
 });
 
+Meteor.publish(Vendors.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Vendors.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(FoodMenus.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return FoodMenus.collection.find();
+  }
+  return this.ready();
+});
+
+
 // alanning:roles publication
 // Recommended code to publish roles for each user.
 Meteor.publish(null, function () {

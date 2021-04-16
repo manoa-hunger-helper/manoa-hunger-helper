@@ -30,6 +30,7 @@ import EditVendorInformation from '../pages/EditVendorInformation';
 import EditMyMenu from '../pages/EditMyMenu';
 import AddVendor from '../pages/AddVendor';
 import AddFood from '../pages/AddFood';
+import AdminManageVendors from '../pages/AdminManageVendors';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -61,6 +62,7 @@ class App extends React.Component {
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <AdminProtectedRoute path="/admin-home" component={AdimHome}/>
+            <AdminProtectedRoute path="/admin-manage-vendors" component={AdminManageVendors}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <Route component={NotFound}/>
           </Switch>
