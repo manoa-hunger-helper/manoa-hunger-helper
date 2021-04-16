@@ -18,9 +18,18 @@ class AllVendors extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     const currtime = new Date().getHours();
-    // const day = new Date().getDate();
+    const dayNum = new Date().getDay();
+    const weekday = new Array(7);
+    weekday[0] = 'Sunday';
+    weekday[1] = 'Monday';
+    weekday[2] = 'Tuesday';
+    weekday[3] = 'Wednesday';
+    weekday[4] = 'Thursday';
+    weekday[5] = 'Friday';
+    weekday[6] = 'Saturday';
+
     const vendors = _.filter(this.props.vendors, function (vendor) {
-      if (currtime >= vendor.starttime && currtime <= vendor.endtime) {
+      if (currtime >= vendor.starttime && currtime < vendor.endtime && vendor.businessdate.includes(weekday[dayNum])) {
         return vendor;
       }
       return 0;
