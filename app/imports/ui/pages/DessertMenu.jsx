@@ -17,7 +17,7 @@ class Menus extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-      <Container>
+      <Container id="dessert-menu-page">
         <Header as="h2" textAlign="center" style={{ paddingTop: '30px', paddingBottom: '50px' }}>View Dessert </Header>
         <Card.Group>
           {this.props.foodMenus.map((menu, index) => <MenuItem key={index} menu={menu}/>)}

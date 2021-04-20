@@ -6,7 +6,7 @@ import LandingTop from '../components/LandingTop';
 class Landing extends React.Component {
   render() {
     return (
-      <div>
+      <div id="landing-page">
         <LandingTop/>
         <LandingBottom/>
       </div>

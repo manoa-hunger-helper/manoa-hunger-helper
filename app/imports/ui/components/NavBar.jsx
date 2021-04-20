@@ -26,18 +26,18 @@ class NavBar extends React.Component {
         </Menu.Item>
         {(this.props.currentUser && !Roles.userIsInRole(Meteor.userId(), 'vendor') && !Roles.userIsInRole(Meteor.userId(), 'admin')) ? (
           [
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/all-vendors" key='all'>All Vendors</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/available-vendors" key='now'>Available
+            <Menu.Item id="all-vendor-page" as={NavLink} activeClassName="active" exact to="/all-vendors" key='all'>All Vendors</Menu.Item>,
+            <Menu.Item id="available-now-page" as={NavLink} activeClassName="active" exact to="/available-vendors" key='now'>Available
               Now</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/todays-top-picks" key='picks'>Today Top
               Picks</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/view" key='all-menus'>Menus</Menu.Item>,
+            <Menu.Item id="menu-page" as={NavLink} activeClassName="active" exact to="/view" key='all-menus'>Menus</Menu.Item>,
             <Menu.Item key='recomm'>
-              <Dropdown text="Recommendation">
+              <Dropdown id="recomm-dropdown" text="Recommendation">
                 <Dropdown.Menu>
-                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/vegan-menu" key='vegan'>Vegetarian</Dropdown.Item>
-                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/drink-menu" key='drink'>Drink</Dropdown.Item>
-                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/dessert-menu" key='dessert'>Dessert</Dropdown.Item>
+                  <Dropdown.Item id="vegan-menu-page" as={NavLink} activeClassName="active" exact to="/vegan-menu" key='vegan'>Vegetarian</Dropdown.Item>
+                  <Dropdown.Item id="drink-menu-page" as={NavLink} activeClassName="active" exact to="/drink-menu" key='drink'>Drink</Dropdown.Item>
+                  <Dropdown.Item id="dessert-menu-page" as={NavLink} activeClassName="active" exact to="/dessert-menu" key='dessert'>Dessert</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>,

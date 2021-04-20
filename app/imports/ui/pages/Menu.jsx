@@ -43,7 +43,7 @@ class Menus extends React.Component {
     const food = FoodMenus.collection.find({ vendor: { $in: names } });
 
     return (
-      <Container>
+      <Container id="menu-page">
         <Header as="h2" textAlign="center" style={{ paddingTop: '0px' }}>Find Menu Items </Header>
         <AutoForm style={{ paddingBottom: '100px', paddingTop: '10px' }} schema={bridge} onSubmit={data => this.submit(data)} >
           <Segment>
