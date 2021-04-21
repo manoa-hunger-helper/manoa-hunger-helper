@@ -1,16 +1,25 @@
+body {
+  font-family: 'Acme', sans-serif!important;
+}
+.transbox {
+  background: rgba(249,166,2,0.3);
+}
+
 .footer-background{
-  background-color: #FBBD08;
+  background: linear-gradient(rgba(249,166,2,0.5), rgba(255,161,102,1));
   color:white;
 }
 .landing-middle{
-  background:url(https://foodrevolution.org/wp-content/uploads/blog-featured_healthy_foods-20180306.jpg)no-repeat center fixed;
+  background:
+      url('images/landing-background.jpeg')no-repeat center center fixed;
   background-size: cover;
   height: 500px;
   color: white;
   padding-top: 150px;
+  font-family: 'Acme', sans-serif!important;
 }
 .landing-bottom{
-  background-color: #FBBD08;
+  background: linear-gradient(rgba(249,166,2,0.3), rgba(249,166,2,0.5));
 }
 
 .vendor-home-background {
