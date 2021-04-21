@@ -1,8 +1,5 @@
-body {
+body, h1, h2, h3, h4, h5 {
   font-family: 'Acme', sans-serif!important;
-}
-.transbox {
-  background: rgba(249,166,2,0.3);
 }
 
 .footer-background{
@@ -10,16 +7,27 @@ body {
   color:white;
 }
 .landing-middle{
-  background:
-      url('images/landing-background.jpeg')no-repeat center center fixed;
+  background: url('images/landing-background.jpeg')no-repeat center center fixed;
   background-size: cover;
   height: 500px;
   color: white;
-  padding-top: 150px;
+  padding-top: 80px;
   font-family: 'Acme', sans-serif!important;
+}
+.landing-middle .header{
+  text-shadow: 2px 2px 4px #000000;
 }
 .landing-bottom{
   background: linear-gradient(rgba(249,166,2,0.3), rgba(249,166,2,0.5));
+}
+.landing-bottom .image{
+  opacity: 0.9;
+}
+
+.home-header {
+  font-family: 'Acme', sans-serif!important;
+  font-size: 100px!important;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .vendor-home-background {
@@ -45,3 +53,4 @@ body {
   color: white;
   padding-top: 150px;
 }
+
