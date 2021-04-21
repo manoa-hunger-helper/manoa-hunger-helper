@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { withRouter, NavLink } from 'react-router-dom';
+import { withRouter, NavLink, Redirect } from 'react-router-dom';
 import { Menu, Dropdown, Header } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 
@@ -16,6 +16,9 @@ class NavBar extends React.Component {
       }
       if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
         return '/admin-home';
+      }
+      if ((Meteor.userId() !== null)) {
+        return <Redirect to="/user-home"/>;
       }
       return '/';
     };

@@ -47,7 +47,7 @@ body, h1, h2, h3, h4, h5 {
   font-size:5em ;
 }
 .user-home-background {
-  background:url("images/user-homepage-background.jpg")no-repeat center fixed;
+  background:url("images/user-home.jpeg")no-repeat center fixed;
   background-size: cover;
   height: 500px;
   color: white;
