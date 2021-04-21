@@ -8,7 +8,7 @@ class UserHomeTop extends React.Component {
     return (
       <div className ="user-home-background">
         <Grid textAlign='center'>
-          <Header as='h1'inverted>Aloha! Time to Eat!</Header>
+          <Header as='h1'inverted className="home-header">Aloha! Time to Eat!</Header>
         </Grid>
         <Grid columns={2} verticalAlign='top' textAlign='center' container>
           <Grid.Column>

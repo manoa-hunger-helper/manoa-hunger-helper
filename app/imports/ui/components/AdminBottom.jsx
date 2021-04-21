@@ -10,16 +10,17 @@ class AdminBottom extends React.Component {
         <Grid style={gridStyle}>
           <Grid.Row columns="four">
             <Grid.Column>
-              <Image src="https://www.awnexinc.com/wp-content/uploads/Panda-Express-Kilgore.jpg" width='315px'height="227px" size="big" rounded/>
+              <Image src="https://www.awnexinc.com/wp-content/uploads/Panda-Express-Kilgore.jpg" width='315px'height="188px"
+                rounded/>
             </Grid.Column>
             <Grid.Column>
-              <Image src="https://www.fastfoodmenuprices.com/wp-content/uploads/2020/10/Subway-Menu.jpg" width='315px' height="227px" size="big" rounded/>
+              <Image src="https://www.fastfoodmenuprices.com/wp-content/uploads/2020/10/Subway-Menu.jpg" width='315px' height="188px" rounded/>
             </Grid.Column>
             <Grid.Column>
-              <Image src="https://static01.nyt.com/images/2017/11/18/business/00xp-starbucks1/00xp-starbucks1-superJumbo.jpg" size="big" width='315px' height="227px" rounded />
+              <Image src="https://static01.nyt.com/images/2017/11/18/business/00xp-starbucks1/00xp-starbucks1-superJumbo.jpg" width='315px' height="188px" rounded />
             </Grid.Column>
             <Grid.Column>
-              <Image src="https://photos.prnewswire.com/prnfull/20150915/266814" size="big" width='315px' height="227px" rounded/>
+              <Image src="https://www.rewindandcapture.com/wp-content/uploads/2018/08/Jamba-Juice.jpg" width='315px' height="188px" rounded/>
             </Grid.Column>
           </Grid.Row>
         </Grid>

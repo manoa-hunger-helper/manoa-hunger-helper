@@ -1,5 +1,4 @@
 import React from 'react';
-import UserHomeBottom from '../components/UserHomeBottom';
 import UserHomeTop from '../components/UserHomeTop';
 import LandingBottom from '../components/LandingBottom';
 

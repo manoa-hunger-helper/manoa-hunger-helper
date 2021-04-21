@@ -4,7 +4,7 @@ import { Grid, Image } from 'semantic-ui-react';
 /** A simple static component to render some text for the landing page. */
 class LandingBottom extends React.Component {
   render() {
-    const gridStyle = { marginTop: '0px', marginBottom: '0px'};
+    const gridStyle = { marginTop: '0px', marginBottom: '0px' };
     return (
       <div className="landing-bottom">
         <Grid style={gridStyle}>
