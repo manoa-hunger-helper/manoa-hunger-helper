@@ -40,7 +40,7 @@ class MyVendor extends React.Component {
               {this.props.vendors.map((vendor) => <MyVendorData key={vendor._id} vendor={vendor}/>)}
             </Table.Body>
           </Table>
-        ) : 'No vendor data, please go to add vendor, update your vendor information.'}
+        ) : <p>No vendor data, please go to add vendor, update your vendor information.</p>}
 
         {(this.props.foodmenus.length) ? (
           <Table celled>
@@ -62,7 +62,7 @@ class MyVendor extends React.Component {
               {this.props.foodmenus.map((foodmenu) => <FoodMenuItem key={foodmenu._id} foodmenu={foodmenu} FoodMenus={FoodMenus}/>)}
             </Table.Body>
           </Table>
-        ) : 'No menu data, please go to add food, update your menu information'}
+        ) : <p>No menu data, please go to add food, update your menu information</p>}
       </Container>
     );
   }
