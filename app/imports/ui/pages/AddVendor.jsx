@@ -31,7 +31,7 @@ class AddVendor extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center">Add Vendor Information</Header>
+          <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>Add Vendor Information</Header>
           <AutoForm ref={ref => {
             fRef = ref;
           }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>

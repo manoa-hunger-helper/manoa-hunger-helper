@@ -20,7 +20,7 @@ class MyVendor extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h2" textAlign="center">My Vendor</Header>
+        <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>My Vendor</Header>
         {(this.props.vendors.length) ? (
           <Table celled>
             <Table.Header>

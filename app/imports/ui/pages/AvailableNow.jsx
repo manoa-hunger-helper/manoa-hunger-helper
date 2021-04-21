@@ -36,7 +36,7 @@ class AllVendors extends React.Component {
     });
     return (
       <Container id="AllVendors-page">
-        <Header as="h2" textAlign="center"style={ { paddingTop: '30px', paddingBottom: '20px' }}>Vendor  Available  Now </Header>
+        <Header as="h2" textAlign="center" color="orange" style={ { paddingTop: '30px', paddingBottom: '20px' }}>Vendor  Available  Now </Header>
         <Card.Group centered>
           {vendors.map((vendor, index) => <VendorItem key={index} vendor={vendor}/>)}
         </Card.Group>

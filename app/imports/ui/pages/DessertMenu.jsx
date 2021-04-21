@@ -18,7 +18,7 @@ class Menus extends React.Component {
   renderPage() {
     return (
       <Container id="dessert-menu-page">
-        <Header as="h2" textAlign="center" style={{ paddingTop: '30px', paddingBottom: '50px' }}>View Dessert </Header>
+        <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>View Dessert </Header>
         <Card.Group>
           {this.props.foodMenus.map((menu, index) => <MenuItem key={index} menu={menu}/>)}
         </Card.Group>

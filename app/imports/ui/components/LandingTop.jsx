@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Grid, Header, Icon} from 'semantic-ui-react';
+import { Divider, Grid, Header, Icon } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class LandingTop extends React.Component {
