@@ -31,6 +31,7 @@ import EditMyMenu from '../pages/EditMyMenu';
 import AddVendor from '../pages/AddVendor';
 import AddFood from '../pages/AddFood';
 import AdminManageVendors from '../pages/AdminManageVendors';
+import MyMenu from '../pages/MyMenu';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -49,6 +50,7 @@ class App extends React.Component {
             <ProtectedRoute path="/available-vendors" component={AvailableNow}/>
             <ProtectedRoute path="/todays-top-picks" component={TodayTopPicks}/>
             <ProtectedRoute path="/view" component={Menu}/>
+            <ProtectedRoute path="/pick" component={MyMenu}/>
             <ProtectedRoute path="/vegan-menu" component={VeganMenu}/>
             <ProtectedRoute path="/drink-menu" component={DrinkMenu}/>
             <ProtectedRoute path="/dessert-menu" component={DessertMenu}/>
