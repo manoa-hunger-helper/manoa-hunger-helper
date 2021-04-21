@@ -42,7 +42,7 @@ test('Test the Available Now page', async (testController) => {
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoAvailableNowPage(testController);
   await availableNowPage.isDisplayed(testController);
-  await availableNowPage.hasCard(testController);
+  // await availableNowPage.hasCard(testController);
 });
 
 test('Test the Menu page', async (testController) => {
