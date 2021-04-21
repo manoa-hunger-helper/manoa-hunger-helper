@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { withRouter, NavLink } from 'react-router-dom';
+import { withRouter, NavLink, Redirect } from 'react-router-dom';
 import { Menu, Dropdown, Header } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
-    const menuStyle = { marginBottom: '0px' };
+    const menuStyle = { marginBottom: '0px', background: 'linear-gradient(rgba(255,161,102,1),rgba(249,166,2,0.5))' };
     const landing = () => {
       if (Roles.userIsInRole(Meteor.userId(), 'vendor')) {
         return '/vendor-home';
@@ -17,10 +17,13 @@ class NavBar extends React.Component {
       if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
         return '/admin-home';
       }
+      if ((Meteor.userId() !== null)) {
+        return <Redirect to="/user-home"/>;
+      }
       return '/';
     };
     return (
-      <Menu style={menuStyle} attached="top" borderless inverted color="yellow">
+      <Menu style={menuStyle} attached="top" borderless inverted color="yellow" >
         <Menu.Item as={NavLink} activeClassName="" exact to={landing()}>
           <Header inverted as='h1'>manoa-hunger-helper</Header>
         </Menu.Item>

@@ -38,6 +38,8 @@ class Signup extends React.Component {
 
   /* Display the signup form. Redirect to add page after successful registration and login. */
   render() {
+    const topStyle = { paddingTop: '30px', paddingBottom: '10px' };
+    const bottomStyle = { paddingBottom: '50px' };
     const { from } = this.props.location.state || { from: { pathname: '/add' } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
@@ -51,9 +53,9 @@ class Signup extends React.Component {
     const { role } = this.state;
     return (
       <Container id="signup-page">
-        <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+        <Grid textAlign="center" verticalAlign="middle" centered columns={2} style={ bottomStyle }>
           <Grid.Column>
-            <Header as="h2" textAlign="center" color="orange">
+            <Header as="h2" textAlign="center" color="orange" style={ topStyle }>
               Register your account
             </Header>
             <Form onSubmit={this.submit}>

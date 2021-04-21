@@ -4,21 +4,23 @@ import { Grid, Image } from 'semantic-ui-react';
 /** A simple static component to render some text for the landing page. */
 class AdminBottom extends React.Component {
   render() {
+    const gridStyle = { marginTop: '0px', marginBottom: '0px' };
     return (
-      <div className ="landing-bottom">
-        <Grid>
+      <div className="landing-bottom">
+        <Grid style={gridStyle}>
           <Grid.Row columns="four">
             <Grid.Column>
-              <Image src="https://tse3.mm.bing.net/th?id=OIP.pLvuddj1wTpV5xeAM110KQHaEK&pid=Api&P=0&w=268&h=152" size="large"/>
+              <Image src="https://www.awnexinc.com/wp-content/uploads/Panda-Express-Kilgore.jpg" width='315px'height="188px"
+                rounded/>
             </Grid.Column>
             <Grid.Column>
-              <Image src="https://tse1.mm.bing.net/th?id=OIP.NJ8KFzeiR-_m-_6z-o0sUwHaEK&pid=Api&P=0&w=323&h=183" size="large"/>
+              <Image src="https://www.fastfoodmenuprices.com/wp-content/uploads/2020/10/Subway-Menu.jpg" width='315px' height="188px" rounded/>
             </Grid.Column>
             <Grid.Column>
-              <Image src="https://tse2.mm.bing.net/th?id=OIP.iUjwKwwiR9RQYc1v8nwCCgHaD4&pid=Api&P=0&w=350&h=185" size="large"/>
+              <Image src="https://static01.nyt.com/images/2017/11/18/business/00xp-starbucks1/00xp-starbucks1-superJumbo.jpg" width='315px' height="188px" rounded />
             </Grid.Column>
             <Grid.Column>
-              <Image src="https://tse2.mm.bing.net/th?id=OIP.fIm3TWSqIzwZVdU1JBY2rQHaEK&pid=Api&P=0&w=361&h=204" size="large"/>
+              <Image src="https://www.rewindandcapture.com/wp-content/uploads/2018/08/Jamba-Juice.jpg" width='315px' height="188px" rounded/>
             </Grid.Column>
           </Grid.Row>
         </Grid>
