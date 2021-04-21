@@ -40,7 +40,7 @@ class MyVendor extends React.Component {
               {this.props.vendors.map((vendor) => <MyVendorData key={vendor._id} vendor={vendor}/>)}
             </Table.Body>
           </Table>
-        ) : <p>No vendor data, please go to add vendor, update your vendor information.</p>}
+        ) : <p>No vendor data, please go to add vendor, update your vendor information</p>}
 
         {(this.props.foodmenus.length) ? (
           <Table celled>
