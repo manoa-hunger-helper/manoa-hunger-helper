@@ -67,11 +67,11 @@
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
   "defaultInformation": [
-    { "firstname": "Jone", "lastname":"Smith", "favoriteVendor":"Panda Express", "favoriteItem": "Orange Chicken", "owner": "john@foo.com" },
-    { "firstname": "Peter", "lastname":"Johnson", "favoriteVendor":"Ono Seafood","favoriteItem": "Shoyu Ahi", "owner": "vendor@foo.com" },
-    { "firstname": "Robert", "lastname":"Lee", "favoriteVendor":"Jamba Juice","favoriteItem": "Peach Perfection", "owner": "vendor2@foo.com" },
-    { "firstname": "David", "lastname":"Young", "favoriteVendor":"DA Spot", "favoriteItem": "Grilled Chicken Fillet", "owner": "vendor4@foo.com" },
-    { "firstname": "Richard", "lastname":"King", "favoriteVendor":"Panda Express","favoriteItem": "Orange Chicken", "owner": "vendor3@foo.com"}
+    { "firstname": "Jone", "lastname":"Smith", "favoriteVendor":"Panda Express", "favoriteItem": "Orange Chicken","image":"https://tse2.mm.bing.net/th?id=OIP.56662o4yV01NUau07Nm5fwAAAA&pid=Api&P=0&w=300&h=300", "owner": "john@foo.com" },
+    { "firstname": "Peter", "lastname":"Johnson", "favoriteVendor":"Ono Seafood","favoriteItem": "Shoyu Ahi","image":"https://tse1.mm.bing.net/th?id=OIP.46Mhl3YGQle1Ca4O0w4oEwAAAA&pid=Api&P=0&w=300&h=300", "owner": "vendor@foo.com" },
+    { "firstname": "Robert", "lastname":"Lee", "favoriteVendor":"Jamba Juice","favoriteItem": "Peach Perfection", "image":"https://tse2.mm.bing.net/th?id=OIP.kOEMhJ8QVYbAHSc11xIRQgHaJ4&pid=Api&P=0&w=300&h=300","owner": "vendor2@foo.com" },
+    { "firstname": "David", "lastname":"Young", "favoriteVendor":"DA Spot", "favoriteItem": "Grilled Chicken Fillet", "image":"https://tse1.mm.bing.net/th?id=OIP.95CRVvHdwsyCIf70M2GEUQAAAA&pid=Api&P=0&w=300&h=300","owner": "vendor4@foo.com" },
+    { "firstname": "Richard", "lastname":"King", "favoriteVendor":"Panda Express","favoriteItem": "Orange Chicken","image":"https://tse4.mm.bing.net/th?id=OIP.-ExDDqKjGC_NCgSYQP-HOQAAAA&pid=Api&P=0&w=300&h=300", "owner": "vendor3@foo.com"}
   ],
   "defaultVendor": [
     { "name": "Panda Express", "image": "./images/panda_logo.png", "price": "$", "location":  "Paradise Palms Café",

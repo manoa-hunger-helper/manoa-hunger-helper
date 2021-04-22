@@ -15,8 +15,8 @@ class EditUserInformation extends React.Component {
 
   // On successful submit, insert the data.
   submit(data) {
-    const { firstname, lastname, favoriteVendor, favoriteItem, _id } = data;
-    Information.collection.update(_id, { $set: { firstname, lastname, favoriteVendor, favoriteItem } }, (error) => (error ?
+    const { firstname, lastname, favoriteVendor, favoriteItem, image, _id } = data;
+    Information.collection.update(_id, { $set: { firstname, lastname, favoriteVendor, favoriteItem,image} }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   }
@@ -34,6 +34,7 @@ class EditUserInformation extends React.Component {
           <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>Edit this user Information</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
             <Segment>
+              <TextField name='image'/>
               <TextField name='firstname'/>
               <TextField name='lastname'/>
               <TextField name='favoriteVendor'/>

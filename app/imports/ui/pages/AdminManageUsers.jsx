@@ -18,9 +18,10 @@ class AdminManageUsers extends React.Component {
     return (
       <Grid container centered >
         <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>Manage Users Information</Header>
-        <Table celled>
+        <Table celled style={{ marginBottom: '80px' }}>
           <Table.Header>
             <Table.Row>
+              <Table.HeaderCell>User image</Table.HeaderCell>
               <Table.HeaderCell>User email</Table.HeaderCell>
               <Table.HeaderCell>firstname</Table.HeaderCell>
               <Table.HeaderCell>lastname</Table.HeaderCell>
@@ -34,7 +35,6 @@ class AdminManageUsers extends React.Component {
             {this.props.information.map((info) => <AdminUserItem key={info._id} info={info} Information={Information} />)}
           </Table.Body>
         </Table>
-        <Button color= "red" style={{ marginTop: '20px', marginBottom: '50px' }}>add more user information</Button>
       </Grid>
     );
   }

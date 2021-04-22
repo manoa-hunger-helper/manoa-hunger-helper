@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Icon, Table } from 'semantic-ui-react';
+import { Button, Icon, Image, Table } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 
@@ -12,6 +12,7 @@ class AdminUserItem extends React.Component {
   render() {
     return (
       <Table.Row>
+        <Table.Cell><Image src={this.props.info.image} size='small'/></Table.Cell>
         <Table.Cell>{this.props.info.owner}</Table.Cell>
         <Table.Cell>{this.props.info.firstname}</Table.Cell>
         <Table.Cell>{this.props.info.lastname}</Table.Cell>
