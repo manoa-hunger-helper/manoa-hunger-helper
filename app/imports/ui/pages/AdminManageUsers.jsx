@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Grid, Table, Header, Loader, Button } from 'semantic-ui-react';
+import { Grid, Table, Header, Loader } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import AdminUserItem from '../components/AdminUserItem';
