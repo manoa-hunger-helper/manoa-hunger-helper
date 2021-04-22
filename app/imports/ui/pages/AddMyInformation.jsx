@@ -31,10 +31,10 @@ class AddMyInformation extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>Add My Information</Header>
+          <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>Add Your Information when you are a new user</Header>
           <AutoForm ref={ref => {
             fRef = ref;
-          }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
+          }} schema={bridge} onSubmit={data => this.submit(data, fRef)} style={{ marginBottom: '20px' }}>
             <Segment>
               <TextField name='image'/>
               <TextField name='firstname'/>
