@@ -3,6 +3,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Vendors } from '../../api/vendor/Vendor';
 import { FoodMenus } from '../../api/menu/FoodMenu';
+import { Information } from '../../api/information/Information';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -58,6 +59,13 @@ Meteor.publish(Stuffs.adminPublicationName, function () {
 Meteor.publish(Vendors.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Vendors.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Information.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Information.collection.find();
   }
   return this.ready();
 });

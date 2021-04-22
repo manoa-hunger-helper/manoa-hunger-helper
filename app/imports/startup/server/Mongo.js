@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Vendors } from '../../api/vendor/Vendor.js';
 import { FoodMenus } from '../../api/menu/FoodMenu.js';
+import { Information } from '../../api/information/Information.js';
 
 /* eslint-disable no-console */
 
@@ -9,6 +10,10 @@ import { FoodMenus } from '../../api/menu/FoodMenu.js';
 function addData(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
   Stuffs.collection.insert(data);
+}
+function addUser(data) {
+  console.log(`  Adding: ${data.firstname} (${data.owner})`);
+  Information.collection.insert(data);
 }
 
 // Initialize the database with a default vendor document.
@@ -31,6 +36,12 @@ if (Stuffs.collection.find().count() === 0) {
   }
 }
 
+if (Information.collection.find().count() === 0) {
+  if (Meteor.settings.defaultInformation) {
+    console.log('Creating default user.');
+    Meteor.settings.defaultInformation.map(data => addUser(data));
+  }
+}
 // Initialize the VendorsCollection if empty.
 if (Vendors.collection.find().count() === 0) {
   if (Meteor.settings.defaultVendor) {

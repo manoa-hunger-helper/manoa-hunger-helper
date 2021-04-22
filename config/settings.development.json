@@ -66,7 +66,13 @@
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
-
+  "defaultInformation": [
+    { "firstname": "Jone", "lastname":"Smith", "favoriteVendor":"Panda Express", "favoriteItem": "Orange Chicken", "owner": "john@foo.com" },
+    { "firstname": "Peter", "lastname":"Johnson", "favoriteVendor":"Ono Seafood","favoriteItem": "Shoyu Ahi", "owner": "vendor@foo.com" },
+    { "firstname": "Robert", "lastname":"Lee", "favoriteVendor":"Jamba Juice","favoriteItem": "Peach Perfection", "owner": "vendor2@foo.com" },
+    { "firstname": "David", "lastname":"Young", "favoriteVendor":"DA Spot", "favoriteItem": "Grilled Chicken Fillet", "owner": "vendor4@foo.com" },
+    { "firstname": "Richard", "lastname":"King", "favoriteVendor":"Panda Express","favoriteItem": "Orange Chicken", "owner": "vendor3@foo.com"}
+  ],
   "defaultVendor": [
     { "name": "Panda Express", "image": "./images/panda_logo.png", "price": "$", "location":  "Paradise Palms Café",
       "state": "Close", "businessdate": "Monday, Tuesday, Wednesday, Thursday and Friday", "starttime": 10, "endtime":  14,
