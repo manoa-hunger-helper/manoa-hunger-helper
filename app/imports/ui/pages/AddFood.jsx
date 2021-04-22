@@ -29,7 +29,7 @@ class AddFood extends React.Component {
   render() {
     let fRef = null;
     return (
-      <Grid container centered>
+      <Grid id="add-food-page" container centered>
         <Grid.Column>
           <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>Add Food</Header>
           <AutoForm ref={ref => {

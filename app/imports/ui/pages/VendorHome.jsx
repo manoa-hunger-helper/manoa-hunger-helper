@@ -6,7 +6,7 @@ import VendorHomeTop from '../components/VendorHomeTop';
 class VendorHome extends React.Component {
   render() {
     return (
-      <div>
+      <div id="vendor-home-page">
         <VendorHomeTop/>
         <AdminBottom/>
       </div>

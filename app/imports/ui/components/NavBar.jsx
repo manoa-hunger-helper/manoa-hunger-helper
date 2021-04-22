@@ -47,15 +47,15 @@ class NavBar extends React.Component {
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'vendor') ? (
-          [<Menu.Item as={NavLink} activeClassName="active" exact to="/my-vendor" key='my-vendor'>My Vendor</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/add-vendor-info" key='add-vendor-info'>Add
+          [<Menu.Item id="my-vendor-page" as={NavLink} activeClassName="active" exact to="/my-vendor" key='my-vendor'>My Vendor</Menu.Item>,
+            <Menu.Item id="add-vendor-page" as={NavLink} activeClassName="active" exact to="/add-vendor-info" key='add-vendor-info'>Add
               Vendor</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/add-menu-food" key='add-menu-food'>Add
+            <Menu.Item id="add-menu-page" as={NavLink} activeClassName="active" exact to="/add-menu-food" key='add-menu-food'>Add
               Food</Menu.Item>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          [<Menu.Item as={NavLink} activeClassName="active" exact to="/admin-manage-users" key='admin-manage-users'>Manage Users</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/admin-manage-vendors" key='admin-manage-vendors'>Manage Vendors</Menu.Item>,
+          [<Menu.Item id="manage-user-page" as={NavLink} activeClassName="active" exact to="/admin-manage-users" key='admin-manage-users'>Manage Users</Menu.Item>,
+            <Menu.Item id="manage-vendor-page" as={NavLink} activeClassName="active" exact to="/admin-manage-vendors" key='admin-manage-vendors'>Manage Vendors</Menu.Item>,
           ]
         ) : ''}
         <Menu.Item position="right">

@@ -19,7 +19,7 @@ class MyVendor extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <Container>
+      <Container id="my-vendor-page">
         <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>My Vendor</Header>
         {(this.props.vendors.length) ? (
           <Table celled>

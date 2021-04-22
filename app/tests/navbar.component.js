@@ -66,6 +66,21 @@ class NavBar {
     await testController.click('#recomm-dropdown');
     await testController.click('#dessert-menu-page');
   }
+
+  /** go to my vendor page. */
+  async gotoMyVendorPage(testController) {
+    await testController.click('#my-vendor-page');
+  }
+
+  /** go to add vendor page. */
+  async gotoAddVendorPage(testController) {
+    await testController.click('#add-vendor-page');
+  }
+
+  /** go to add menu page. */
+  async gotoAddMenuPage(testController) {
+    await testController.click('#add-menu-page');
+  }
 }
 
 export const navBar = new NavBar();

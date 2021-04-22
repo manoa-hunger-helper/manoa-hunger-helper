@@ -1,8 +1,8 @@
 import { Selector } from 'testcafe';
 
-class DessertMenuPage {
+class MyVendorPage {
   constructor() {
-    this.pageId = '#dessert-menu-page';
+    this.pageId = '#my-vendor-page';
     this.pageSelector = Selector(this.pageId);
   }
 
@@ -12,11 +12,11 @@ class DessertMenuPage {
     await testController.wait(10000).expect(this.pageSelector.exists).ok();
   }
 
-  /** Checks that the current page has at least two card.  */
-  async hasCard(testController) {
-    const cardCount = Selector('.ui .card').count;
-    await testController.expect(cardCount).gte(2);
+  /** Checks that the current page has at least two row on table.  */
+  async hasTable(testController) {
+    const tableCount = Selector('tr').count;
+    await testController.expect(tableCount).gte(2);
   }
 }
 
-export const dessertMenuPage = new DessertMenuPage();
+export const myVendorPage = new MyVendorPage();
