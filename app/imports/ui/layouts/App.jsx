@@ -34,6 +34,7 @@ import AdminManageVendors from '../pages/AdminManageVendors';
 import MyMenu from '../pages/MyMenu';
 import AdminManageUsers from '../pages/AdminManageUsers';
 import EditUserInformation from '../pages/EditUserInformation';
+import AddMyInformation from '../pages/AddMyInformation';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -56,6 +57,7 @@ class App extends React.Component {
             <ProtectedRoute path="/vegan-menu" component={VeganMenu}/>
             <ProtectedRoute path="/drink-menu" component={DrinkMenu}/>
             <ProtectedRoute path="/dessert-menu" component={DessertMenu}/>
+            <ProtectedRoute path="/add-my-information" component={AddMyInformation}/>
             <VendorProtectedRoute path="/vendor-home" component={VendorHome}/>
             <VendorProtectedRoute path="/my-vendor" component={MyVendor}/>
             <VendorProtectedRoute path="/add-vendor-info" component={AddVendor}/>
