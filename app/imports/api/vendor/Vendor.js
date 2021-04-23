@@ -14,22 +14,13 @@ class VendorCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       name: String,
-      image: String,
-      price: String,
       location: String,
-      state: {
-        type: String,
-        allowedValues: ['Open', 'Close'],
-        defaultValue: 'Close',
-      },
-      businessdate: String,
-      starttime: Number,
-      endtime: Number,
-      website: String,
-      phone: String,
-      email: String,
-      type: String,
-      owner: String,
+      image: String,
+      operationDays: String,
+      operationHours: String,
+      paymentOptions: String,
+      dietaryOptions: String,
+      description: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
