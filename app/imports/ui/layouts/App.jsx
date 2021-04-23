@@ -17,10 +17,12 @@ import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import UserHome from '../pages/UserHome';
 import Menu from '../pages/Menu';
+import VeganMenu from '../pages/VeganMenu';
+import DessertMenu from '../pages/DessertMenu';
+import DrinkMenu from '../pages/DrinkMenu';
 import AllVendors from '../pages/AllVendors';
 import TodayTopPicks from '../pages/TodayTopPicks';
 import AvailableNow from '../pages/AvailableNow';
-import Recommendation from '../pages/Recommendation';
 import VendorHome from '../pages/VendorHome';
 import MyVendor from '../pages/MyVendor';
 import AdimHome from '../pages/AdimHome';
@@ -28,6 +30,10 @@ import EditVendorInformation from '../pages/EditVendorInformation';
 import EditMyMenu from '../pages/EditMyMenu';
 import AddVendor from '../pages/AddVendor';
 import AddFood from '../pages/AddFood';
+import AdminManageVendors from '../pages/AdminManageVendors';
+import MyMenu from '../pages/MyMenu';
+import AdminManageUsers from '../pages/AdminManageUsers';
+import EditUserInformation from '../pages/EditUserInformation';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -45,8 +51,11 @@ class App extends React.Component {
             <ProtectedRoute path="/all-vendors" component={AllVendors}/>
             <ProtectedRoute path="/available-vendors" component={AvailableNow}/>
             <ProtectedRoute path="/todays-top-picks" component={TodayTopPicks}/>
-            <ProtectedRoute path="/recommendation" component={Recommendation}/>
             <ProtectedRoute path="/view" component={Menu}/>
+            <ProtectedRoute path="/pick" component={MyMenu}/>
+            <ProtectedRoute path="/vegan-menu" component={VeganMenu}/>
+            <ProtectedRoute path="/drink-menu" component={DrinkMenu}/>
+            <ProtectedRoute path="/dessert-menu" component={DessertMenu}/>
             <VendorProtectedRoute path="/vendor-home" component={VendorHome}/>
             <VendorProtectedRoute path="/my-vendor" component={MyVendor}/>
             <VendorProtectedRoute path="/add-vendor-info" component={AddVendor}/>
@@ -57,6 +66,9 @@ class App extends React.Component {
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <AdminProtectedRoute path="/admin-home" component={AdimHome}/>
+            <AdminProtectedRoute path="/admin-manage-users" component={AdminManageUsers}/>
+            <AdminProtectedRoute path="/admin-manage-vendors" component={AdminManageVendors}/>
+            <AdminProtectedRoute path="/editUserInfor/:_id" component={EditUserInformation}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <Route component={NotFound}/>
           </Switch>

@@ -4,6 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor';
+import swal from 'sweetalert';
 
 /**
  * Signup component is similar to signin component, but we create a new user instead.
@@ -37,20 +38,24 @@ class Signup extends React.Component {
 
   /* Display the signup form. Redirect to add page after successful registration and login. */
   render() {
+    const topStyle = { paddingTop: '30px', paddingBottom: '10px' };
+    const bottomStyle = { paddingBottom: '50px' };
     const { from } = this.props.location.state || { from: { pathname: '/add' } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
       if (this.state.role === 'vendor') {
-        return <Redirect to='/vendor-home'/>;
+        swal('Success', 'Please, log in to your new account ');
+        Meteor.logout();
+        return <Redirect to="/signin"/>;
       }
       return <Redirect to={from}/>;
     }
     const { role } = this.state;
     return (
       <Container id="signup-page">
-        <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+        <Grid textAlign="center" verticalAlign="middle" centered columns={2} style={ bottomStyle }>
           <Grid.Column>
-            <Header as="h2" textAlign="center" color="orange">
+            <Header as="h2" textAlign="center" color="orange" style={ topStyle }>
               Register your account
             </Header>
             <Form onSubmit={this.submit}>

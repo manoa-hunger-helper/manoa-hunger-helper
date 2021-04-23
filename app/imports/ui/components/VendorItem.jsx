@@ -1,9 +1,9 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Image, Card, Icon, Accordion } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
+import { Image, Card, Icon, Accordion, Button } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { withRouter, Link } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class VendorItem extends React.Component {
@@ -20,7 +20,6 @@ class VendorItem extends React.Component {
   render() {
     const vendorInfo = this.props.vendor;
     const { activeIndex } = this.state;
-    console.log(vendorInfo);
     return (
       <Card>
         <Image large src={vendorInfo.image} wrapped ui={false}/>
@@ -44,6 +43,12 @@ class VendorItem extends React.Component {
               </Accordion.Content>
             </Accordion>
           </Card.Meta>
+          <Card.Meta>
+            {this.props.vendor.address}
+          </Card.Meta>
+          <Card.Meta>
+            {this.props.vendor.phone}
+          </Card.Meta>
           <Card.Description>
             <Accordion>
               <Accordion.Title
@@ -61,6 +66,9 @@ class VendorItem extends React.Component {
           {Roles.userIsInRole(Meteor.userId(), 'vendor') ? (<Card.Content extra>
             <Link to={`/edit/${this.props.vendor._id}`}>Edit</Link>
           </Card.Content>) : ''}
+        </Card.Content>
+        <Card.Content extra>
+          <Link to={'/pick'}><Button color={'red'}>Find My Menu</Button></Link>
         </Card.Content>
       </Card>
     );

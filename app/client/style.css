@@ -1,22 +1,40 @@
+body, h1, h2, h3, h4, h5 {
+  font-family: 'Acme', sans-serif!important;
+}
+
 .footer-background{
-  background-color: #FBBD08;
+  background: linear-gradient(rgba(249,166,2,0.5), rgba(255,161,102,1));
   color:white;
 }
 .landing-middle{
-  background:url(https://foodrevolution.org/wp-content/uploads/blog-featured_healthy_foods-20180306.jpg)no-repeat center fixed;
+  background: url('images/landing-background.jpeg')no-repeat center center fixed;
   background-size: cover;
   height: 500px;
   color: white;
-  padding-top: 150px;
+  padding-top: 80px;
+  font-family: 'Acme', sans-serif!important;
+}
+.landing-middle .header{
+  text-shadow: 2px 2px 4px #000000;
 }
 .landing-bottom{
-  background-color: #FBBD08;
+  background: linear-gradient(rgba(249,166,2,0.3), rgba(249,166,2,0.5));
+}
+.landing-bottom .image{
+  opacity: 0.9;
+}
+
+.home-header {
+  font-family: 'Acme', sans-serif!important;
+  font-size: 100px!important;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .vendor-home-background {
   background: url("images/uhm-food-vendors-background.jpg") no-repeat center center fixed;
   background-size: cover;
   height: 600px;
+  padding-top: 150px;
 }
 .admin-middle{
   background:url(https://oneclassblog.com/wp-content/uploads/2017/09/JABSOM_Pano_Brizzi-2014.jpg)no-repeat center fixed;
@@ -29,9 +47,10 @@
   font-size:5em ;
 }
 .user-home-background {
-  background:url("images/user-homepage-background.jpg")no-repeat center fixed;
+  background:url("images/user-home.jpeg")no-repeat center fixed;
   background-size: cover;
   height: 500px;
   color: white;
   padding-top: 150px;
 }
+

@@ -36,6 +36,51 @@ class NavBar {
     await testController.click('#login-dropdown');
     await testController.click('#login-dropdown-sign-up');
   }
+
+  /** go to all vendor page. */
+  async gotoAllVendorPage(testController) {
+    await testController.click('#all-vendor-page');
+  }
+
+  /** go to available now page. */
+  async gotoAvailableNowPage(testController) {
+    await testController.click('#available-now-page');
+  }
+
+  /** go to menu page. */
+  async gotoMenuPage(testController) {
+    await testController.click('#menu-page');
+  }
+
+  async gotoVeganPage(testController) {
+    await testController.click('#recomm-dropdown');
+    await testController.click('#vegan-menu-page');
+  }
+
+  async gotoDrinkPage(testController) {
+    await testController.click('#recomm-dropdown');
+    await testController.click('#drink-menu-page');
+  }
+
+  async gotoDessertPage(testController) {
+    await testController.click('#recomm-dropdown');
+    await testController.click('#dessert-menu-page');
+  }
+
+  /** go to my vendor page. */
+  async gotoMyVendorPage(testController) {
+    await testController.click('#my-vendor-page');
+  }
+
+  /** go to add vendor page. */
+  async gotoAddVendorPage(testController) {
+    await testController.click('#add-vendor-page');
+  }
+
+  /** go to add menu page. */
+  async gotoAddMenuPage(testController) {
+    await testController.click('#add-menu-page');
+  }
 }
 
 export const navBar = new NavBar();

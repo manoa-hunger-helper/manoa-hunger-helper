@@ -19,26 +19,28 @@ class MyVendor extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <Container>
-        <Header as="h2" textAlign="center">My Vendor</Header>
-        <Table celled>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>Name</Table.HeaderCell>
-              <Table.HeaderCell>Image</Table.HeaderCell>
-              <Table.HeaderCell>Price</Table.HeaderCell>
-              <Table.HeaderCell>Location</Table.HeaderCell>
-              <Table.HeaderCell>State</Table.HeaderCell>
-              <Table.HeaderCell>Time</Table.HeaderCell>
-              <Table.HeaderCell>Contact</Table.HeaderCell>
-              <Table.HeaderCell>Type</Table.HeaderCell>
-              <Table.HeaderCell>Edit</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            {this.props.vendors.map((vendor) => <MyVendorData key={vendor._id} vendor={vendor}/>)}
-          </Table.Body>
-        </Table>
+      <Container id="my-vendor-page">
+        <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>My Vendor</Header>
+        {(this.props.vendors.length) ? (
+          <Table celled>
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell>Name</Table.HeaderCell>
+                <Table.HeaderCell>Image</Table.HeaderCell>
+                <Table.HeaderCell>Price</Table.HeaderCell>
+                <Table.HeaderCell>Location</Table.HeaderCell>
+                <Table.HeaderCell>State</Table.HeaderCell>
+                <Table.HeaderCell>Time</Table.HeaderCell>
+                <Table.HeaderCell>Contact</Table.HeaderCell>
+                <Table.HeaderCell>Type</Table.HeaderCell>
+                <Table.HeaderCell>Edit</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              {this.props.vendors.map((vendor) => <MyVendorData key={vendor._id} vendor={vendor}/>)}
+            </Table.Body>
+          </Table>
+        ) : <p>No vendor data, please go to add vendor, update your vendor information</p>}
 
         {(this.props.foodmenus.length) ? (
           <Table celled>
@@ -60,7 +62,7 @@ class MyVendor extends React.Component {
               {this.props.foodmenus.map((foodmenu) => <FoodMenuItem key={foodmenu._id} foodmenu={foodmenu} FoodMenus={FoodMenus}/>)}
             </Table.Body>
           </Table>
-        ) : ''}
+        ) : <p>No menu data, please go to add food, update your menu information</p>}
       </Container>
     );
   }
@@ -76,7 +78,7 @@ MyVendor.propTypes = {
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 export default withTracker(() => {
   // Get access to Vendor documents.
-  const subscription = Meteor.subscribe(Vendors.userPublicationName);
+  const subscription = Meteor.subscribe(Vendors.vendorPublicationName);
   // Get access to FoodMenus documents.
   const subscription2 = Meteor.subscribe(FoodMenus.vendorPublicationName);
   // Determine if the subscription is ready

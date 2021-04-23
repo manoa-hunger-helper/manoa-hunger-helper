@@ -3,6 +3,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Vendors } from '../../api/vendor/Vendor';
 import { FoodMenus } from '../../api/menu/FoodMenu';
+import { Information } from '../../api/information/Information';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -20,6 +21,7 @@ Meteor.publish(FoodMenus.userPublicationName, function () {
   }
   return this.ready();
 });
+
 Meteor.publish(Vendors.userPublicationName, function () {
   if (this.userId) {
     return Vendors.collection.find();
@@ -29,7 +31,7 @@ Meteor.publish(Vendors.userPublicationName, function () {
 
 // Vendor-level publication.
 // If logged in, then publish documents owned by this vendor. Otherwise publish nothing.
-Meteor.publish(Vendors.userPublicationName, function () {
+Meteor.publish(Vendors.vendorPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
     const username = Meteor.users.findOne(this.userId).username;
     return Vendors.collection.find({ owner: username });
@@ -50,6 +52,27 @@ Meteor.publish(FoodMenus.vendorPublicationName, function () {
 Meteor.publish(Stuffs.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Stuffs.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Vendors.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Vendors.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Information.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Information.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(FoodMenus.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return FoodMenus.collection.find();
   }
   return this.ready();
 });

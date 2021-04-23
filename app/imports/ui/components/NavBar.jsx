@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { withRouter, NavLink } from 'react-router-dom';
+import { withRouter, NavLink, Redirect } from 'react-router-dom';
 import { Menu, Dropdown, Header } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
-    const menuStyle = { marginBottom: '0px' };
+    const menuStyle = { marginBottom: '0px', background: 'linear-gradient(rgba(255,161,102,1),rgba(249,166,2,0.5))' };
     const landing = () => {
       if (Roles.userIsInRole(Meteor.userId(), 'vendor')) {
         return '/vendor-home';
@@ -17,33 +17,46 @@ class NavBar extends React.Component {
       if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
         return '/admin-home';
       }
+      if ((Meteor.userId() !== null)) {
+        return <Redirect to="/user-home"/>;
+      }
       return '/';
     };
     return (
-      <Menu style={menuStyle} attached="top" borderless inverted color="yellow">
+      <Menu style={menuStyle} attached="top" borderless inverted color="yellow" >
         <Menu.Item as={NavLink} activeClassName="" exact to={landing()}>
           <Header inverted as='h1'>manoa-hunger-helper</Header>
         </Menu.Item>
         {(this.props.currentUser && !Roles.userIsInRole(Meteor.userId(), 'vendor') && !Roles.userIsInRole(Meteor.userId(), 'admin')) ? (
           [
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/all-vendors" key='all'>All Vendors</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/available-vendors" key='now'>Available
+            <Menu.Item id="all-vendor-page" as={NavLink} activeClassName="active" exact to="/all-vendors" key='all'>All Vendors</Menu.Item>,
+            <Menu.Item id="available-now-page" as={NavLink} activeClassName="active" exact to="/available-vendors" key='now'>Available
               Now</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/todays-top-picks" key='picks'>Today Top
               Picks</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/view" key='all-menus'>Menus</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/recommendation" key='recommend'>Recommendation</Menu.Item>,
+            <Menu.Item id="menu-page" as={NavLink} activeClassName="active" exact to="/view" key='all-menus'>Menus</Menu.Item>,
+            <Menu.Item key='recomm'>
+              <Dropdown id="recomm-dropdown" text="Recommendation">
+                <Dropdown.Menu>
+                  <Dropdown.Item id="vegan-menu-page" as={NavLink} activeClassName="active" exact to="/vegan-menu" key='vegan'>Vegetarian</Dropdown.Item>
+                  <Dropdown.Item id="drink-menu-page" as={NavLink} activeClassName="active" exact to="/drink-menu" key='drink'>Drink</Dropdown.Item>
+                  <Dropdown.Item id="dessert-menu-page" as={NavLink} activeClassName="active" exact to="/dessert-menu" key='dessert'>Dessert</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Menu.Item>,
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'vendor') ? (
-          [<Menu.Item as={NavLink} activeClassName="active" exact to="/my-vendor" key='my-vendor'>My Vendor</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/add-vendor-info" key='add-vendor-info'>Add
+          [<Menu.Item id="my-vendor-page" as={NavLink} activeClassName="active" exact to="/my-vendor" key='my-vendor'>My Vendor</Menu.Item>,
+            <Menu.Item id="add-vendor-page" as={NavLink} activeClassName="active" exact to="/add-vendor-info" key='add-vendor-info'>Add
               Vendor</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/add-menu-food" key='add-menu-food'>Add
+            <Menu.Item id="add-menu-page" as={NavLink} activeClassName="active" exact to="/add-menu-food" key='add-menu-food'>Add
               Food</Menu.Item>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
+          [<Menu.Item id="manage-user-page" as={NavLink} activeClassName="active" exact to="/admin-manage-users" key='admin-manage-users'>Manage Users</Menu.Item>,
+            <Menu.Item id="manage-vendor-page" as={NavLink} activeClassName="active" exact to="/admin-manage-vendors" key='admin-manage-vendors'>Manage Vendors</Menu.Item>,
+          ]
         ) : ''}
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (
@@ -57,7 +70,6 @@ class NavBar extends React.Component {
             <Dropdown id="navbar-current-user" text={this.props.currentUser} pointing="top right" icon={'user'}>
               <Dropdown.Menu>
                 <Dropdown.Item id="navbar-sign-out" icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
-                <Dropdown.Item id="navbar-profile" icon="sign out" text="My Profile" as={NavLink} exact to="/profile"/>
               </Dropdown.Menu>
             </Dropdown>
           )}
