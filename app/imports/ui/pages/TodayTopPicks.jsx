@@ -1,63 +1,52 @@
 import React from 'react';
-import { Grid, Segment, Header } from 'semantic-ui-react';
-import { AutoForm, ErrorsField, NumField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
-import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
-import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import SimpleSchema from 'simpl-schema';
-import { Stuffs } from '../../api/stuff/Stuff';
+import { Container, Loader, Card, Header } from 'semantic-ui-react';
+import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
+import { _ } from 'meteor/underscore';
+import FeaturedMenuItem from '../components/FeaturedMenuItem';
+import { Featured } from '../../api/featured/Featured';
 
-// Create a schema to specify the structure of the data to appear in the form.
-const formSchema = new SimpleSchema({
-  name: String,
-  quantity: Number,
-  condition: {
-    type: String,
-    allowedValues: ['excellent', 'good', 'fair', 'poor'],
-    defaultValue: 'good',
-  },
-});
+/** Renders the Profile Collection as a set of Cards. */
+class TodayTopPicks extends React.Component {
 
-const bridge = new SimpleSchema2Bridge(formSchema);
-
-/** Renders the Page for adding a document. */
-class AddStuff extends React.Component {
-
-  // On submit, insert the data.
-  submit(data, formRef) {
-    const { name, quantity, condition } = data;
-    const owner = Meteor.user().username;
-    Stuffs.collection.insert({ name, quantity, condition, owner },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Item added successfully', 'success');
-          formRef.reset();
-        }
-      });
+  /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
+  render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
-  // Render the form. Use Uniforms: https://github.com/vazco/uniforms
-  render() {
-    let fRef = null;
+  /** Render the page once subscriptions have been received. */
+  renderPage() {
+    const names = _.uniq(_.pluck(this.props.featured, 'name'));
+    // const uniqueFeatured = Featured.collection.find({ name: { $in: names } });
+    const uniqueFeatured = _.map(names, (entry) => Featured.collection.findOne({ name: entry }));
     return (
-      <Grid container centered>
-        <Grid.Column>
-          <Header as="h2" textAlign="center">Add Stuff</Header>
-          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
-            <Segment>
-              <TextField name='name'/>
-              <NumField name='quantity' decimal={false}/>
-              <SelectField name='condition'/>
-              <SubmitField value='Submit'/>
-              <ErrorsField/>
-            </Segment>
-          </AutoForm>
-        </Grid.Column>
-      </Grid>
+      <Container id="vegan-menu-page">
+        <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>
+          Today&apos;s Top picks </Header>
+        <Card.Group>
+          {uniqueFeatured.map(
+            (menu, index) => <FeaturedMenuItem key={index} menu={menu}/>,
+          )}
+        </Card.Group>
+      </Container>
     );
   }
 }
 
-export default AddStuff;
+TodayTopPicks.propTypes = {
+  ready: PropTypes.bool.isRequired,
+  featured: PropTypes.array.isRequired,
+};
+
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+export default withTracker(() => {
+  // Ensure that minimongo is populated with all collections prior to running render().
+  const sub1 = Meteor.subscribe(Featured.userPublicationName);
+  const ready = sub1.ready();
+  const featured = Featured.collection.find().fetch();
+  return {
+    featured,
+    ready,
+  };
+})(TodayTopPicks);

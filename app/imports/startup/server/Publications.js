@@ -4,6 +4,7 @@ import { Stuffs } from '../../api/stuff/Stuff';
 import { Vendors } from '../../api/vendor/Vendor';
 import { FoodMenus } from '../../api/menu/FoodMenu';
 import { Information } from '../../api/information/Information';
+import { Featured } from '../../api/featured/Featured';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -14,6 +15,7 @@ Meteor.publish(Stuffs.userPublicationName, function () {
   }
   return this.ready();
 });
+
 // If logged in, then publish documents owned by this vendor. Otherwise publish nothing.
 Meteor.publish(FoodMenus.userPublicationName, function () {
   if (this.userId) {
@@ -21,6 +23,14 @@ Meteor.publish(FoodMenus.userPublicationName, function () {
   }
   return this.ready();
 });
+
+Meteor.publish(Featured.userPublicationName, function () {
+  if (this.userId) {
+    return Featured.collection.find();
+  }
+  return this.ready();
+});
+
 Meteor.publish(Information.userPublicationName, function () {
   if (this.userId) {
     return Information.collection.find();

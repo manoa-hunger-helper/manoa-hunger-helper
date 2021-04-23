@@ -1,0 +1,51 @@
+import { Mongo } from 'meteor/mongo';
+import SimpleSchema from 'simpl-schema';
+import { Tracker } from 'meteor/tracker';
+
+/**
+ * The NotesCollection. It encapsulates state and variable values for stuff.
+ */
+class FeaturedCollection {
+  constructor() {
+    // The name of this collection.
+    this.name = 'FeaturedCollection';
+    // Define the Mongo collection.
+    this.collection = new Mongo.Collection(this.name);
+    // Define the structure of each document in the collection.
+    this.schema = new SimpleSchema({
+      name: String,
+      vendor: String,
+      price: Number,
+      image: String,
+      bio: String,
+      owner: String,
+      vegan: {
+        type: Boolean,
+        allowedValues: [true, false],
+        defaultValue: false,
+      },
+      drink: {
+        type: Boolean,
+        allowedValues: [true, false],
+        defaultValue: false,
+      },
+      dessert: {
+        type: Boolean,
+        allowedValues: [true, false],
+        defaultValue: false,
+      },
+    }, { tracker: Tracker });
+    // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
+    this.collection.attachSchema(this.schema);
+    // Define names for publications and subscriptions
+    this.userPublicationName = `${this.name}.publication.user`;
+    this.vendorPublicationName = `${this.name}.publication.vendor`;
+    this.adminPublicationName = `${this.name}.publication.admin`;
+  }
+}
+
+/**
+ * The singleton instance of the NotesCollection.
+ * @type {NotesCollection}
+ */
+export const Featured = new FeaturedCollection();

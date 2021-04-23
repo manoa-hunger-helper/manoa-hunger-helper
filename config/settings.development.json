@@ -66,6 +66,7 @@
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
+
   "defaultInformation": [
     { "firstname": "Jone", "lastname":"Smith", "favoriteVendor":"Panda Express", "favoriteItem": "Orange Chicken","image":"https://tse2.mm.bing.net/th?id=OIP.56662o4yV01NUau07Nm5fwAAAA&pid=Api&P=0&w=300&h=300", "owner": "john@foo.com" },
     { "firstname": "Peter", "lastname":"Johnson", "favoriteVendor":"Ono Seafood","favoriteItem": "Shoyu Ahi","image":"https://tse1.mm.bing.net/th?id=OIP.46Mhl3YGQle1Ca4O0w4oEwAAAA&pid=Api&P=0&w=300&h=300", "owner": "vendor@foo.com" },
@@ -94,6 +95,28 @@
       "website": "https://uhm.sodexomyway.com/dining-near-me/jamba-juice", "phone": "(808) 956-7327", "email": "food@hawaii.edu",
       "type": "Hawaiian", "owner": "vendor4@foo.com"
     }
+  ],
+  "defaultFeaturedMenu": [
+    { "name": "Orange Chicken", "vendor": "Panda Express", "price": 10.20, "owner": "vendor@foo.com",
+      "image": "https://www.tasteofhome.com/wp-content/uploads/2018/11/PX_OrangeChicken_FriedRice_Bowl.jpg",
+      "bio": "Our signature dish. Crispy chicken wok-tossed in a sweet and spicy orange sauce.",
+      "vegan": true,
+      "drink": false,
+      "dessert": false
+    },
+    { "name": "Shoyu Ahi", "vendor": "Ono Seafood", "price": 11.75, "owner": "vendor3@foo.com",
+      "image": "https://www.acouplecooks.com/wp-content/uploads/2020/01/Ahi-Poke-004.jpg",
+      "bio" : "Fresh ahi mixed with Japanese shoyu sauce, served with white rice or brown rice",
+      "vegan": false,
+      "drink": false,
+      "dessert": false
+    },
+    { "name": "Peach Perfection", "vendor": "Jamba Juice", "price": 5.89, "owner": "vendor4@foo.com",
+      "image": "https://jambajuice.ph/wp-content/uploads/Peach-Pleasure.jpg",
+      "bio": "White Grape Pear Peach Juice Blend, Mangos, Peaches, Apple  Strawberry Juice Blend, Strawberry",
+      "vegan": true,
+      "drink": true,
+      "dessert": false
+    }
   ]
-
 }

@@ -3,6 +3,7 @@ import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Vendors } from '../../api/vendor/Vendor.js';
 import { FoodMenus } from '../../api/menu/FoodMenu.js';
 import { Information } from '../../api/information/Information.js';
+import { Featured } from '../../api/featured/Featured';
 
 /* eslint-disable no-console */
 
@@ -26,6 +27,11 @@ function addVendor(data) {
 function addFood(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
   FoodMenus.collection.insert(data);
+}
+// Initialize the database with a default featured document.
+function addFeatured(data) {
+  console.log(`  Adding: ${data.name} (${data.owner})`);
+  Featured.collection.insert(data);
 }
 
 // Initialize the StuffsCollection if empty.
@@ -55,5 +61,12 @@ if (FoodMenus.collection.find().count() === 0) {
   if (Meteor.settings.defaultFoodMenu) {
     console.log('Creating default food menu.');
     Meteor.settings.defaultFoodMenu.map(data => addFood(data));
+  }
+}
+
+if (Featured.collection.find().count() === 0) {
+  if (Meteor.settings.defaultFoodMenu) {
+    console.log('Creating default featured food menu.');
+    Meteor.settings.defaultFeaturedMenu.map(data => addFeatured(data));
   }
 }

@@ -1,12 +1,14 @@
 import React from 'react';
-import { Image, Card, Icon, Divider, Rating } from 'semantic-ui-react';
+import { Image, Card, Icon, Divider, Rating, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import AddFeatured from './AddFeatured';
+import { Featured } from '../../api/featured/Featured';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-class MenuItem extends React.Component {
+class FeaturedMenuItem extends React.Component {
   render() {
+    const name = this.props.menu.name;
+    const count = Featured.collection.find({ name }).count();
     return (
       <Card centered color='yellow'>
         <Image size='huge' src={this.props.menu.image} style={{ height: '290px' }}/>
@@ -19,9 +21,10 @@ class MenuItem extends React.Component {
           <Card.Description>
             {this.props.menu.bio}
           </Card.Description>
-          <Card.Content extra style={{ paddingBottom: '20px', paddingTop: '20px' }}>
-            <AddFeatured menuitem={this.props.menu} />
-          </Card.Content>
+          <Card.Description>
+            <Divider/>
+            <Header textAlign='center' as='h3' color='orange'>{count} people recommended this!</Header>
+          </Card.Description>
           <Card.Content extra>
             <Divider/>
             <Icon name='user' />
@@ -36,9 +39,9 @@ class MenuItem extends React.Component {
 }
 
 // Require a document to be passed to this component.
-MenuItem.propTypes = {
+FeaturedMenuItem.propTypes = {
   menu: PropTypes.object.isRequired,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.
-export default withRouter(MenuItem);
+export default withRouter(FeaturedMenuItem);
