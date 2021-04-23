@@ -16,10 +16,10 @@ class MyInformation extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     const currentId = Meteor.userId();
-    const email = Meteor.users.findOne({ _id: currentId }).email;
+    const username = Meteor.users.findOne({ _id: currentId }).username;
 
     const info = _.filter(this.props.information, function (infos) {
-      if (email === infos.owner) {
+      if (username === infos.owner) {
         return infos;
       }
       return 0;
