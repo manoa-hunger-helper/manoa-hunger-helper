@@ -3,8 +3,9 @@ import { Meteor } from 'meteor/meteor';
 import { Container, Loader, Card, Header } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import VendorItem from '../components/VendorItem';
 import { Vendors } from '../../api/vendor/Vendor';
+import VendorItem from '../components/VendorItem';
+import vendorList from './private/data.json';
 
 /** Renders the Profile Collection as a set of Cards. */
 class AllVendors extends React.Component {

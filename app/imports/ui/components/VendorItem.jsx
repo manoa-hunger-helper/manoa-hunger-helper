@@ -1,33 +1,66 @@
 import React from 'react';
-import { Image, Card } from 'semantic-ui-react';
+import { Meteor } from 'meteor/meteor';
+import { Image, Card, Icon, Accordion } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import { Roles } from 'meteor/alanning:roles';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class VendorItem extends React.Component {
-  render() {
-    return (
-      <Card centered>
-        <Image size='huge' src={this.props.vendor.image} style={{ height: '290px' }}/>
-        <Card.Content>
-          <Card.Header>{this.props.vendor.name}</Card.Header>
-          <Card.Meta>
-            {this.props.vendor.address}
-          </Card.Meta>
-          <Card.Meta>
-            {this.props.vendor.businessdate}
-            <p>{this.props.vendor.starttime}:00 --- {this.props.vendor.endtime}:00</p>
-          </Card.Meta>
-          <Card.Meta>
-            {this.props.vendor.address}
-          </Card.Meta>
-          <Card.Meta>
-            {this.props.vendor.phone}
-          </Card.Meta>
+  state = { activeIndex: -1 }
 
+  handleClick = (e, titleProps) => {
+    const { index } = titleProps;
+    const { activeIndex } = this.state;
+    const newIndex = activeIndex === index ? -1 : index;
+
+    this.setState({ activeIndex: newIndex });
+  }
+
+  render() {
+    const vendorInfo = this.props.vendor;
+    const { activeIndex } = this.state;
+    console.log(vendorInfo);
+    return (
+      <Card>
+        <Image large src={vendorInfo.image} wrapped ui={false}/>
+        <Card.Content>
+          <Card.Header>{vendorInfo.name}</Card.Header>
+          <Card.Meta>{vendorInfo.location}</Card.Meta>
+          <Card.Meta>{vendorInfo.operationDays}</Card.Meta>
+          <Card.Meta>{vendorInfo.operationHours}</Card.Meta>
+          <Card.Meta>{vendorInfo.paymentOptions}</Card.Meta>
+          <Card.Meta>
+            <Accordion>
+              <Accordion.Title
+                  active={activeIndex === 0}
+                  index={0}
+                  onClick={this.handleClick}>
+                <Icon name='dropdown'/>
+                Click to view dietary options
+              </Accordion.Title>
+              <Accordion.Content active={activeIndex === 0}>
+                {vendorInfo.email}
+              </Accordion.Content>
+            </Accordion>
+          </Card.Meta>
           <Card.Description>
-            {this.props.vendor.location}
+            <Accordion>
+              <Accordion.Title
+                  acive={activeIndex === 0}
+                  index={0}
+                  onClick={this.handleClick}>
+                <Icon name='dropdown'/>
+                Click to see description
+              </Accordion.Title>
+              <Accordion.Content active={activeIndex === 0}>
+                {vendorInfo.description}
+              </Accordion.Content>
+            </Accordion>
           </Card.Description>
+          {Roles.userIsInRole(Meteor.userId(), 'vendor') ? (<Card.Content extra>
+            <Link to={`/edit/${this.props.vendor._id}`}>Edit</Link>
+          </Card.Content>) : ''}
         </Card.Content>
       </Card>
     );
