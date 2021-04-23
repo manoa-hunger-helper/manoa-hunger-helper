@@ -35,6 +35,7 @@ import MyMenu from '../pages/MyMenu';
 import AdminManageUsers from '../pages/AdminManageUsers';
 import EditUserInformation from '../pages/EditUserInformation';
 import AddMyInformation from '../pages/AddMyInformation';
+import MyInformation from '../pages/MyInformation';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -49,6 +50,7 @@ class App extends React.Component {
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/user-home" component={UserHome}/>
+            <ProtectedRoute path="/my-information1" component={MyInformation}/>
             <ProtectedRoute path="/all-vendors" component={AllVendors}/>
             <ProtectedRoute path="/available-vendors" component={AvailableNow}/>
             <ProtectedRoute path="/todays-top-picks" component={TodayTopPicks}/>
@@ -65,6 +67,7 @@ class App extends React.Component {
             <VendorProtectedRoute path="/editVedorInfor/:_id" component={EditVendorInformation}/>
             <VendorProtectedRoute path="/editMyMenu/:_id" component={EditMyMenu}/>
             <VendorProtectedRoute path="/add-my-information2" component={AddMyInformation}/>
+            <VendorProtectedRoute path="/my-information2" component={MyInformation}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
