@@ -21,6 +21,12 @@ Meteor.publish(FoodMenus.userPublicationName, function () {
   }
   return this.ready();
 });
+Meteor.publish(Information.userPublicationName, function () {
+  if (this.userId) {
+    return Information.collection.find();
+  }
+  return this.ready();
+});
 
 Meteor.publish(Vendors.userPublicationName, function () {
   if (this.userId) {
@@ -46,7 +52,12 @@ Meteor.publish(FoodMenus.vendorPublicationName, function () {
   }
   return this.ready();
 });
-
+Meteor.publish(Information.vendorPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'vendor')) {
+    return Information.collection.find();
+  }
+  return this.ready();
+});
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise publish nothing.
 Meteor.publish(Stuffs.adminPublicationName, function () {
