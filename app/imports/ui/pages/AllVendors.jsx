@@ -5,7 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Vendors } from '../../api/vendor/Vendor';
 import VendorItem from '../components/VendorItem';
-import vendorList from './private/data.json';
+// import vendorList from '../../../private/data.json';
 
 /** Renders the Profile Collection as a set of Cards. */
 class AllVendors extends React.Component {
@@ -17,6 +17,11 @@ class AllVendors extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
+    var myjson = {};
+    if (Meteor.isServer) {
+      myjson = JSON.parse(Assets.getText("data.json"));
+      console.log(myjson);
+    }
     return (
       <Container id="AllVendors-page">
         <Header as="h2" textAlign="center">Vendors</Header>
