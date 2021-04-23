@@ -36,13 +36,13 @@ test('Test that signin and signout work', async (testController) => {
 test('Test the user functions', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
-  await allVendorsPage.isDisplayed(testController);
+  await allVendorPage.isDisplayed(testController);
 });
 
 test('Test the admin functions', async (testController) => {
   await navBar.gotoSigninPage(testController);
-  await signinPage.signin(testController, admin.username, admin.password);
-  await allVendorsPage.isDisplayed(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await allVendorPage.isDisplayed(testController);
 });
 
 test('Test the All Vendor page', async (testController) => {
