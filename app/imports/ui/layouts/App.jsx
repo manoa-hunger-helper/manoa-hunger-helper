@@ -49,6 +49,7 @@ class App extends React.Component {
             <Route path="/signin" component={Signin}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
+            <Route path="/add-my-information" component={AddMyInformation}/>
             <ProtectedRoute path="/user-home" component={UserHome}/>
             <ProtectedRoute path="/my-information1" component={MyInformation}/>
             <ProtectedRoute path="/all-vendors" component={AllVendors}/>
@@ -59,14 +60,12 @@ class App extends React.Component {
             <ProtectedRoute path="/vegan-menu" component={VeganMenu}/>
             <ProtectedRoute path="/drink-menu" component={DrinkMenu}/>
             <ProtectedRoute path="/dessert-menu" component={DessertMenu}/>
-            <ProtectedRoute path="/add-my-information1" component={AddMyInformation}/>
             <VendorProtectedRoute path="/vendor-home" component={VendorHome}/>
             <VendorProtectedRoute path="/my-vendor" component={MyVendor}/>
             <VendorProtectedRoute path="/add-vendor-info" component={AddVendor}/>
             <VendorProtectedRoute path="/add-menu-food" component={AddFood}/>
             <VendorProtectedRoute path="/editVedorInfor/:_id" component={EditVendorInformation}/>
             <VendorProtectedRoute path="/editMyMenu/:_id" component={EditMyMenu}/>
-            <VendorProtectedRoute path="/add-my-information2" component={AddMyInformation}/>
             <VendorProtectedRoute path="/my-information2" component={MyInformation}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/add" component={AddStuff}/>

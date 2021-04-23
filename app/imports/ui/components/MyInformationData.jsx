@@ -21,6 +21,11 @@ class MyInformationData extends React.Component {
         <Table.Cell>
           <Link to={`/editUserInfor/${this.props.info._id}`}>Edit</Link>
         </Table.Cell>
+        <Table.Cell>
+          <Button icon onClick={() => this.removeItem(this.props.info._id)}>
+            <Icon name='trash'/>
+          </Button>
+        </Table.Cell>
       </Table.Row>
     );
   }

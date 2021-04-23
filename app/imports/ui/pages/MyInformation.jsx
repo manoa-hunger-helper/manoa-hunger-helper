@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Table, Header, Loader, Grid, Button, Link } from 'semantic-ui-react';
+import { Table, Header, Loader, Grid } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
@@ -38,10 +38,11 @@ class MyInformation extends React.Component {
               <Table.HeaderCell>favoriteVendor</Table.HeaderCell>
               <Table.HeaderCell>favoriteItem</Table.HeaderCell>
               <Table.HeaderCell>Edit</Table.HeaderCell>
+              <Table.HeaderCell>Remove</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>
-            {info1.map((info) => <MyInformationData key={info._id} info={info} />)}
+            {info1.map((info) => <MyInformationData key={info._id} info={info} Information={Information}/>)}
           </Table.Body>
         </Table>
       </Grid>
