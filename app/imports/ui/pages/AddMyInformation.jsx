@@ -1,16 +1,17 @@
 import React from 'react';
-import { Grid, Segment, Header,} from 'semantic-ui-react';
+import { Grid, Segment, Header, Loader } from 'semantic-ui-react';
 import { AutoForm, ErrorsField, HiddenField, SubmitField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
 import { Information } from '../../api/information/Information';
 
 const bridge = new SimpleSchema2Bridge(Information.schema);
 
 /** Renders the Page for adding a document. */
 class AddMyInformation extends React.Component {
-
   // On submit, insert the data.
   submit(data, formRef) {
     const { firstname, lastname, favoriteVendor, favoriteItem, image, owner } = data;
@@ -25,8 +26,12 @@ class AddMyInformation extends React.Component {
       });
   }
 
-  // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  }
+
+  // Render the form. Use Uniforms: https://github.com/vazco/uniforms
+  renderPage() {
     let fRef = null;
     return (
       <Grid container centered>
@@ -51,5 +56,21 @@ class AddMyInformation extends React.Component {
     );
   }
 }
-
-export default AddMyInformation;
+AddMyInformation.propTypes = {
+  doc: PropTypes.object,
+  ready: PropTypes.bool.isRequired,
+};
+export default withTracker(({ match }) => {
+  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
+  const documentId = match.params._id;
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe(Information.userPublicationName);
+  // Determine if the subscription is ready
+  const ready = subscription.ready();
+  // Get the document
+  const doc = Information.collection.findOne(documentId);
+  return {
+    doc,
+    ready,
+  };
+})(AddMyInformation);
