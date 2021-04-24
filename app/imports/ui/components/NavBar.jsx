@@ -18,7 +18,7 @@ class NavBar extends React.Component {
         return '/admin-home';
       }
       if ((Meteor.userId() !== null)) {
-        return <Redirect to="/user-home"/>;
+        return '/user-home';
       }
       return '/';
     };
