@@ -41,7 +41,7 @@ test('Test that signin and signout work', async (testController) => {
   await signoutPage.isDisplayed(testController);
 });
 
-test('Test User Home page', async (testController) => {
+test('Test the User Home page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await userHomePage.isDisplayed(testController);
