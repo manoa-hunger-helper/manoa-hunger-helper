@@ -39,7 +39,7 @@ class AddMyInformation extends React.Component {
     const owners = _.pluck(this.props.information, 'owner');
     const permit = _.contains(owners, username);
     return (
-      <Grid container centered>
+      <Grid id="add-my-info-page" container centered>
         {(!permit) ? (
           <Grid.Column>
             <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>Add

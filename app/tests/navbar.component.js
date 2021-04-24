@@ -67,6 +67,16 @@ class NavBar {
     await testController.click('#dessert-menu-page');
   }
 
+  async gotoViewMyInfoPage(testController) {
+    await testController.click('#information-dropdown');
+    await testController.click('#my-information');
+  }
+
+  async gotoAddMyInfoPage(testController) {
+    await testController.click('#information-dropdown');
+    await testController.click('#add-my-information');
+  }
+
   /** go to my vendor page. */
   async gotoMyVendorPage(testController) {
     await testController.click('#my-vendor-page');
@@ -79,7 +89,17 @@ class NavBar {
 
   /** go to add menu page. */
   async gotoAddMenuPage(testController) {
-    await testController.click('#add-menu-page');
+    await testController.click('#add-menu-food-page');
+  }
+
+  /** go to manage user page. */
+  async gotoManageUserPage(testController) {
+    await testController.click('#manage-user-page');
+  }
+
+  /** go to manage vendor page. */
+  async gotoManageVendorPage(testController) {
+    await testController.click('#manage-vendor-page');
   }
 }
 

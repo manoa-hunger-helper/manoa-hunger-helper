@@ -6,7 +6,7 @@ import LandingBottom from '../components/LandingBottom';
 class UserHome extends React.Component {
   render() {
     return (
-      <div>
+      <div id="user-home-page">
         <UserHomeTop/>
         <LandingBottom/>
       </div>

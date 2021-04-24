@@ -16,7 +16,7 @@ class AdminManageUsers extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <Grid container centered >
+      <Grid id="manage-user-page" container centered >
         <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>Manage Users Information</Header>
         <Table celled style={{ marginBottom: '80px' }}>
           <Table.Header>

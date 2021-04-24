@@ -6,7 +6,7 @@ import AdminTop from '../components/AdminTop';
 class AdminHome extends React.Component {
   render() {
     return (
-      <div>
+      <div id="admin-home-page">
         <AdminTop/>
         <AdminBottom/>
       </div>

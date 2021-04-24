@@ -59,13 +59,13 @@ class NavBar extends React.Component {
             <Menu.Item id="add-vendor-page" as={NavLink} activeClassName="active" exact to="/add-vendor-info" key='add-vendor-info'>Add
               Vendor</Menu.Item>,
 
-            <Menu.Item id="add-menu-food" as={NavLink} activeClassName="active" exact to="/add-menu-food" key='add-menu-food'>Add
+            <Menu.Item id="add-menu-food-page" as={NavLink} activeClassName="active" exact to="/add-menu-food" key='add-menu-food'>Add
               Food</Menu.Item>,
             <Menu.Item key='information'>
               <Dropdown id="information-dropdown" text=" Owner Information">
                 <Dropdown.Menu>
                   <Dropdown.Item id="my-information" as={NavLink} activeClassName="active" exact to="/my-information" key='drink'>view my informtion </Dropdown.Item>
-                  <Dropdown.Item id="add-my-information1" as={NavLink} activeClassName="active" exact to="/add-my-information" key='add-my-information'>add my information</Dropdown.Item>
+                  <Dropdown.Item id="add-my-information" as={NavLink} activeClassName="active" exact to="/add-my-information" key='add-my-information'>add my information</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>,

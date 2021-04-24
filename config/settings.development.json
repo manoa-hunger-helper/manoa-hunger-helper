@@ -91,7 +91,7 @@
       "type": "Japanese", "owner": "vendor3@foo.com"
     },
     { "name": "Jamba Juice ", "image": "./images/jamba-juice-logo.png", "price": "$", "location":  "Campus Center",
-      "state": "Close", "businessdate": "Monday, Tuesday, Wednesday, Thursday and Friday", "starttime": 10, "endtime":  23,
+      "state": "Close", "businessdate": "Monday, Tuesday, Wednesday, Thursday and Friday", "starttime": 0, "endtime":  23,
       "website": "https://uhm.sodexomyway.com/dining-near-me/jamba-juice", "phone": "(808) 956-7327", "email": "food@hawaii.edu",
       "type": "Hawaiian", "owner": "vendor4@foo.com"
     }

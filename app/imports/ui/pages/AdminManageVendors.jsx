@@ -20,7 +20,7 @@ class ManageVendors extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>Manage Vendors</Header>
+        <Header id="manage-vendors-page" as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>Manage Vendors</Header>
         {(this.props.vendors.length) ? (
           <Table celled>
             <Table.Header>

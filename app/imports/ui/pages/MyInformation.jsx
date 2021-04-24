@@ -26,7 +26,7 @@ class MyInformation extends React.Component {
       return 0;
     });
     return (
-      <Grid container centered>
+      <Grid id="my-information-page" container centered>
         <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>My Information</Header>
         <Table celled style={{ marginBottom: '30px' }}>
           <Table.Header>
