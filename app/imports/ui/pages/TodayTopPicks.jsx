@@ -21,7 +21,7 @@ class TodayTopPicks extends React.Component {
     // const uniqueFeatured = Featured.collection.find({ name: { $in: names } });
     const uniqueFeatured = _.map(names, (entry) => Featured.collection.findOne({ name: entry }));
     return (
-      <Container id="vegan-menu-page">
+      <Container id="TodayTopPicks-page">
         <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>
           Today&apos;s Top picks </Header>
         <Card.Group>

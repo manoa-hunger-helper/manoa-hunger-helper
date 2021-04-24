@@ -47,6 +47,11 @@ class NavBar {
     await testController.click('#available-now-page');
   }
 
+  /** go to today top picks now page. */
+  async gotoTodayTopPicksPage(testController) {
+    await testController.click('#today-top-picks-page');
+  }
+
   /** go to menu page. */
   async gotoMenuPage(testController) {
     await testController.click('#menu-page');

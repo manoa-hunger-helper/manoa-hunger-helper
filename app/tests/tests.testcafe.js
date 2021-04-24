@@ -5,6 +5,7 @@ import { navBar } from './navbar.component';
 import { userHomePage } from './userhome.page';
 import { allVendorPage } from './allvendor.page';
 import { availableNowPage } from './availablenow.page';
+import { todayTopPicksPage } from './todaytoppicks.page';
 import { menuPage } from './menu.page';
 import { veganMenuPage } from './venganmenu.page';
 import { drinkMenuPage } from './drinkmenu.page';
@@ -61,6 +62,14 @@ test('Test the Available Now page', async (testController) => {
   await navBar.gotoAvailableNowPage(testController);
   await availableNowPage.isDisplayed(testController);
   await availableNowPage.hasCard(testController);
+});
+
+test.only('Test the Today Top Picks page', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoTodayTopPicksPage(testController);
+  await todayTopPicksPage.isDisplayed(testController);
+  await todayTopPicksPage.hasCard(testController);
 });
 
 test('Test the Menu page', async (testController) => {
