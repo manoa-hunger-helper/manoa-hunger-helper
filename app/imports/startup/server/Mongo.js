@@ -65,7 +65,7 @@ if (FoodMenus.collection.find().count() === 0) {
 }
 
 if (Featured.collection.find().count() === 0) {
-  if (Meteor.settings.defaultFoodMenu) {
+  if (Meteor.settings.defaultFeaturedMenu) {
     console.log('Creating default featured food menu.');
     Meteor.settings.defaultFeaturedMenu.map(data => addFeatured(data));
   }
