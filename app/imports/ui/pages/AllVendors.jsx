@@ -17,9 +17,9 @@ class AllVendors extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    var myjson = {};
+    let myjson = {};
     if (Meteor.isServer) {
-      myjson = JSON.parse(Assets.getText("data.json"));
+      myjson = JSON.parse(Assets.getText('data.json'));
       console.log(myjson);
     }
     return (

@@ -32,9 +32,9 @@ class VendorItem extends React.Component {
           <Card.Meta>
             <Accordion>
               <Accordion.Title
-                  active={activeIndex === 0}
-                  index={0}
-                  onClick={this.handleClick}>
+                active={activeIndex === 0}
+                index={0}
+                onClick={this.handleClick}>
                 <Icon name='dropdown'/>
                 Click to view dietary options
               </Accordion.Title>
@@ -52,9 +52,9 @@ class VendorItem extends React.Component {
           <Card.Description>
             <Accordion>
               <Accordion.Title
-                  acive={activeIndex === 0}
-                  index={0}
-                  onClick={this.handleClick}>
+                acive={activeIndex === 0}
+                index={0}
+                onClick={this.handleClick}>
                 <Icon name='dropdown'/>
                 Click to see description
               </Accordion.Title>
