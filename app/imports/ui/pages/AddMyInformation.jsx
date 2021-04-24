@@ -59,7 +59,7 @@ class AddMyInformation extends React.Component {
               </Segment>
             </AutoForm>
           </Grid.Column>) : <Header as="h2" textAlign="center" color="orange"
-          style={{ paddingTop: '30px', paddingBottom: '20px' }}> Sorry, you already add
+          style={{ paddingTop: '50px', paddingBottom: '50px' }}> Sorry, you already add
             information!!!</Header>}
       </Grid>
     );
