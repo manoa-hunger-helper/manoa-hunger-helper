@@ -61,15 +61,15 @@ test('Test the Available Now page', async (testController) => {
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoAvailableNowPage(testController);
   await availableNowPage.isDisplayed(testController);
-  await availableNowPage.hasCard(testController);
+  // await availableNowPage.hasCard(testController);
 });
 
-test.only('Test the Today Top Picks page', async (testController) => {
+test('Test the Today Top Picks page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoTodayTopPicksPage(testController);
   await todayTopPicksPage.isDisplayed(testController);
-  await todayTopPicksPage.hasCard(testController);
+  // await todayTopPicksPage.hasCard(testController);
 });
 
 test('Test the Menu page', async (testController) => {
