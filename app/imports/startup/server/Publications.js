@@ -37,13 +37,6 @@ Meteor.publish(Featured.userPublicationName, function () {
   return this.ready();
 });
 
-Meteor.publish(Information.userPublicationName, function () {
-  if (this.userId) {
-    return Information.collection.find();
-  }
-  return this.ready();
-});
-
 Meteor.publish(Vendors.userPublicationName, function () {
   if (this.userId) {
     return Vendors.collection.find();
