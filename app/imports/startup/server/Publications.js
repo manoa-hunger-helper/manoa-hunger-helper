@@ -23,6 +23,12 @@ Meteor.publish(FoodMenus.userPublicationName, function () {
   }
   return this.ready();
 });
+Meteor.publish(Information.userPublicationName, function () {
+  if (this.userId) {
+    return Information.collection.find();
+  }
+  return this.ready();
+});
 
 Meteor.publish(Featured.userPublicationName, function () {
   if (this.userId) {

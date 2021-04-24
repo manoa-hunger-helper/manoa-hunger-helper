@@ -44,18 +44,31 @@ class NavBar extends React.Component {
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>,
-            <Menu.Item id="add-my-information1" as={NavLink} activeClassName="active" exact to="/add-my-information" key='add-my-information'>Add My Information</Menu.Item>,
-            <Menu.Item id="my-information1" as={NavLink} activeClassName="active" exact to="/my-information1" key='my-information1'>My Information</Menu.Item>,
+            <Menu.Item key='information'>
+              <Dropdown id="information-dropdown" text="Information">
+                <Dropdown.Menu>
+                  <Dropdown.Item id="my-information" as={NavLink} activeClassName="active" exact to="/my-information" key='drink'>view my informtion </Dropdown.Item>
+                  <Dropdown.Item id="add-my-information" as={NavLink} activeClassName="active" exact to="/add-my-information" key='add-my-information'>add my information</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Menu.Item>,
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'vendor') ? (
           [<Menu.Item id="my-vendor-page" as={NavLink} activeClassName="active" exact to="/my-vendor" key='my-vendor'>My Vendor</Menu.Item>,
             <Menu.Item id="add-vendor-page" as={NavLink} activeClassName="active" exact to="/add-vendor-info" key='add-vendor-info'>Add
               Vendor</Menu.Item>,
+
             <Menu.Item id="add-menu-food" as={NavLink} activeClassName="active" exact to="/add-menu-food" key='add-menu-food'>Add
               Food</Menu.Item>,
-            <Menu.Item id="add-my-information" as={NavLink} activeClassName="active" exact to="/add-my-information" key='add-my-information'>Add My Information</Menu.Item>,
-            <Menu.Item id="my-information2" as={NavLink} activeClassName="active" exact to="/my-information2" key='my-information2'>My Information</Menu.Item>,
+            <Menu.Item key='information'>
+              <Dropdown id="information-dropdown" text="Information">
+                <Dropdown.Menu>
+                  <Dropdown.Item id="my-information" as={NavLink} activeClassName="active" exact to="/my-information" key='drink'>view my informtion </Dropdown.Item>
+                  <Dropdown.Item id="add-my-information1" as={NavLink} activeClassName="active" exact to="/add-my-information" key='add-my-information'>add my information</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Menu.Item>,
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (

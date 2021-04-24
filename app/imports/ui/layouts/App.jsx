@@ -66,7 +66,7 @@ class App extends React.Component {
             <VendorProtectedRoute path="/add-menu-food" component={AddFood}/>
             <VendorProtectedRoute path="/editVedorInfor/:_id" component={EditVendorInformation}/>
             <VendorProtectedRoute path="/editMyMenu/:_id" component={EditMyMenu}/>
-            <VendorProtectedRoute path="/my-information2" component={MyInformation}/>
+            <Route path="/my-information" component={MyInformation}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
