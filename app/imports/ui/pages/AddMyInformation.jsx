@@ -6,6 +6,7 @@ import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import { _ } from 'meteor/underscore';
 import { Information } from '../../api/information/Information';
 
 const bridge = new SimpleSchema2Bridge(Information.schema);
@@ -33,25 +34,33 @@ class AddMyInformation extends React.Component {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
     let fRef = null;
+    const currentId = Meteor.userId();
+    const username = Meteor.users.findOne({ _id: currentId }).username;
+    const owners = _.pluck(this.props.information, 'owner');
+    const permit = _.contains(owners, username);
     return (
       <Grid container centered>
-        <Grid.Column>
-          <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>Add Your Information when you are a new user</Header>
-          <AutoForm ref={ref => {
-            fRef = ref;
-          }} schema={bridge} onSubmit={data => this.submit(data, fRef)} style={{ marginBottom: '20px' }}>
-            <Segment>
-              <TextField name='image'/>
-              <TextField name='firstname'/>
-              <TextField name='lastname'/>
-              <TextField name='favoriteVendor'/>
-              <TextField name='favoriteItem'/>
-              <SubmitField value='Submit'/>
-              <ErrorsField/>
-              <HiddenField name='owner' value={Meteor.user().username}/>
-            </Segment>
-          </AutoForm>
-        </Grid.Column>
+        {(!permit) ? (
+          <Grid.Column>
+            <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>Add
+                  Your Information when you are a new user</Header>
+            <AutoForm ref={ref => {
+              fRef = ref;
+            }} schema={bridge} onSubmit={data => this.submit(data, fRef)} style={{ marginBottom: '20px' }}>
+              <Segment>
+                <TextField name='image'/>
+                <TextField name='firstname'/>
+                <TextField name='lastname'/>
+                <TextField name='favoriteVendor'/>
+                <TextField name='favoriteItem'/>
+                <SubmitField value='Submit'/>
+                <ErrorsField/>
+                <HiddenField name='owner' value={Meteor.user().username}/>
+              </Segment>
+            </AutoForm>
+          </Grid.Column>) : <Header as="h2" textAlign="center" color="orange"
+          style={{ paddingTop: '30px', paddingBottom: '20px' }}> Sorry, you already add
+            information!!!</Header>}
       </Grid>
     );
   }
@@ -59,6 +68,7 @@ class AddMyInformation extends React.Component {
 AddMyInformation.propTypes = {
   doc: PropTypes.object,
   ready: PropTypes.bool.isRequired,
+  information: PropTypes.array.isRequired,
 };
 export default withTracker(({ match }) => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
@@ -69,8 +79,10 @@ export default withTracker(({ match }) => {
   const ready = subscription.ready();
   // Get the document
   const doc = Information.collection.findOne(documentId);
+  const information = Information.collection.find({}).fetch();
   return {
     doc,
     ready,
+    information,
   };
 })(AddMyInformation);

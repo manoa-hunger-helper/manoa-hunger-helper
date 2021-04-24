@@ -51,7 +51,6 @@ class App extends React.Component {
             <Route path="/signout" component={Signout}/>
             <Route path="/add-my-information" component={AddMyInformation}/>
             <ProtectedRoute path="/user-home" component={UserHome}/>
-            <ProtectedRoute path="/my-information1" component={MyInformation}/>
             <ProtectedRoute path="/all-vendors" component={AllVendors}/>
             <ProtectedRoute path="/available-vendors" component={AvailableNow}/>
             <ProtectedRoute path="/todays-top-picks" component={TodayTopPicks}/>
@@ -66,7 +65,7 @@ class App extends React.Component {
             <VendorProtectedRoute path="/add-menu-food" component={AddFood}/>
             <VendorProtectedRoute path="/editVedorInfor/:_id" component={EditVendorInformation}/>
             <VendorProtectedRoute path="/editMyMenu/:_id" component={EditMyMenu}/>
-            <VendorProtectedRoute path="/my-information2" component={MyInformation}/>
+            <Route path="/my-information" component={MyInformation}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
