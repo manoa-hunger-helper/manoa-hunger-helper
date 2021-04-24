@@ -22,7 +22,7 @@ class VendorItem extends React.Component {
     const { activeIndex } = this.state;
     return (
       <Card>
-        <Image large src={vendorInfo.image} wrapped ui={false}/>
+        <Image size='large' src={vendorInfo.image} wrapped ui={false}/>
         <Card.Content>
           <Card.Header>{vendorInfo.name}</Card.Header>
           <Card.Meta>{vendorInfo.location}</Card.Meta>
