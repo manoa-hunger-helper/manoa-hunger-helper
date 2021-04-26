@@ -107,7 +107,8 @@
       "phone": "(808) 956-6462",
       "email": "food@hawaii.edu",
       "type": "Asian",
-      "owner": "vendor@foo.com"
+      "owner": "vendor@foo.com",
+      "description": "Located at Hemenway Hall, Ba-Le is the perfect stop if you're craving something a little different."
     },
     { "name": "Da Spot",
       "image": "./images/daspot-logo.png",
@@ -121,7 +122,8 @@
       "phone": "(808) 956-4798",
       "email": "food@hawaii.edu",
       "type": "Mediterranean, North African",
-      "owner": "vendor2@foo.com"
+      "owner": "vendor2@foo.com",
+      "description": "Da Spot Health Foods & Juices offers diverse, healthy and affordable cusine with a unique take on tasty dishes from around the world."
     },
     { "name": "Dunkin' Donuts",
       "image": "./images/dunkindonuts-logo.png",
@@ -135,7 +137,8 @@
       "phone": "(808) 956-4798",
       "email": "food@hawaii.edu",
       "type": "Japanese",
-      "owner": "vendor3@foo.com"
+      "owner": "vendor3@foo.com",
+      "description": "Dunkin' Donuts in Paradise Palms Cafe will keep Hawaii running with high-quality beverage offerings-including freshly-brewed Hot and ICed Coffees-paired perfectly with delicious donuts, bakery goods, sandwiches and more."
     },
     { "name": "Food Court",
       "image": "./images/foodcourt-logo.jpeg",
@@ -149,7 +152,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "Japanese, Korean, American, Hawaiian",
-      "owner": "vendor4@foo.com"
+      "owner": "vendor4@foo.com",
+      "description": "The Campus Center Food Court offers a variety of food including plate lunches, and our newly featured Simply to Go station with fresh made salads, wraps, fresh fruit and desserts."
     },
     { "name": "Gateway Cafe",
       "image": "./images/gatewaycafe-logo.jpg",
@@ -163,7 +167,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "Japanese, Korean, American, Hawaiian",
-      "owner": "vendor5@foo.com"
+      "owner": "vendor5@foo.com",
+      "description": "We offer fresh salads, made-in-house pizzas, and a grill station in addition to our Simple Servings hot entrees and vegan and vegetarian entrees daily."
     },
     { "name": "Govinda's",
       "image": "./images/govindas-logo.png",
@@ -177,7 +182,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "Japanese, Korean, American, Hawaiian",
-      "owner": "vendor6@foo.com"
+      "owner": "vendor6@foo.com",
+      "description": "Govinda's uses top quality produce and only the finest quality sea salt. All of teh rice, grains, beans, tofu, sugar and flour are certified organic. Their menu never contains any meat or meat by products, fish, eggs, MSG, iodized salt, preservatives, hydrogenated oils, or artifical colors or flavors."
     },
     { "name": "Hale Aloha Cafe",
       "image": "./images/halealoha-logo.jpeg",
@@ -191,7 +197,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "Japanese, Korean, American, Hawaiian",
-      "owner": "vendor7@foo.com"
+      "owner": "vendor7@foo.com",
+      "description": "Hale Aloha Cafe serve your favorite comfort foods and cuisine influenced by global flavors. Located at the center of the Hale Aloha Towers on the lower campus, Hale Aloha Cafe is open for dinner 7 days a week for brunch and dinner."
     },
     { "name": "Holoholo Grill",
       "image": "./images/holoholo-logo.png",
@@ -205,7 +212,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "Japanese, Korean, American, Hawaiian",
-      "owner": "vendor8@foo.com"
+      "owner": "vendor8@foo.com",
+      "description": "Holoholo Grill features healthy, locally grown salads, sandwiches, and grab-and-go items at affordable prices. They are committed to using the freshest island-grown ingredients sourced directly from farmers and fisherman. Grab-and-go, breakfast items, or catering for any sized group are also available!"
     },
     { "name": "Hot Tacos",
       "image": "./images/hottacos-logo.png",
@@ -219,7 +227,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "Japanese, Korean, American, Hawaiian",
-      "owner": "vendor9@foo.com"
+      "owner": "vendor9@foo.com",
+      "description": "Hot Tacos offers authentic Mexican food, prepped and cooked daily from scratch offering tacos, burritos, and quesadillas with meat options like steak, chicken, marinated pork, and shredded beef. They offer a la carte options or lunch plates that include beans and Spanish rice and other add on options like Chili Rellenos and Tamales."
     },
     { "name": "Island Pita",
       "image": "./images/islandpita-logo.jpeg",
@@ -233,7 +242,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "Japanese, Korean, American, Hawaiian",
-      "owner": "vendor10@foo.com"
+      "owner": "vendor10@foo.com",
+      "description": " Mobile eatery serving Mediterranean cuisine like chicken and lamb kabob as well as with vegan options such as hummus, Israeli salad, falafel, and fresh baked pita made daily."
     },
     { "name": "Jamba Juice",
       "image": "./images/jambajuice-logo.jpeg",
@@ -247,7 +257,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "American",
-      "owner": "vendor11@foo.com"
+      "owner": "vendor11@foo.com",
+      "description": "Visit Jamba for refreshing fruit smoothie blends, delicious and nutritious energy bowls, fresh juices, healthy baked goods and savory grab-and-go food items. \n\nJamba blends real fruit and whole ingredients into each delicious fresh juice, smoothie, or energy bowl you order and contains no artificial colors, preservatives, or flavors."
     },
     { "name": "Kamitoku Ramen",
       "image": "./images/kamitokuramen-logo.png",
@@ -261,7 +272,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "Japanese",
-      "owner": "vendor12@foo.com"
+      "owner": "vendor12@foo.com",
+      "description": "Kamitoku Ramen specializes in Tottori-style beef bone ramen."
     },
     { "name": "Lasoon",
       "image": "./images/lasoon-logo.png",
@@ -274,8 +286,9 @@
       "website": "https://uhm.sodexomyway.com/dining-near-me/cc-food-court",
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
-      "type": "Japanese, Korean, American, Hawaiian",
-      "owner": "vendor13@foo.com"
+      "type": "Nepal, Indian",
+      "owner": "vendor13@foo.com",
+      "description": "Lasoon offers natural home-cooked Nepali and Indian food for everyone. From a $5 bowl options when you are in a hurry to larger plates to please your appetite. \n\nWe are focusing on vegan and gluten free meals and offer 4 - 5 options that are changed daily. Besides the vegan options we offer 3 meat options ranging from mild to spicy!"
     },
     { "name": "Le Crepe Cafe",
       "image": "./images/lecrepecafe-logo.png",
@@ -289,7 +302,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "Japanese, Korean, American, Hawaiian",
-      "owner": "vendor14@foo.com"
+      "owner": "vendor14@foo.com",
+      "description": "Le Crepe Cafe makes traditional French crepes, cooked to order in front of customers. They specialize in flavorsome menu of sweet and savory crepes and use fresh ingredients, organic when possible. Their utensils are even bio-compostable. Enjoy a crepe any time of day, as a breakfast, snack, main course, or dessert - close you're eyes and you're in Paris! \n\nWhether you're needing a break from the law books or a pick-me-up as you're headed to or off campus, you'll also appreciate Le Crepe Cafe's French Roast and espresso drinks."
     },
     { "name": "L&L Hawaiian BBQ",
       "image": "./images/L&L-logo.png",
@@ -303,7 +317,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "Hawaiian",
-      "owner": "vendor15@foo.com"
+      "owner": "vendor15@foo.com",
+      "description": "Delicious local and Asian-American fusion cuisine served in big portions at reasonable prices! Try delicious L&L favorites like the Hawaiian Barbecue beef, chicken, or short ribs! Enjoy L&L's famous fried chicken katsu, the best in town! Grab-and-go, breakfast items and party packs for groups also available."
     },
     { "name": "Ono Seafood",
       "image": "./images/onoseafood-logo.png",
@@ -317,7 +332,8 @@
       "phone": "(808) 956-4798",
       "email": "food@hawaii.edu",
       "type": "Hawaiian",
-      "owner": "vendor16@foo.com"
+      "owner": "vendor16@foo.com",
+      "description": "Traditional super ono ahi & tako poke; always fresh, premium ahi - never frozen! Made to order poke by the pound & poke bowls."
     },
     { "name": "Panda Express",
       "image": "./images/pandaexpress-logo.jpeg",
@@ -331,7 +347,8 @@
       "phone": "(808) 956-4798",
       "email": "food@hawaii.edu",
       "type": "Chinese",
-      "owner": "vendor17@foo.com"
+      "owner": "vendor17@foo.com",
+      "description": "Panda Express serves gourmet Chinese food made with only the freshest ingredients. Famous for its Orange Chicken, they also offer a number of Wok Smart entrees that contain less than 250 calories per serving, such as Shanghai Angus Steak, Kung Pao Chicken, and Broccoli Beef. Other favorites include Beijing Beef, Sweetfire Chicken Breast, and Honey Walnut Shrimp. \n\nPanda Express' offerings can be enjoyed in Panda Bowls, or two and three item plates. Perfect for lunch, dinner or as a pick-me-up snack between classes."
     },
     { "name": "Pizza Hut",
       "image": "./images/pizzahut-logo.png",
@@ -345,7 +362,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "Italian, American",
-      "owner": "vendor18@foo.com"
+      "owner": "vendor18@foo.com",
+      "description": "You can always count on pizza to satisfy your hunger. \n\nOur Pizza Hut Express location offers all of your favorite Pizza Hut items for you to grab and go. \n\nEnjoy our daily Pizza Hut pan pizza specials, breadsticks, and popular Wingstreet items!"
     },
     { "name": "Simply To Go",
       "image": "./images/simply2go-logo.jpeg",
@@ -359,7 +377,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "American",
-      "owner": "vendor19@foo.com"
+      "owner": "vendor19@foo.com",
+      "description": "Simply To Go is just as the name says...simple items purchased to go!\n\nA great place to get a quick bite between classes, you can purchase coffee, breakfast items, pastries, bottled beverages, and desserts while you're on the go.\nWe proudly serve Starbucks Coffee.\n\nSimply To Go carries a variety of healthy food brands, such as Kashi, Kopali Organics and Bare Fruit Snacks.\n\nCool off on a hot day with a Dole Whip!"
     },
     { "name": "Sistah Truck",
       "image": "./images/sistah-logo.png",
@@ -373,7 +392,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "Japanese, Korean, American, Hawaiian",
-      "owner": "vendor20@foo.com"
+      "owner": "vendor20@foo.com",
+      "description": "Sistah Truck serves Korean-inspired local cuisine. Daily menu plate lunches include loco moco, chicken katsu, and Korean-style shoyu chicken. They also serve grab-and-go dishes like bibimbap, gyoza and kimchi bowls. Vegetarian options are available."
     },
     { "name": "Starbucks",
       "image": "./images/starbucks-logo.jpeg",
@@ -387,7 +407,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "American",
-      "owner": "vendor21@foo.com"
+      "owner": "vendor21@foo.com",
+      "description": "With a full menu, as well as seasonal and specialty items, coffee fanatics are sure to be pleased. Also available are pastries, fruit cups, and bottled beverages for your purchase\n\nOur location strives to give you teh very same experience found at any other Starbucks across the nation."
     },
     { "name": "Stir Fresh",
       "image": "./images/stirfresh-logo.jpeg",
@@ -401,7 +422,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "Asian",
-      "owner": "vendor22@foo.com"
+      "owner": "vendor22@foo.com",
+      "description": "Located on the first floor of Campus Center across from the ATMs, Stir-Fresh serves up fresh and healthy Poke Bowls and Stir Frys.\n\nCome down today and build your own stir fry - First choose your protein, next choose your sauce, then choose rice or noodles, last fill up your bowl with the vegetables of your choice. After you've made your selections your lunch will be tossed by our expert chefs.\n\nWhat to eat what the locals eat? Try one of our signature poke bowls. Aloha Friday specials are also offered every week.\n\nStop by today and enjoy the Stir Fresh experience!"
     },
     { "name": "The Bean Counter",
       "image": "./images/thebeancounter-logo.png",
@@ -415,7 +437,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "American",
-      "owner": "vendor23@foo.com"
+      "owner": "vendor23@foo.com",
+      "description": "Local beans, local flavor...your local coffee bar.\n\nThe Bean Counter serves up brewed coffee from the Hawaiian Islands and fulfills your caffeinated desires with a full service espresso bar. Feed your growling stomach with a dizzying array of bagels with homemade spreads, or chow down with our savory wraps, healthy salads and sweet treats."
     },
     { "name": "The Market",
       "image": "./images/themarket-logo.jpeg",
@@ -429,7 +452,8 @@
       "phone": "(808) 956-7367",
       "email": "food@hawaii.edu",
       "type": "American",
-      "owner": "vendor24@foo.com"
+      "owner": "vendor24@foo.com",
+      "description": "Located on the lower campus at student housing , The Market at Hale Noelani is your on-campus convenience store which offers all your favorite items and basic necessities.\n\nOpen 7 days a week, you can stock up on snacks, cup noodle, bottled water, toilet paper, bath soap, laundry detergent, and much more at The Market!\n\nThe Market also offers hot food in a hurry - Pizzas, Hot Dogs, and Mac & Cheese are a few of the quick bites you can enjoy from this location.\n\nOur fresh produce section and natural foods section are very popular with our customers. Whether you're looking to put together a meal, or just grab an afternoon snack, The Market has a great set of options to satisfy dorm and apartment residents!"
     }
   ],
   "defaultFeaturedMenu": [
