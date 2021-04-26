@@ -36,10 +36,10 @@ class VendorItem extends React.Component {
                 index={0}
                 onClick={this.handleClick}>
                 <Icon name='dropdown'/>
-                Click to view dietary options
+                Click To View Available Dietary Options
               </Accordion.Title>
               <Accordion.Content active={activeIndex === 0}>
-                {vendorInfo.email}
+                {vendorInfo.dietaryOptions}
               </Accordion.Content>
             </Accordion>
           </Card.Meta>
