@@ -19,10 +19,11 @@ class VendorItem extends React.Component {
     const vendorInfo = this.props.vendor;
     const { activeIndex } = this.state;
     return (
-      <Card>
+      <Card color='orange'>
         <Image size='large' src={vendorInfo.image} wrapped ui={false} style={{ height: '290px' }}/>
         <Card.Content>
           <Card.Header>{vendorInfo.name}</Card.Header>
+          <Card.Meta>{vendorInfo.price} : {vendorInfo.type}</Card.Meta>
           <Card.Meta>{vendorInfo.location}</Card.Meta>
           <Card.Meta>{vendorInfo.businessdate}</Card.Meta>
           <Card.Meta>From {vendorInfo.starttime}:00 to {vendorInfo.endtime}:00</Card.Meta>
@@ -34,7 +35,7 @@ class VendorItem extends React.Component {
                 index={0}
                 onClick={this.handleClick}>
                 <Icon name='dropdown'/>
-                Click to view more inforamtion
+                Click to view more information
               </Accordion.Title>
               <Accordion.Content active={activeIndex === 0}>
                 {vendorInfo.description}
@@ -44,7 +45,7 @@ class VendorItem extends React.Component {
           </Card.Meta>
         </Card.Content>
         <Card.Content extra>
-          <Link to={'/pick'}><Button color={'red'}>Find My Menu</Button></Link>
+          <Link to={'/pick'}><Button inverted color={'orange'}>Find My Menu</Button></Link>
         </Card.Content>
       </Card>
     );
