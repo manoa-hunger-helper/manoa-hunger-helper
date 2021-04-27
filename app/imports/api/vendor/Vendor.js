@@ -32,7 +32,7 @@ class VendorCollection {
       state: {
         type: String,
         allowedValues: ['Open', 'Close'],
-        defaultValue: ['Close', 'Open'],
+        defaultValue: 'Close',
       },
       businessdate: String,
       starttime: {
