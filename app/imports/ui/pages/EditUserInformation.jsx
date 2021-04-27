@@ -15,8 +15,8 @@ class EditUserInformation extends React.Component {
 
   // On successful submit, insert the data.
   submit(data) {
-    const { firstname, lastname, favoriteVendor, favoriteItem, image, _id } = data;
-    Information.collection.update(_id, { $set: { firstname, lastname, favoriteVendor, favoriteItem, image } }, (error) => (error ?
+    const { firstname, lastname, phoneNumber, address, image, _id } = data;
+    Information.collection.update(_id, { $set: { firstname, lastname, phoneNumber, address, image } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   }
@@ -37,8 +37,8 @@ class EditUserInformation extends React.Component {
               <TextField name='image'/>
               <TextField name='firstname'/>
               <TextField name='lastname'/>
-              <TextField name='favoriteVendor'/>
-              <TextField name='favoriteItem'/>
+              <TextField name='phoneNumber'/>
+              <TextField name='address'/>
               <SubmitField value='Submit'/>
               <ErrorsField/>
               <HiddenField name='owner' />

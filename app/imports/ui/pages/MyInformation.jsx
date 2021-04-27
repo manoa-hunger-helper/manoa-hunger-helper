@@ -35,8 +35,8 @@ class MyInformation extends React.Component {
               <Table.HeaderCell>email</Table.HeaderCell>
               <Table.HeaderCell>firstname</Table.HeaderCell>
               <Table.HeaderCell>lastname</Table.HeaderCell>
-              <Table.HeaderCell>favoriteVendor</Table.HeaderCell>
-              <Table.HeaderCell>favoriteItem</Table.HeaderCell>
+              <Table.HeaderCell>phone number</Table.HeaderCell>
+              <Table.HeaderCell>address</Table.HeaderCell>
               <Table.HeaderCell>Edit</Table.HeaderCell>
               <Table.HeaderCell>Remove</Table.HeaderCell>
             </Table.Row>

@@ -15,8 +15,8 @@ const bridge = new SimpleSchema2Bridge(Information.schema);
 class AddMyInformation extends React.Component {
   // On submit, insert the data.
   submit(data, formRef) {
-    const { firstname, lastname, favoriteVendor, favoriteItem, image, owner } = data;
-    Information.collection.insert({ firstname, lastname, favoriteVendor, favoriteItem, image, owner },
+    const { firstname, lastname, phoneNumber, address, image, owner } = data;
+    Information.collection.insert({ firstname, lastname, phoneNumber, address, image, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -51,15 +51,15 @@ class AddMyInformation extends React.Component {
                 <TextField name='image'/>
                 <TextField name='firstname'/>
                 <TextField name='lastname'/>
-                <TextField name='favoriteVendor'/>
-                <TextField name='favoriteItem'/>
+                <TextField name='phoneNumber'/>
+                <TextField name='address'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' value={Meteor.user().username}/>
               </Segment>
             </AutoForm>
           </Grid.Column>) : <Header as="h2" textAlign="center" color="orange"
-          style={{ paddingTop: '50px', paddingBottom: '50px' }}> Sorry, you already add
+          style={{ paddingTop: '50px', paddingBottom: '50px' }}> Sorry, you already added
             information!!!</Header>}
       </Grid>
     );
