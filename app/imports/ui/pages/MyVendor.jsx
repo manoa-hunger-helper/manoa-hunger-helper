@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { Container, Table, Header, Loader } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { Vendors } from '../../api/vendor/Vendor';
 import MyVendorData from '../components/MyVendorData';
 import { FoodMenus } from '../../api/menu/FoodMenu';
@@ -42,7 +43,10 @@ class MyVendor extends React.Component {
               {this.props.vendors.map((vendor) => <MyVendorData key={vendor._id} vendor={vendor}/>)}
             </Table.Body>
           </Table>
-        ) : <p>No vendor data, please go to add vendor, update your vendor information</p>}
+        ) : (<div>
+          <p>No vendor data, please go to add vendor, update your vendor information</p>
+          <Link to="/add-vendor-info" >Click here to add your vendor information</Link>
+        </div>) }
 
         {(this.props.foodmenus.length) ? (
           <Table celled>
@@ -64,7 +68,10 @@ class MyVendor extends React.Component {
               {this.props.foodmenus.map((foodmenu) => <FoodMenuItem key={foodmenu._id} foodmenu={foodmenu} FoodMenus={FoodMenus}/>)}
             </Table.Body>
           </Table>
-        ) : <p>No menu data, please go to add food, update your menu information</p>}
+        ) : (<div>
+          <p>No menu data, please go to add food, update your menu information</p>
+          <Link to="/add-menu-food">Click here to add food to your menu</Link>
+        </div>)}
       </Container>
     );
   }
