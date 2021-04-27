@@ -34,10 +34,11 @@ class VendorItem extends React.Component {
                 index={0}
                 onClick={this.handleClick}>
                 <Icon name='dropdown'/>
-                Click to view my websit
+                Click to view more inforamtion
               </Accordion.Title>
               <Accordion.Content active={activeIndex === 0}>
-                <a href={vendorInfo.website}> {vendorInfo.website}</a>
+                {vendorInfo.description}
+                <a href={vendorInfo.website}>{vendorInfo.website}</a>
               </Accordion.Content>
             </Accordion>
           </Card.Meta>
