@@ -28,7 +28,7 @@
       "drink": false,
       "dessert": false
     },
-    { "name": "Grilled Chicken Fillet", "vendor": "DA Spot", "price": 6.00, "owner": "vendor2@foo.com",
+    { "name": "Grilled Chicken Fillet", "vendor": "Da Spot", "price": 6.00, "owner": "vendor2@foo.com",
       "image": "https://www.cfacdn.com/img/order/COM/Menu_Refresh/Entree/Entree%20PDP/_0000s_0009_Final__0026_CFA_PDP_Grilled-Deluxe-Sandwich_1085.png",
       "bio": "Freshly Grilled Chicken Wrapped with Homemade Flatbread with Tomato herb Cucumber Sauce\n\n",
       "vegan": false,
@@ -48,8 +48,64 @@
       "vegan": true,
       "drink": true,
       "dessert": false
+    },
+    { "name": "Veggie", "vendor": "Le Crepe Cafe", "price": 9.99, "owner": "vendor14@foo.com",
+      "image": "./images/le-crepe-cafe-veggies.jpeg",
+      "bio": "Mozzarella, spinach, tomatoes, basil, green onions, and bell peppers",
+      "vegan": true,
+      "drink": false,
+      "dessert": false
+    },
+    { "name": "Romeo et Juliette", "vendor": "Le Crepe Cafe", "price": 8.99, "owner": "vendor14@foo.com",
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/1b/36/66/8c/romeo-et-juliette-nutella.jpg",
+      "bio": "Nutella, bananas, and strawberries",
+      "vegan": true,
+      "drink": false,
+      "dessert": true
+    },
+    { "name": "Honey Mocha", "vendor": "Le Crepe Cafe", "price": 4.50, "owner": "vendor14@foo.com",
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/rXVKMYjhIHDQZmMzs9pPVA/l.jpg",
+      "bio": "Espresso, honey, cinnamon, chocolate, and steamed milk",
+      "vegan": false,
+      "drink": true,
+      "dessert": false
+    },
+    { "name": "Chicken Katsu", "vendor": "L&L Hawaiian BBQ", "price": 8.99, "owner": "vendor15@foo.com",
+      "image": "https://i.pinimg.com/originals/cd/c8/04/cdc80439e87e7a8e6356ad4433ceb856.jpg",
+      "bio": "Tender pieces of deep-fried boneless chicken, this best-seller is served with our piquant katsu sauce",
+      "vegan": false,
+      "drink": false,
+      "dessert": false
+    },
+    { "name": "Beef Pho", "vendor": "Ba-Le", "price": 10.75, "owner": "vendor@foo.com",
+      "image": "https://content-service.sodexomyway.com/media/BaLe2_tcm247-32793_w1024_n.jpg?url=https://uhm.sodexomyway.com/",
+      "bio": "Authentic South Vietnamese Style Pho. A comforting richly seasoned beef broth is ladled over rice noodles and thinly sliced beef. Add hot sauce and plum sauce to taste and top with cilantro, basil, lime juice and bean sprouts.",
+      "vegan": false,
+      "drink": false,
+      "dessert": false
+    },
+    { "name": "Tuna Melt Panini", "vendor": "Holoholo Grill", "price": 6.99, "owner": "vendor8@foo.com",
+      "image": "https://www.rachaelraymag.com/.image/t_share/MTYxOTUzMDIyMzU4ODU3MDA2/mediterranean-tuna-melt-paninis-660e6604.jpg",
+      "bio": "Mix tuna, mayonnaise, balsamic vinegar, onion, and dill pickle together in a bowl. Spread tuna mixture over 2 slices of bread. Top with American cheese and remaining 2 slices of bread.",
+      "vegan": false,
+      "drink": false,
+      "dessert": false
+    },
+    { "name": "Mocha Cookie Crumble Frappuccino Blended Beverage", "vendor": "Starbucks", "price": 5.95, "owner": "vendor21@foo.com",
+      "image": "https://globalassets.starbucks.com/assets/e4d9e996eb64453eb3ac7adb570c9b7b.jpg?impolicy=1by1_wide_1242",
+      "bio": "Frappuccino Roast coffee, mocha sauce and Frappuccino® chips blended with milk and ice, layered on top of whipped cream and chocolate cookie crumble and topped with vanilla whipped cream, mocha drizzle and even more chocolate cookie crumble.",
+      "vegan": false,
+      "drink": true,
+      "dessert": false
+    },
+    { "name": "Beefy Wild", "vendor": "Kamitoku Ramen", "price": 11.95, "owner": "vendor12@foo.com",
+      "image": "https://www.kamitokuramen.com/cms/wp-content/uploads/2019/11/Beefy-Wild-1-1024x819.jpg",
+      "bio": "Robust,full flavored beef broth with a garlic kick!",
+      "vegan": false,
+      "drink": false,
+      "dessert": false
     }
-    ],
+  ],
 
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
@@ -347,7 +403,7 @@
       "website": "https://manoa.hawaii.edu/food/ono-seafood/",
       "phone": "(808) 956-4798",
       "email": "food@hawaii.edu",
-      "type": "Hawaiian",
+      "type": "Japanese",
       "owner": "vendor16@foo.com",
       "description": "Traditional super ono ahi & tako poke; always fresh, premium ahi - never frozen! Made to order poke by the pound & poke bowls."
     },
