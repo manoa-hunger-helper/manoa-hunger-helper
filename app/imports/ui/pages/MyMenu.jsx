@@ -44,7 +44,7 @@ class MyMenu extends React.Component {
 
     return (
       <Container>
-        <Header as="h2" textAlign="center" style={{ paddingTop: '10px' }}>Find The Vendor Menu </Header>
+        <Header as="h2" textAlign="center" color={'orange'} style={{ paddingTop: '10px' }}>Find The Vendor Menu </Header>
         <AutoForm style={{ paddingBottom: '100px', paddingTop: '10px' }} schema={bridge} onSubmit={data => this.submit(data)} >
           <Segment>
             <MultiSelectField id='vendors' name='vendors' showInlineError={true} placeholder={'Pick a vendor'}/>
