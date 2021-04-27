@@ -40,7 +40,7 @@ class Signup extends React.Component {
   render() {
     const topStyle = { paddingTop: '30px', paddingBottom: '10px' };
     const bottomStyle = { paddingBottom: '50px' };
-    const { from } = this.props.location.state || { from: { pathname: '/add' } };
+    const { from } = this.props.location.state || { from: { pathname: '/user-home' } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
       if (this.state.role === 'vendor') {
