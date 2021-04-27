@@ -43,7 +43,7 @@ class AddMyInformation extends React.Component {
         {(!permit) ? (
           <Grid.Column>
             <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>Add
-                  Your Information when you are a new user</Header>
+                  Your Information When You Are a New User</Header>
             <AutoForm ref={ref => {
               fRef = ref;
             }} schema={bridge} onSubmit={data => this.submit(data, fRef)} style={{ marginBottom: '20px' }}>
