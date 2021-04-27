@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
 import swal from 'sweetalert';
-import { AutoForm, ErrorsField, HiddenField, NumField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
+import { AutoForm, ErrorsField, HiddenField, LongTextField, NumField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -15,8 +15,8 @@ class EditVendorInformation extends React.Component {
 
   // On successful submit, insert the data.
   submit(data) {
-    const { name, image, price, location, state, businessdate, starttime, endtime, website, phone, email, type, _id } = data;
-    Vendors.collection.update(_id, { $set: { name, image, price, location, state, businessdate, starttime, endtime, website, phone, email, type } }, (error) => (error ?
+    const { name, image, price, location, state, businessdate, starttime, endtime, paymentOptions, website, phone, email, type, description, _id } = data;
+    Vendors.collection.update(_id, { $set: { name, image, price, location, state, businessdate, starttime, endtime, paymentOptions, website, phone, email, type, description } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   }
@@ -42,10 +42,12 @@ class EditVendorInformation extends React.Component {
               <TextField name='businessdate'/>
               <NumField name='starttime' decimal={false}/>
               <NumField name='endtime' decimal={false}/>
+              <TextField name='paymentOptions' label='Payment Options'/>
               <TextField name='website'/>
               <TextField name='phone'/>
               <TextField name='email'/>
               <TextField name='type'/>
+              <LongTextField name='description'/>
               <SubmitField value='Submit'/>
               <ErrorsField/>
               <HiddenField name='owner' />

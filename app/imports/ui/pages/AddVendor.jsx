@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Segment, Header } from 'semantic-ui-react';
-import { AutoForm, ErrorsField, HiddenField, NumField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
+import { AutoForm, ErrorsField, HiddenField, NumField, SelectField, SubmitField, TextField, LongTextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -13,8 +13,8 @@ class AddVendor extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { name, image, price, location, state, businessdate, starttime, endtime, website, phone, email, type, owner } = data;
-    Vendors.collection.insert({ name, image, price, location, state, businessdate, starttime, endtime, website, phone, email, type, owner },
+    const { name, image, price, location, state, businessdate, starttime, endtime, paymentOptions, website, phone, email, type, description, owner } = data;
+    Vendors.collection.insert({ name, image, price, location, state, businessdate, starttime, endtime, paymentOptions, website, phone, email, type, description, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -44,10 +44,12 @@ class AddVendor extends React.Component {
               <TextField name='businessdate' label='Business Date'/>
               <NumField name='starttime' label='Open Time (24-hour notation)' decimal={false} min={0} max={23} />
               <NumField name='endtime' label='Close Time (24-hour notation)' decimal={false} min={0} max={23} />
+              <TextField name='paymentOptions' label='Payment Options'/>
               <TextField name='website'/>
               <TextField name='phone'/>
               <TextField name='email'/>
               <TextField name='type' label='Vendor Type'/>
+              <LongTextField name='description'/>
               <SubmitField value='Submit'/>
               <ErrorsField/>
               <HiddenField name='owner' value={Meteor.user().username}/>

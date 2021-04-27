@@ -30,9 +30,11 @@ class MyVendor extends React.Component {
                 <Table.HeaderCell>Price</Table.HeaderCell>
                 <Table.HeaderCell>Location</Table.HeaderCell>
                 <Table.HeaderCell>State</Table.HeaderCell>
+                <Table.HeaderCell>Payment Options</Table.HeaderCell>
                 <Table.HeaderCell>Time</Table.HeaderCell>
                 <Table.HeaderCell>Contact</Table.HeaderCell>
                 <Table.HeaderCell>Type</Table.HeaderCell>
+                <Table.HeaderCell>Description</Table.HeaderCell>
                 <Table.HeaderCell>Edit</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
