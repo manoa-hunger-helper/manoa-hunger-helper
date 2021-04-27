@@ -23,10 +23,10 @@ class InformationCollection {
         defaultValue: 'None',
       },
       owner: String,
-      favoriteVendor: { type: String,
+      phoneNumber: { type: String,
         defaultValue: 'None',
       },
-      favoriteItem: { type: String,
+      address: { type: String,
         defaultValue: 'None',
       },
     }, { tracker: Tracker });

@@ -16,8 +16,8 @@ class MyInformationData extends React.Component {
         <Table.Cell>{this.props.info.owner}</Table.Cell>
         <Table.Cell>{this.props.info.firstname}</Table.Cell>
         <Table.Cell>{this.props.info.lastname}</Table.Cell>
-        <Table.Cell>{this.props.info.favoriteVendor}</Table.Cell>
-        <Table.Cell>{this.props.info.favoriteItem}</Table.Cell>
+        <Table.Cell>{this.props.info.phoneNumber}</Table.Cell>
+        <Table.Cell>{this.props.info.address}</Table.Cell>
         <Table.Cell>
           <Link to={`/editUserInfor/${this.props.info._id}`}>Edit</Link>
         </Table.Cell>
