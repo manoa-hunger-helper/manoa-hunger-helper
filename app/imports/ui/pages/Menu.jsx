@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { _ } from 'meteor/underscore';
-import { Container, Loader, Card, Header, Segment } from 'semantic-ui-react';
+import { Container, Loader, Card, Header, Segment, Message, Icon } from 'semantic-ui-react';
 import { AutoForm, SubmitField } from 'uniforms-semantic';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -41,6 +41,8 @@ class Menus extends React.Component {
     const bridge = new SimpleSchema2Bridge(formSchema);
     const names = _.pluck(Vendors.collection.find({ type: { $in: this.state.types } }).fetch(), 'name');
     const food = FoodMenus.collection.find({ vendor: { $in: names } });
+    const count = food.count();
+    const message = 'Oops! You may have not select any ethnicity, or the food of your selected ethnicity is not available at this time. Please contact the admins for more information.';
 
     return (
       <Container id="menu-page">
@@ -51,12 +53,21 @@ class Menus extends React.Component {
             <SubmitField id='submit' value='Submit'/>
           </Segment>
         </AutoForm>
-        <Card.Group>
-          {food.map((menu, index) => <MenuItem
-            key={index}
-            menu={menu}
-          />)}
-        </Card.Group>
+        {count === 0 ?
+          <Message color={'orange'} style={{ paddingBottom: '10px', paddingTop:
+                  '10px', marginBottom: '50px' }} icon>
+            <Icon name='search' size='tiny'/>
+            <Message.Content>
+              <Message.Header as='h1'>No Result</Message.Header>
+              {message}
+            </Message.Content>
+          </Message> :
+          <Card.Group>
+            {food.map((menu, index) => <MenuItem
+              key={index}
+              menu={menu}
+            />)}
+          </Card.Group>}
       </Container>
     );
   }
