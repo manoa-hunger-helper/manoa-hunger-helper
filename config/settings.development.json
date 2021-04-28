@@ -1,27 +1,27 @@
 {
   "defaultFoodMenu": [
-    { "name": "Orange Chicken", "vendor": "Panda Express", "price": 10.20, "owner": "vendor@foo.com",
+    { "name": "Orange Chicken", "vendor": "Panda Express", "price": 10.20, "owner": "vendor17@foo.com",
       "image": "https://www.tasteofhome.com/wp-content/uploads/2018/11/PX_OrangeChicken_FriedRice_Bowl.jpg",
       "bio": "Our signature dish. Crispy chicken wok-tossed in a sweet and spicy orange sauce.",
       "vegan": true,
       "drink": false,
       "dessert": false
     },
-    { "name": "Shoyu Ahi", "vendor": "Ono Seafood", "price": 11.75, "owner": "vendor3@foo.com",
+    { "name": "Shoyu Ahi", "vendor": "Ono Seafood", "price": 11.75, "owner": "vendor16@foo.com",
       "image": "https://www.acouplecooks.com/wp-content/uploads/2020/01/Ahi-Poke-004.jpg",
       "bio" : "Fresh ahi mixed with Japanese shoyu sauce, served with white rice or brown rice",
       "vegan": false,
       "drink": false,
       "dessert": false
     },
-    { "name": "Mixed Veggie", "vendor": "Panda Express", "price": 8.00, "owner": "vendor@foo.com",
+    { "name": "Mixed Veggie", "vendor": "Panda Express", "price": 8.00, "owner": "vendor17@foo.com",
       "image": "https://image.zmenu.com/large/3300/20140409152448457945.jpg",
       "bio": "A healthful medley of broccoli, kale, and cabbage.",
       "vegan": true,
       "drink": false,
       "dessert": false
     },
-    { "name": "Honey Walnut Shrimp", "vendor": "Panda Express", "price": 13.95, "owner": "vendor@foo.com",
+    { "name": "Honey Walnut Shrimp", "vendor": "Panda Express", "price": 13.95, "owner": "vendor17@foo.com",
       "image": "https://tse2.mm.bing.net/th?id=OIP.JHRJbT_8OAVsMqFMzUD6kQHaFj&pid=Api&P=0&w=227&h=171",
       "bio": "Large tempura-battered shrimp, wok-tossed in a honey sauce and topped with glazed walnuts.",
       "vegan": false,
@@ -35,14 +35,14 @@
       "drink": false,
       "dessert": false
     },
-    { "name": "Strawberry Wild", "vendor": "Jamba Juice", "price": 5.89, "owner": "vendor4@foo.com",
+    { "name": "Strawberry Wild", "vendor": "Jamba Juice", "price": 5.89, "owner": "vendor11@foo.com",
       "image": "https://jambajuice.ph/wp-content/uploads/SWild.jpg",
       "bio": "Apple Pear Strawberry Juice Blend, Fat Free Vanilla Frozen Yogurt, Strawberry, Banana",
         "vegan": true,
         "drink": true,
         "dessert": false
     },
-    { "name": "Peach Perfection", "vendor": "Jamba Juice", "price": 5.89, "owner": "vendor4@foo.com",
+    { "name": "Peach Perfection", "vendor": "Jamba Juice", "price": 5.89, "owner": "vendor11@foo.com",
       "image": "https://jambajuice.ph/wp-content/uploads/Peach-Pleasure.jpg",
       "bio": "White Grape Pear Peach Juice Blend, Mangos, Peaches, Apple  Strawberry Juice Blend, Strawberry",
       "vegan": true,
@@ -537,21 +537,21 @@
     }
   ],
   "defaultFeaturedMenu": [
-    { "name": "Orange Chicken", "vendor": "Panda Express", "price": 10.20, "owner": "vendor@foo.com",
+    { "name": "Orange Chicken", "vendor": "Panda Express", "price": 10.20, "owner": "vendor17@foo.com",
       "image": "https://www.tasteofhome.com/wp-content/uploads/2018/11/PX_OrangeChicken_FriedRice_Bowl.jpg",
       "bio": "Our signature dish. Crispy chicken wok-tossed in a sweet and spicy orange sauce.",
       "vegan": true,
       "drink": false,
       "dessert": false
     },
-    { "name": "Shoyu Ahi", "vendor": "Ono Seafood", "price": 11.75, "owner": "vendor3@foo.com",
+    { "name": "Shoyu Ahi", "vendor": "Ono Seafood", "price": 11.75, "owner": "vendor16@foo.com",
       "image": "https://www.acouplecooks.com/wp-content/uploads/2020/01/Ahi-Poke-004.jpg",
       "bio" : "Fresh ahi mixed with Japanese shoyu sauce, served with white rice or brown rice",
       "vegan": false,
       "drink": false,
       "dessert": false
     },
-    { "name": "Peach Perfection", "vendor": "Jamba Juice", "price": 5.89, "owner": "vendor4@foo.com",
+    { "name": "Peach Perfection", "vendor": "Jamba Juice", "price": 5.89, "owner": "vendor11@foo.com",
       "image": "https://jambajuice.ph/wp-content/uploads/Peach-Pleasure.jpg",
       "bio": "White Grape Pear Peach Juice Blend, Mangos, Peaches, Apple  Strawberry Juice Blend, Strawberry",
       "vegan": true,
