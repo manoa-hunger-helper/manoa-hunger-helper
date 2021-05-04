@@ -25,8 +25,8 @@ class AdminManageUsers extends React.Component {
               <Table.HeaderCell>User email</Table.HeaderCell>
               <Table.HeaderCell>firstname</Table.HeaderCell>
               <Table.HeaderCell>lastname</Table.HeaderCell>
-              <Table.HeaderCell>favorite vendor</Table.HeaderCell>
-              <Table.HeaderCell>favorite item</Table.HeaderCell>
+              <Table.HeaderCell>phone number</Table.HeaderCell>
+              <Table.HeaderCell>address</Table.HeaderCell>
               <Table.HeaderCell>edit</Table.HeaderCell>
               <Table.HeaderCell>Remove</Table.HeaderCell>
             </Table.Row>
