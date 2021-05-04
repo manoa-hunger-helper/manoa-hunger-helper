@@ -19,7 +19,10 @@ class MyVendorData extends React.Component {
         <Table.Cell><Image src={this.props.vendor.image} size='small'/></Table.Cell>
         <Table.Cell>{this.props.vendor.price}</Table.Cell>
         <Table.Cell>{this.props.vendor.location}</Table.Cell>
-        <Table.Cell>{stats}</Table.Cell>
+        <Table.Cell>
+          <p>Vendor stats: {this.props.vendor.state}</p>
+          <p>Stats shows to user: {stats}</p>
+        </Table.Cell>
         <Table.Cell>{this.props.vendor.paymentOptions}</Table.Cell>
         <Table.Cell>
           <p>Business Day: {this.props.vendor.businessdate}</p>
