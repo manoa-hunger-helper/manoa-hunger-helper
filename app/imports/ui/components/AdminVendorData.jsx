@@ -3,7 +3,7 @@ import { Table, Image, Button, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Renders a single row in the List Stuff table. */
 class AdminVendorData extends React.Component {
   removeItem(vendorID) {
     this.props.Vendors.collection.remove(vendorID);

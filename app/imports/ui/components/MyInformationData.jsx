@@ -3,7 +3,7 @@ import { Table, Image, Button, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Renders a single row in the List Stuff table. */
 class MyInformationData extends React.Component {
   removeItem(InfoID) {
     this.props.Information.collection.remove(InfoID);

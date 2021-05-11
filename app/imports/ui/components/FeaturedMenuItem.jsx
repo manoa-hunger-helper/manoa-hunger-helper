@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { Featured } from '../../api/featured/Featured';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Renders a single row in the List Stuff table. */
 class FeaturedMenuItem extends React.Component {
   render() {
     const name = this.props.menu.name;

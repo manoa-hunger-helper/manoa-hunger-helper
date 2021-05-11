@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Vendors } from '../../api/vendor/Vendor.js';
 import { FoodMenus } from '../../api/menu/FoodMenu.js';
 import { Information } from '../../api/information/Information.js';
@@ -8,10 +7,6 @@ import { Featured } from '../../api/featured/Featured';
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
-function addData(data) {
-  console.log(`  Adding: ${data.name} (${data.owner})`);
-  Stuffs.collection.insert(data);
-}
 function addUser(data) {
   console.log(`  Adding: ${data.firstname} (${data.owner})`);
   Information.collection.insert(data);
@@ -32,14 +27,6 @@ function addFood(data) {
 function addFeatured(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
   Featured.collection.insert(data);
-}
-
-// Initialize the StuffsCollection if empty.
-if (Stuffs.collection.find().count() === 0) {
-  if (Meteor.settings.defaultData) {
-    console.log('Creating default data.');
-    Meteor.settings.defaultData.map(data => addData(data));
-  }
 }
 
 if (Information.collection.find().count() === 0) {

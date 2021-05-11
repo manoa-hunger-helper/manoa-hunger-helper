@@ -135,14 +135,6 @@
     { "email": "vendor23@foo.com", "password": "changeme", "role": "vendor" },
     { "email": "vendor24@foo.com", "password": "changeme", "role": "vendor" }
   ],
-
-  "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
-  ],
-
   "defaultInformation": [
     { "firstname": "Jone", "lastname":"Smith", "phoneNumber":"808-307-1122", "address": "1779 Apaki St, Honolulu, HI 96817","image":"https://tse2.mm.bing.net/th?id=OIP.56662o4yV01NUau07Nm5fwAAAA&pid=Api&P=0&w=300&h=300", "owner": "john@foo.com" },
     { "firstname": "Peter", "lastname":"Johnson", "phoneNumber":"808-345-7777","address": "1441 Kapiolani Blvd St, Honolulu, HI 96814","image":"https://tse1.mm.bing.net/th?id=OIP.46Mhl3YGQle1Ca4O0w4oEwAAAA&pid=Api&P=0&w=300&h=300", "owner": "vendor@foo.com" },
