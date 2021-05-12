@@ -64,7 +64,7 @@ class NavBar extends React.Component {
             <Menu.Item key='information'>
               <Dropdown id="information-dropdown" text=" Owner Information">
                 <Dropdown.Menu>
-                  <Dropdown.Item id="my-information" as={NavLink} activeClassName="active" exact to="/my-information" key='drink'>view my informtion </Dropdown.Item>
+                  <Dropdown.Item id="my-information" as={NavLink} activeClassName="active" exact to="/my-information" key='drink'>view my information </Dropdown.Item>
                   <Dropdown.Item id="add-my-information" as={NavLink} activeClassName="active" exact to="/add-my-information" key='add-my-information'>add my information</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
@@ -76,6 +76,12 @@ class NavBar extends React.Component {
             <Menu.Item id="manage-vendor-page" as={NavLink} activeClassName="active" exact to="/admin-manage-vendors" key='admin-manage-vendors'>Manage Vendors</Menu.Item>,
           ]
         ) : ''}
+        <Menu.Item id="all-vendor-page" as={NavLink} activeClassName="active" exact to="/all-vendors" key='all'>All Vendors</Menu.Item>,
+        <Menu.Item id="available-now-page" as={NavLink} activeClassName="active" exact to="/available-vendors" key='now'>Available
+          Now</Menu.Item>,
+        <Menu.Item id="today-top-picks-page" as={NavLink} activeClassName="active" exact to="/todays-top-picks" key='picks'>Todays Top
+          Picks</Menu.Item>,
+        <Menu.Item id="menu-page" as={NavLink} activeClassName="active" exact to="/view" key='all-menus'>Menus</Menu.Item>,
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (
             <Dropdown id="login-dropdown" text="Login" pointing="top right" icon={'user'}>
