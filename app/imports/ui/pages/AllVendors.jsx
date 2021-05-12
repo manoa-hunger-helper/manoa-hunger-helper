@@ -25,7 +25,7 @@ class AllVendors extends React.Component {
     return (
       <Container id="AllVendors-page">
         <Header as="h2" textAlign="center" color="orange" style={ { paddingTop: '30px', paddingBottom: '30px' }}>All Vendors</Header>
-        <Card.Group centered style={{paddingBottom: '40px'}}>
+        <Card.Group centered style={{ paddingBottom: '40px' }}>
           {this.props.vendors.map((vendors, index) => <VendorItem key={index} vendor={vendors}/>)}
         </Card.Group>
       </Container>
