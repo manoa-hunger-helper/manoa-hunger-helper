@@ -32,7 +32,7 @@ class NavBar extends React.Component {
             <Menu.Item id="all-vendor-page" as={NavLink} activeClassName="active" exact to="/all-vendors" key='all'>All Vendors</Menu.Item>,
             <Menu.Item id="available-now-page" as={NavLink} activeClassName="active" exact to="/available-vendors" key='now'>Available
               Now</Menu.Item>,
-            <Menu.Item id="today-top-picks-page" as={NavLink} activeClassName="active" exact to="/todays-top-picks" key='picks'>Today Top
+            <Menu.Item id="today-top-picks-page" as={NavLink} activeClassName="active" exact to="/todays-top-picks" key='picks'>Today's Top
               Picks</Menu.Item>,
             <Menu.Item id="menu-page" as={NavLink} activeClassName="active" exact to="/view" key='all-menus'>Menus</Menu.Item>,
             <Menu.Item key='recomm'>
