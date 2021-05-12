@@ -24,7 +24,7 @@ class TodayTopPicks extends React.Component {
       <Container id="TodayTopPicks-page">
         <Header as="h2" textAlign="center" color="orange" style={{ paddingTop: '30px', paddingBottom: '20px' }}>
           Today&apos;s Top picks </Header>
-        <Card.Group>
+        <Card.Group style={{paddingBottom: '40px'}}>
           {uniqueFeatured.map(
             (menu, index) => <FeaturedMenuItem key={index} menu={menu}/>,
           )}
