@@ -21,13 +21,13 @@ class AdminManageUsers extends React.Component {
         <Table celled style={{ marginBottom: '80px' }}>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>User image</Table.HeaderCell>
-              <Table.HeaderCell>User email</Table.HeaderCell>
-              <Table.HeaderCell>firstname</Table.HeaderCell>
-              <Table.HeaderCell>lastname</Table.HeaderCell>
-              <Table.HeaderCell>phone number</Table.HeaderCell>
-              <Table.HeaderCell>address</Table.HeaderCell>
-              <Table.HeaderCell>edit</Table.HeaderCell>
+              <Table.HeaderCell>User Image</Table.HeaderCell>
+              <Table.HeaderCell>User Email</Table.HeaderCell>
+              <Table.HeaderCell>FirstName</Table.HeaderCell>
+              <Table.HeaderCell>LastName</Table.HeaderCell>
+              <Table.HeaderCell>Phone Number</Table.HeaderCell>
+              <Table.HeaderCell>Address</Table.HeaderCell>
+              <Table.HeaderCell>Edit</Table.HeaderCell>
               <Table.HeaderCell>Remove</Table.HeaderCell>
             </Table.Row>
           </Table.Header>

@@ -31,12 +31,12 @@ class MyInformation extends React.Component {
         <Table celled style={{ marginBottom: '30px' }}>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>image</Table.HeaderCell>
-              <Table.HeaderCell>email</Table.HeaderCell>
-              <Table.HeaderCell>firstname</Table.HeaderCell>
-              <Table.HeaderCell>lastname</Table.HeaderCell>
-              <Table.HeaderCell>phone number</Table.HeaderCell>
-              <Table.HeaderCell>address</Table.HeaderCell>
+              <Table.HeaderCell>Image</Table.HeaderCell>
+              <Table.HeaderCell>Email</Table.HeaderCell>
+              <Table.HeaderCell>Firstname</Table.HeaderCell>
+              <Table.HeaderCell>Lastname</Table.HeaderCell>
+              <Table.HeaderCell>Phone number</Table.HeaderCell>
+              <Table.HeaderCell>Address</Table.HeaderCell>
               <Table.HeaderCell>Edit</Table.HeaderCell>
               <Table.HeaderCell>Remove</Table.HeaderCell>
             </Table.Row>
